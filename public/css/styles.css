@@ -1,5 +1,5 @@
 /* =====================================================
-   ExamBox — Dark theme editor layout
+   WebBox — Dark theme editor layout
    ===================================================== */
 
 *, *::before, *::after {
@@ -562,3 +562,52 @@ html, body {
 ::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #777; }
+
+/* ── Light theme ──────────────────────────────────── */
+html[data-theme="light"] {
+  --bg-base:      #f3f3f3;
+  --bg-toolbar:   #e8e8e8;
+  --bg-pane:      #f3f3f3;
+  --bg-header:    #e0e0e0;
+  --bg-preview:   #ffffff;
+  --border:       #d0d0d0;
+  --text-primary: #1e1e1e;
+  --text-muted:   #666666;
+}
+
+html[data-theme="light"] .toolbar__title { color: #1e1e1e; }
+html[data-theme="light"] .toolbar__logo  { color: #0078d4; }
+
+html[data-theme="light"] .btn:not(.btn--primary):not(.btn--secondary) {
+  background: #d8d8d8;
+  color: #1e1e1e;
+}
+html[data-theme="light"] .btn:not(.btn--primary):not(.btn--secondary):hover {
+  background: #c8c8c8;
+}
+
+html[data-theme="light"] .btn-minimize:hover {
+  background: #d0d0d0;
+  color: #1e1e1e;
+}
+
+html[data-theme="light"] .toggle__track { background: #aaa; }
+
+html[data-theme="light"] .console-panel { background: #f0f0f0; }
+
+html[data-theme="light"] .console-clear-btn { background: #d0d0d0; color: #444; }
+html[data-theme="light"] .console-clear-btn:hover { background: #c0c0c0; color: #1e1e1e; }
+
+html[data-theme="light"] .console-entry:hover { background: #e8e8e8; }
+html[data-theme="light"] .console-entry--log   { color: #1e1e1e; }
+html[data-theme="light"] .console-entry--info  { color: #0066cc; border-bottom-color: #d0e4f7; }
+html[data-theme="light"] .console-entry--warn  { color: #7a5800; background: #fff8e1; border-bottom-color: #f0d080; }
+html[data-theme="light"] .console-entry--error { color: #c0392b; background: #fff0f0; border-bottom-color: #f0c0c0; }
+
+html[data-theme="light"] .console-entry--log   .console-entry__type { color: #888; }
+html[data-theme="light"] .console-entry--info  .console-entry__type { color: #0066cc; }
+html[data-theme="light"] .console-entry--warn  .console-entry__type { color: #7a5800; }
+html[data-theme="light"] .console-entry--error .console-entry__type { color: #c0392b; }
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #bbb; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #999; }

@@ -1,5 +1,5 @@
 {
-  "name": "exambox",
+  "name": "webbox",
   "version": "1.0.0",
   "description": "Zelfgehoste HTML/CSS/JS editor voor examens",
   "main": "app.js",

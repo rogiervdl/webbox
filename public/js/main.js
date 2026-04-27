@@ -1,5 +1,5 @@
 /* =====================================================
-   ExamBox — Hoofdlogica
+   WebBox — Hoofdlogica
    ===================================================== */
 
 (function () {
@@ -30,7 +30,7 @@ h1 {
 }`;
 
   const DEFAULT_JS = `// Jouw JavaScript
-console.log('ExamBox geladen!');`;
+console.log('WebBox geladen!');`;
 
   // ── Monaco initialisatie ─────────────────────────────
   require(['vs/editor/editor.main'], function () {
@@ -79,7 +79,44 @@ console.log('ExamBox geladen!');`;
       consoleBadge.classList.remove('visible');
     }
 
-    function appendConsoleEntry(type, text) {
+    function renderConsoleArgs(targetEl, args) {
+      const safeArgs = Array.isArray(args) ? args : [String(args || '')];
+      if (!safeArgs.length) return;
+
+      const firstArg = String(safeArgs[0]);
+      const hasCssTokens = typeof safeArgs[0] === 'string' && firstArg.indexOf('%c') !== -1;
+
+      // Browser-consoles ondersteunen `%c` tokens met opeenvolgende style-argumenten.
+      // We benaderen dat gedrag hier voor de ingebouwde console.
+      if (hasCssTokens) {
+        const parts = firstArg.split('%c');
+        let styleArgIndex = 1;
+
+        const plainPrefix = document.createElement('span');
+        plainPrefix.textContent = parts[0];
+        targetEl.appendChild(plainPrefix);
+
+        for (let i = 1; i < parts.length; i++) {
+          const segment = document.createElement('span');
+          segment.textContent = parts[i];
+          segment.style.cssText = String(safeArgs[styleArgIndex] || '');
+          targetEl.appendChild(segment);
+          styleArgIndex++;
+        }
+
+        for (let i = styleArgIndex; i < safeArgs.length; i++) {
+          if (i > styleArgIndex) targetEl.appendChild(document.createTextNode(' '));
+          targetEl.appendChild(document.createTextNode(String(safeArgs[i])));
+        }
+        return;
+      }
+
+      targetEl.textContent = safeArgs.map(function (value) {
+        return String(value);
+      }).join(' ');
+    }
+
+    function appendConsoleEntry(type, args) {
       const entry = document.createElement('div');
       entry.className = 'console-entry console-entry--' + type;
       const typeEl = document.createElement('span');
@@ -87,7 +124,7 @@ console.log('ExamBox geladen!');`;
       typeEl.textContent = type;
       const textEl = document.createElement('span');
       textEl.className = 'console-entry__text';
-      textEl.textContent = text;
+      renderConsoleArgs(textEl, args);
       entry.appendChild(typeEl);
       entry.appendChild(textEl);
       consoleOutput.appendChild(entry);
@@ -103,9 +140,8 @@ console.log('ExamBox geladen!');`;
     }
 
     window.addEventListener('message', function (e) {
-      if (!e.data || e.data.__exambox !== true) return;
-      const text = e.data.args.join(' ');
-      appendConsoleEntry(e.data.type, text);
+      if (!e.data || e.data.__webbox !== true) return;
+      appendConsoleEntry(e.data.type, e.data.args);
     });
 
     document.getElementById('console-toggle').addEventListener('click', function (e) {
@@ -144,7 +180,7 @@ console.log('ExamBox geladen!');`;
      *   - Anders → append aan het einde
      */
     const CONSOLE_BRIDGE = `<script>(function(){` +
-      `var _s=function(t,a){try{window.parent.postMessage({__exambox:true,type:t,` +
+      `var _s=function(t,a){try{window.parent.postMessage({__webbox:true,type:t,` +
       `args:Array.prototype.slice.call(a).map(function(x){try{` +
       `return typeof x==='object'?JSON.stringify(x,null,2):String(x)}catch(e){return String(x)}` +
       `})},'*')}catch(e){}};` +
@@ -414,6 +450,27 @@ console.log('ExamBox geladen!');`;
         function () { return workspace.classList.contains('layout-vertical'); }
       );
     });
+
+    // ── Theme toggle ───────────────────────────────────
+    const btnTheme = document.getElementById('btn-theme');
+    const iconSun  = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      const isDark = theme === 'dark';
+      iconSun.style.display  = isDark ? '' : 'none';
+      iconMoon.style.display = isDark ? 'none' : '';
+      monaco.editor.setTheme(isDark ? 'vs-dark' : 'vs');
+      localStorage.setItem('webbox-theme', theme);
+    }
+
+    btnTheme.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    applyTheme(localStorage.getItem('webbox-theme') || 'dark');
 
     // ── Initiële run ────────────────────────────────────
     runCode();
