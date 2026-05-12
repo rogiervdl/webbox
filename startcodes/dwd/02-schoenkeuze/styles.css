@@ -1,0 +1,162 @@
+/* general */
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   background-color: #EEF1C0;
+}
+
+body {
+   background-color: #EEF1C0;
+   color: #333;
+   font-family: roboto;
+   font-size: 14px;
+   margin-bottom: 50px;
+   padding: 0 20px;
+}
+
+h1 {
+   font-weight: 300;
+   margin: 30px 0;
+}
+
+h2 {
+   color: black;
+   font-weight: 400;
+   margin-bottom: 15px;
+}
+
+/* model picker */
+
+#model {
+   display: flex;
+   list-style: none;
+   margin-bottom: 20px;
+}
+
+#model a {
+   color: #333;
+   text-decoration: none;
+}
+
+#model a.selected,
+#model a:hover {
+   text-decoration: underline;
+}
+
+#model li+li::before {
+   content: "-";
+   margin: 10px;
+}
+
+/* shoe image */
+
+#figShoe {
+   display: inline-block;
+   margin-bottom: 20px;
+}
+
+#figShoe img {
+   border: 1px solid #ccc;
+   width: 400px;
+}
+
+#figShoe figcaption {
+   margin-top: 5px;
+   font-style: italic;
+   text-align: right;
+}
+
+/* summary */
+
+.properties {
+   line-height: 1.6;
+   margin-bottom: 40px;
+}
+
+.properties dt {
+   clear: left;
+   float: left;
+   font-weight: bold;
+}
+
+.properties dt::after {
+   content: ": ";
+   font-weight: bold;
+   margin-right: 5px;
+}
+
+.properties dd {
+   color: #1a1a1a;
+}
+
+/* order form */
+
+label {
+   margin-right: 10px;
+}
+
+select, input {
+   padding: 5px;
+}
+
+select {
+   margin: 10px 0 20px 0;
+   padding: 5px;
+}
+
+button[type=submit] {
+   background-color: #333;
+   border: 2px solid #333;
+   color: #fff;
+   cursor: pointer;
+   font-weight: bold;
+   margin-top: 20px;
+   padding: 10px 15px;
+   text-transform: uppercase;
+   transition: background 0.3s, color 0.3s;
+}
+
+button[type=submit]:hover {
+   background-color: #fff;
+   color: #333;
+}
+
+.message {
+   color: #900;
+   font-style: italic;
+   margin-left: 10px;
+}
+
+/* accessoires */
+
+.accessoire {
+   margin: 10px 0;
+}
+
+.accessoire label {
+   display: flex;
+   align-items: center;
+}
+
+.accessoire input[type=checkbox] {
+   margin-right: 10px;
+}
+
+.accessoire img {
+   margin-right: 10px;
+   width: 100px;
+} 
+
+/* summary */
+
+#lblMessage {
+   font-size: 20px;
+   font-style: italic;
+   margin-top: 18px;
+}
+
+

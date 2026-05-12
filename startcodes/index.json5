@@ -4,8 +4,11 @@
          id: "dwd",
          label: "Dynamic Web Fundamentals",
          exercises: [
-            { id: "oef-1", label: "Oefening 1 — Tabellen" },
-            { id: "oef-2", label: "Oefening 2 — Formulieren" },
+            { 
+               id: "02-schoenkeuze", 
+               label: "02.DomHtml — Schoenkeuze", 
+               startfiles: [ "html", "css" ]
+            },
          ],
       },
       {
