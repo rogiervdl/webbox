@@ -1,7 +1,7 @@
 {
    subjects: [
       {
-         id: "DWD",
+         id: "dwd",
          label: "Dynamic Web Fundamentals",
          exercises: [
             { id: "oef-1", label: "Oefening 1 — Tabellen" },
@@ -9,7 +9,7 @@
          ],
       },
       {
-         id: "WDF",
+         id: "wdf",
          label: "Web Development Fundamentals",
          exercises: [
             { id: "06.cssbuttons", label: "06.CSSDesign — CssButtons" },
