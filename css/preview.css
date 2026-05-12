@@ -190,6 +190,7 @@
    background: var(--bg-preview);
    border: none;
    flex: 1;
+   min-height: 0;
    width: 100%;
 }
 

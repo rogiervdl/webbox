@@ -91,6 +91,7 @@ const Exercises = (() => {
       editors.js.setValue(js ?? '');
 
       applyPaneLayout(collapsed);
+      Preview.run();
 
       if (readme !== null) {
          currentReadme = readme;
