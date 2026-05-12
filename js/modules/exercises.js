@@ -9,6 +9,18 @@ const Exercises = (() => {
    let currentReadme = '';
    let currentExerciseBaseUrl = '';
 
+   const FILE_MAP = {
+      html: 'index.html',
+      css:  'styles.css',
+      js:   'scripts.js',
+   };
+
+   const PANE_MAP = {
+      html: 'pane-html',
+      css:  'pane-css',
+      js:   'pane-js',
+   };
+
    // declaraties
    const selectSubject  = document.querySelector('#select-subject');
    const selectExercise = document.querySelector('#select-exercise');
@@ -48,8 +60,8 @@ const Exercises = (() => {
    /**
     * Laadt de startcode-bestanden voor de geselecteerde oefening.
     *
-    * @param {string} subjectId   - ID van het vak
-    * @param {string} exerciseId  - ID van de oefening
+    * @param {string} subjectId - ID van het vak
+    * @param {string} exerciseId - ID van de oefening
     */
    async function loadExercise(subjectId, exerciseId) {
       const base = `startcodes/${subjectId}/${exerciseId}/`;
@@ -57,10 +69,20 @@ const Exercises = (() => {
       currentReadme = '';
       btnReadme.disabled = true;
 
+      const subject   = subjectsData.find(function (s) { return s.id === subjectId; });
+      const exercise  = subject?.exercises.find(function (e) { return e.id === exerciseId; });
+      const startfiles = exercise?.startfiles ?? ['html', 'css', 'js'];
+      const collapsed  = exercise?.collapsed  ?? [];
+
+      const fetches = {};
+      ['html', 'css', 'js'].forEach(function (key) {
+         fetches[key] = startfiles.includes(key) ? fetchText(`${base}${FILE_MAP[key]}`) : Promise.resolve(null);
+      });
+
       const [html, css, js, readme] = await Promise.all([
-         fetchText(`${base}index.html`),
-         fetchText(`${base}styles.css`),
-         fetchText(`${base}scripts.js`),
+         fetches.html,
+         fetches.css,
+         fetches.js,
          fetchText(`${base}readme.md`),
       ]);
 
@@ -68,10 +90,26 @@ const Exercises = (() => {
       editors.css.setValue(css ?? '');
       editors.js.setValue(js ?? '');
 
+      applyPaneLayout(collapsed);
+
       if (readme !== null) {
          currentReadme = readme;
          btnReadme.disabled = false;
       }
+   }
+
+   /**
+    * Past de collapsed-staat van de editor-panels aan.
+    *
+    * @param {string[]} collapsed - Keys van te collappen panels ('html', 'css', 'js')
+    */
+   function applyPaneLayout(collapsed) {
+      Object.keys(PANE_MAP).forEach(function (key) {
+         const pane = document.querySelector(`#${PANE_MAP[key]}`);
+         pane.classList.toggle('is-minimized', collapsed.includes(key));
+         pane.style.flex = '';
+      });
+      Object.values(editors).forEach(function (editor) { editor.layout(); });
    }
 
    /**
