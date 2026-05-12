@@ -24,6 +24,13 @@ const ThemeSwitcher = (() => {
       localStorage.setItem('webbox-theme', theme);
    }
 
+   /**
+    * Initialiseert het thema
+    */
+   function init() {
+      applyTheme(localStorage.getItem('webbox-theme') || 'dark');
+   }
+
    // event handlers
    function handleBtnThemeClick() {
       const current = document.documentElement.dataset.theme || 'dark';
@@ -37,6 +44,7 @@ const ThemeSwitcher = (() => {
    // return facade
    return {
       applyTheme,
+      init
    };
 
 })();

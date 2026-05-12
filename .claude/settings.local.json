@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL \"https://cdn.jsdelivr.net/npm/json5/dist/index.min.js\" -o vendor/json5.min.js)",
+      "Bash(curl -sL \"https://cdn.jsdelivr.net/npm/marked/marked.min.js\" -o vendor/marked.min.js)"
+    ]
+  }
+}

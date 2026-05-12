@@ -1,0 +1,19 @@
+{
+   subjects: [
+      {
+         id: "DWD",
+         label: "Dynamic Web Fundamentals",
+         exercises: [
+            { id: "oef-1", label: "Oefening 1 — Tabellen" },
+            { id: "oef-2", label: "Oefening 2 — Formulieren" },
+         ],
+      },
+      {
+         id: "WDF",
+         label: "Web Development Fundamentals",
+         exercises: [
+            { id: "06.cssbuttons", label: "06.CSSDesign — CssButtons" },
+         ],
+      },
+   ],
+}

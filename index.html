@@ -17,6 +17,21 @@
          <img class="toolbar__logo" src="img/logo.svg" alt="">
          <span class="toolbar__title">WebBox</span>
       </div>
+
+      <!-- oefeningen -->
+      <div class="toolbar__exercises">
+         <select id="select-subject" class="select">
+            <option value="">Vak...</option>
+         </select>
+         <select id="select-exercise" class="select" disabled>
+            <option value="">Oefening...</option>
+         </select>
+         <button id="btn-readme" class="btn btn--icon" type="button" title="Toon opgave" disabled>
+            <img src="img/icon-book.svg" alt="">
+            <span>Opgave</span>
+         </button>
+      </div>
+
       <div class="toolbar__actions">
          <button id="btn-theme" class="btn btn--icon" type="button" title="Wissel thema" aria-label="Wissel thema">
             <img id="icon-sun" src="img/icon-sun.svg" alt="">
@@ -117,7 +132,21 @@
 
    </main>
 
+   <!-- opgave modal -->
+   <div class="modal" id="modal-readme" aria-hidden="true">
+      <div class="modal__backdrop"></div>
+      <div class="modal__dialog">
+         <div class="modal__header">
+            <span class="modal__title">Opgave</span>
+            <button id="btn-modal-close" class="btn-close" type="button" title="Sluiten">&times;</button>
+         </div>
+         <div class="modal__body" id="modal-readme-body"></div>
+      </div>
+   </div>
+
    <script src="vendor/jszip.min.js"></script>
+   <script src="vendor/json5.min.js"></script>
+   <script src="vendor/marked.min.js"></script>
    <script src="vendor/monaco-editor/min/vs/loader.js"></script>
    <script src="js/config.js"></script>
    <script src="js/modules/console.js"></script>
@@ -127,6 +156,7 @@
    <script src="js/modules/fullscreen.js"></script>
    <script src="js/modules/layout.js"></script>
    <script src="js/modules/preview.js"></script>
+   <script src="js/modules/exercises.js"></script>
    <script src="js/main.js"></script>
 
 </body>

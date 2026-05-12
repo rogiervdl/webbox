@@ -1,8 +1,4 @@
-/* =====================================================
-   WebBox — Hoofdlogica
-   ===================================================== */
-
-// ── Monaco initialisatie ─────────────────────────────
+// Monaco initialisatie
 function initMonaco () {
    const editors = {
       html: monaco.editor.create(document.querySelector('#editor-html'), {
@@ -27,7 +23,8 @@ function initMonaco () {
    Zip.init(editors);
    Layout.init(editors);
    Resizer.init(editors);
-   ThemeSwitcher.applyTheme(localStorage.getItem('webbox-theme') || 'dark');
+   ThemeSwitcher.init();
+   Exercises.init(editors);
    Preview.run();
 }
 
