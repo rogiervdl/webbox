@@ -12,7 +12,7 @@
          id: "wdf",
          label: "Web Development Fundamentals",
          exercises: [
-            { id: "06.cssbuttons", label: "06.CSSDesign — CssButtons" },
+            { id: "06-cssbuttons", label: "06.CSSDesign — CssButtons" },
          ],
       },
    ],
