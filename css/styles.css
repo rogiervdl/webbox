@@ -92,7 +92,7 @@ html, body {
   white-space: nowrap;
 }
 
-.btn svg {
+.btn img {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
@@ -117,7 +117,7 @@ html, body {
   padding: 2px 8px;
   font-size: 11px;
 }
-.btn--xs svg { width: 11px; height: 11px; }
+.btn--xs img { width: 11px; height: 11px; }
 
 /* ── Workspace ────────────────────────────────────── */
 .workspace {
@@ -251,14 +251,14 @@ html, body {
   background: #3e3e42;
 }
 
-.btn-minimize svg {
+.btn-minimize img {
   width: 14px;
   height: 14px;
   transition: transform 0.2s;
 }
 
 /* Geminimaliseerd: pijltje omdraaien */
-.editor-pane.is-minimized .btn-minimize svg {
+.editor-pane.is-minimized .btn-minimize img {
   transform: rotate(180deg);
 }
 
@@ -507,7 +507,7 @@ html, body {
 }
 .console-clear-btn:hover { background: #4a4a4a; color: var(--text-primary); }
 
-.console-panel.is-collapsed .btn-minimize svg {
+.console-panel.is-collapsed .btn-minimize img {
   transform: rotate(180deg);
 }
 
@@ -590,6 +590,9 @@ html[data-theme="light"] .btn-minimize:hover {
   background: #d0d0d0;
   color: #1e1e1e;
 }
+
+html[data-theme="light"] .btn--icon img { filter: brightness(0); }
+html[data-theme="light"] .btn-minimize img { filter: brightness(0.5); }
 
 html[data-theme="light"] .toggle__track { background: #aaa; }
 

@@ -1,0 +1,241 @@
+/*
+ * Editor styles
+ *
+ * @author Rogier van der Linde <rogier@bitmatters.be>
+ */
+
+/* workspace */
+
+.workspace {
+   display: flex;
+   flex-direction: row;
+   height: calc(100vh - var(--toolbar-h));
+   overflow: hidden;
+}
+
+/* editors panel */
+
+.editors-panel {
+   display: flex;
+   flex: 0 0 50%;
+   flex-direction: row;
+   min-width: 200px;
+   overflow: hidden;
+}
+
+/* editor pane */
+
+.editor-pane {
+   border-right: 1px solid var(--border);
+   display: flex;
+   flex: 1 1 0;
+   flex-direction: column;
+   min-height: 0;
+   min-width: 0;
+   overflow: hidden;
+
+   &:last-child {
+      border-right: none;
+   }
+}
+
+.editor-pane__header {
+   align-items: center;
+   background: var(--bg-header);
+   border-bottom: 1px solid var(--border);
+   display: flex;
+   flex-shrink: 0;
+   height: 30px;
+   justify-content: space-between;
+   padding: 0 12px;
+}
+
+.editor-pane__label {
+   font-size: 11px;
+   font-weight: 600;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+.editor-pane__label--html { color: var(--accent-html); }
+.editor-pane__label--css  { color: var(--accent-css); }
+.editor-pane__label--js   { color: var(--accent-js); }
+
+.editor-pane__body {
+   flex: 1;
+   overflow: hidden;
+}
+
+/* minimize button */
+
+.btn-minimize {
+   align-items: center;
+   background: none;
+   border: none;
+   border-radius: 3px;
+   color: var(--text-muted);
+   cursor: pointer;
+   display: flex;
+   flex-shrink: 0;
+   height: 20px;
+   justify-content: center;
+   padding: 0;
+   transition: background 0.15s, color 0.15s;
+   width: 20px;
+
+   &:hover {
+      background: #3e3e42;
+      color: var(--text-primary);
+   }
+
+   & img {
+      height: 14px;
+      transition: transform 0.2s;
+      width: 14px;
+   }
+}
+
+/* minimized pane */
+
+.editor-pane.is-minimized {
+   flex: 0 0 30px !important;
+   min-width: 30px;
+   overflow: hidden;
+
+   & .editor-pane__body {
+      display: none;
+   }
+
+   & .editor-pane__header {
+      align-items: center;
+      flex-direction: column-reverse;
+      gap: 8px;
+      height: 100%;
+      justify-content: flex-end;
+      padding: 8px 0;
+      width: 30px;
+   }
+
+   & .editor-pane__label {
+      letter-spacing: 1.5px;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+   }
+
+   & .btn-minimize img {
+      transform: rotate(180deg);
+   }
+}
+
+/* resizers */
+
+.resizer {
+   background: var(--border);
+   flex-shrink: 0;
+   transition: background 0.15s;
+
+   &:hover,
+   &.is-dragging {
+      background: #569cd6;
+   }
+}
+
+.resizer[data-axis="horizontal"] {
+   cursor: col-resize;
+   width: var(--resizer-w);
+}
+
+.resizer--main {
+   cursor: col-resize;
+   width: var(--resizer-w);
+}
+
+/* layout variants */
+
+.workspace.layout-vertical {
+   & .editors-panel {
+      flex: 0 0 50%;
+      flex-direction: column;
+   }
+
+   & .editor-pane {
+      border-bottom: 1px solid var(--border);
+      border-right: none;
+
+      &:last-child {
+         border-bottom: none;
+      }
+   }
+
+   & .editor-pane.is-minimized {
+      flex: 0 0 30px !important;
+      min-height: 30px;
+      min-width: 0;
+
+      & .editor-pane__header {
+         align-items: center;
+         flex-direction: row;
+         gap: 0;
+         height: 30px;
+         justify-content: space-between;
+         padding: 0 12px;
+         width: auto;
+      }
+
+      & .editor-pane__label {
+         transform: none;
+         writing-mode: horizontal-tb;
+      }
+   }
+
+   & .resizer[data-axis="horizontal"] {
+      cursor: row-resize;
+      height: var(--resizer-w);
+      width: auto;
+   }
+}
+
+.workspace.layout-stacked {
+   flex-direction: column;
+
+   & .editors-panel {
+      flex: 0 0 50%;
+      flex-direction: row;
+      min-width: 0;
+      width: 100%;
+   }
+
+   & .editor-pane {
+      border-bottom: none;
+      border-right: 1px solid var(--border);
+
+      &:last-child {
+         border-right: none;
+      }
+   }
+
+   & .resizer--main {
+      cursor: row-resize;
+      height: var(--resizer-w);
+      width: auto;
+   }
+
+   & .preview-panel {
+      flex: 1 1 0;
+      min-width: 0;
+      width: 100%;
+   }
+}
+
+/* light theme */
+
+html[data-theme="light"] {
+   & .btn-minimize:hover {
+      background: #d0d0d0;
+      color: #1e1e1e;
+   }
+
+   & .btn-minimize img {
+      filter: brightness(0.5);
+   }
+}

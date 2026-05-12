@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact — Bitmatters</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   <!-- header -->
+   <header>
+      <div class="wrapper">
+         <a href="index.html">
+            <img src="img/logo.svg" alt="Bitmatters logo">
+         </a>
+      </div>
+   </header>
+
+   <!-- navigation -->
+   <nav>
+      <div class="wrapper">
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Over ons</a></li>
+            <li class="active"><a href="contact.html">Contact</a></li>
+         </ul>
+      </div>
+   </nav>
+
+   <!-- main content -->
+   <main>
+      <div class="wrapper">
+
+         <h1>Contact</h1>
+
+         <section class="contact__info">
+            <h2>Contactgegevens</h2>
+            <p>Neem gerust contact met ons op via onderstaand formulier of telefonisch op <strong>09 123 45 67</strong>.</p>
+         </section>
+
+         <section class="contact__form">
+            <h2>Stuur ons een bericht</h2>
+
+            <form id="frm-contact" action="submit.php" method="post">
+
+               <fieldset>
+                  <legend>Persoonlijke gegevens</legend>
+
+                  <label for="inp-name">Naam</label>
+                  <input id="inp-name" name="name" type="text" placeholder="Jan Janssen" required>
+
+                  <label for="inp-email">E-mailadres</label>
+                  <input id="inp-email" name="email" type="email" placeholder="jan@voorbeeld.be" required>
+
+                  <label for="inp-tel">Telefoonnummer</label>
+                  <input id="inp-tel" name="tel" type="tel" placeholder="09 123 45 67">
+               </fieldset>
+
+               <fieldset>
+                  <legend>Bericht</legend>
+
+                  <label for="sel-subject">Onderwerp</label>
+                  <select id="sel-subject" name="subject" required>
+                     <option value="">Kies een onderwerp...</option>
+                     <option value="info">Algemene info</option>
+                     <option value="support">Technische hulp</option>
+                     <option value="other">Andere</option>
+                  </select>
+
+                  <label for="txt-message">Bericht</label>
+                  <textarea id="txt-message" name="message" placeholder="Jouw bericht..." required></textarea>
+
+                  <label>
+                     <input name="newsletter" type="checkbox" value="yes">
+                     Ik schrijf me in voor de nieuwsbrief
+                  </label>
+               </fieldset>
+
+               <button type="submit">Verstuur</button>
+               <button type="button" id="btn-reset">Wis formulier</button>
+
+            </form>
+         </section>
+
+      </div>
+   </main>
+
+   <!-- footer -->
+   <footer>
+      <div class="wrapper">
+         <p>&copy; 2026 Bitmatters</p>
+      </div>
+   </footer>
+
+   <script src="js/main.js"></script>
+   <script src="js/pages/contact.js"></script>
+</body>
+</html>

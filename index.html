@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>WebBox</title>
+   <link rel="stylesheet" href="vendor/monaco-editor/min/vs/editor/editor.main.css">
+   <link rel="stylesheet" href="styles.css">
+   <!-- no defer: runs before render to set theme and configure Monaco loader -->
+   <script src="js/init.js"></script>
+</head>
+<body>
+
+   <!-- toolbar -->
+   <header class="toolbar">
+      <div class="toolbar__brand">
+         <img class="toolbar__logo" src="img/logo.svg" alt="">
+         <span class="toolbar__title">WebBox</span>
+      </div>
+      <div class="toolbar__actions">
+         <button id="btn-theme" class="btn btn--icon" type="button" title="Wissel thema" aria-label="Wissel thema">
+            <img id="icon-sun" src="img/icon-sun.svg" alt="">
+            <img id="icon-moon" src="img/icon-moon.svg" alt="">
+            <span>Thema</span>
+         </button>
+         <button id="btn-layout" class="btn btn--icon" type="button" title="Wissel layout" aria-label="Wissel layout">
+            <img src="img/icon-layout.svg" alt="">
+            <span>Layout</span>
+         </button>
+         <label class="toggle" title="Ververs preview automatisch bij wijzigingen">
+            <input id="toggle-live" type="checkbox">
+            <span class="toggle__track"></span>
+            <span class="toggle__label">Live</span>
+         </label>
+         <button id="btn-run" class="btn btn--primary" type="button" title="Voer code uit (Ctrl+Enter)">
+            <img src="img/icon-run.svg" alt="">
+            <span>Run</span>
+         </button>
+         <label class="btn btn--secondary" title="Upload ZIP (index.html, style.css, script.js)">
+            <img src="img/icon-upload.svg" alt="">
+            <span>Upload</span>
+            <input id="input-upload" type="file" accept=".zip">
+         </label>
+         <button id="btn-download" class="btn btn--secondary" type="button" title="Download als ZIP">
+            <img src="img/icon-download.svg" alt="">
+            <span>Download</span>
+         </button>
+      </div>
+   </header>
+
+   <!-- workspace -->
+   <main class="workspace" id="workspace">
+
+      <div class="editors-panel" id="editors-panel">
+
+         <div class="editor-pane" id="pane-html">
+            <div class="editor-pane__header">
+               <span class="editor-pane__label editor-pane__label--html">HTML</span>
+               <button class="btn-minimize" type="button" title="Minimaliseer" data-pane="pane-html">
+                  <img src="img/icon-chevron-up.svg" alt="">
+               </button>
+            </div>
+            <div class="editor-pane__body" id="editor-html"></div>
+         </div>
+
+         <div class="resizer" data-axis="horizontal" data-index="0"></div>
+
+         <div class="editor-pane" id="pane-css">
+            <div class="editor-pane__header">
+               <span class="editor-pane__label editor-pane__label--css">CSS</span>
+               <button class="btn-minimize" type="button" title="Minimaliseer" data-pane="pane-css">
+                  <img src="img/icon-chevron-up.svg" alt="">
+               </button>
+            </div>
+            <div class="editor-pane__body" id="editor-css"></div>
+         </div>
+
+         <div class="resizer" data-axis="horizontal" data-index="1"></div>
+
+         <div class="editor-pane" id="pane-js">
+            <div class="editor-pane__header">
+               <span class="editor-pane__label editor-pane__label--js">JS</span>
+               <button class="btn-minimize" type="button" title="Minimaliseer" data-pane="pane-js">
+                  <img src="img/icon-chevron-up.svg" alt="">
+               </button>
+            </div>
+            <div class="editor-pane__body" id="editor-js"></div>
+         </div>
+
+      </div>
+
+      <div class="resizer resizer--main" id="main-resizer"></div>
+
+      <!-- preview -->
+      <div class="preview-panel" id="preview-panel">
+         <div class="preview-panel__header">
+            <span class="preview-panel__label">Preview</span>
+            <button id="btn-fullscreen" class="btn btn--xs" type="button" title="Volledig scherm">
+               <img src="img/icon-fullscreen.svg" alt="">
+            </button>
+         </div>
+         <iframe id="preview-frame" title="Preview" sandbox="allow-scripts"></iframe>
+
+         <!-- console -->
+         <div class="console-panel" id="console-panel">
+            <div class="console-panel__header" id="console-toggle">
+               <span class="console-panel__label">Console</span>
+               <span class="console-panel__badge" id="console-badge"></span>
+               <button id="console-clear" class="console-clear-btn" type="button" title="Wis console">Wis</button>
+               <button id="btn-console-toggle" class="btn-minimize" type="button" title="Klap in/uit">
+                  <img src="img/icon-chevron-up.svg" alt="">
+               </button>
+            </div>
+            <div class="console-panel__body" id="console-output"></div>
+         </div>
+      </div>
+
+   </main>
+
+   <script src="vendor/jszip.min.js"></script>
+   <script src="vendor/monaco-editor/min/vs/loader.js"></script>
+   <script src="js/config.js"></script>
+   <script src="js/modules/console.js"></script>
+   <script src="js/modules/themeswitcher.js"></script>
+   <script src="js/modules/zip.js"></script>
+   <script src="js/modules/resizer.js"></script>
+   <script src="js/modules/fullscreen.js"></script>
+   <script src="js/modules/layout.js"></script>
+   <script src="js/modules/preview.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+/*
+ * Default theme
+ *
+ * @author Rogier van der Linde <rogier@bitmatters.be>
+ */
+
+:root {
+   --accent-css:    #264de4;
+   --accent-dl:     #2b5797;
+   --accent-dl-h:   #3a6ec0;
+   --accent-html:   #e44d26;
+   --accent-js:     #f0db4f;
+   --accent-run:    #0e7a3d;
+   --accent-run-h:  #11a050;
+   --bg-base:       #1e1e1e;
+   --bg-header:     #2d2d30;
+   --bg-pane:       #1e1e1e;
+   --bg-preview:    #ffffff;
+   --bg-toolbar:    #252526;
+   --border:        #3e3e42;
+   --resizer-w:     5px;
+   --text-muted:    #858585;
+   --text-primary:  #cccccc;
+   --toolbar-h:     44px;
+}
+
+html[data-theme="light"] {
+   --bg-base:      #f3f3f3;
+   --bg-header:    #e0e0e0;
+   --bg-pane:      #f3f3f3;
+   --bg-preview:   #ffffff;
+   --bg-toolbar:   #e8e8e8;
+   --border:       #d0d0d0;
+   --text-muted:   #666666;
+   --text-primary: #1e1e1e;
+}
