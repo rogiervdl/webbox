@@ -4,6 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>WebBox</title>
+   <link rel="icon" type="image/svg+xml" href="img/logo.svg">
    <link rel="stylesheet" href="vendor/monaco-editor/min/vs/editor/editor.main.css">
    <link rel="stylesheet" href="styles.css">
    <!-- no defer: runs before render to set theme and configure Monaco loader -->
@@ -51,7 +52,7 @@
             <img src="img/icon-run.svg" alt="">
             <span>Run</span>
          </button>
-         <label class="btn btn--secondary" title="Upload ZIP (index.html, style.css, script.js)">
+         <label class="btn btn--secondary" title="Upload ZIP (index.html, style.css, script.js)" hidden>
             <img src="img/icon-upload.svg" alt="">
             <span>Upload</span>
             <input id="input-upload" type="file" accept=".zip">
