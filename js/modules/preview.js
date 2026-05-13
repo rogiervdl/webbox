@@ -5,6 +5,7 @@
 const Preview = (() => {
 
    let editors;
+   let baseUrl = '';
 
    // declaraties
    const previewFrame = document.querySelector('#preview-frame');
@@ -35,13 +36,14 @@ window.addEventListener('error',function(e){_s('error',[e.message])});
    function injectAssets(html, css, js) {
       const styleTag  = css.trim() ? `<style>\n${css}\n</style>`   : '';
       const scriptTag = js.trim()  ? `<script>\n${js}\n<\/script>` : '';
+      const baseTag   = baseUrl    ? `<base href="${baseUrl}">`     : '';
 
       let result = html;
 
       if (/(<head[^>]*>)/i.test(result)) {
-         result = result.replace(/(<head[^>]*>)/i, `$1\n${CONSOLE_BRIDGE}`);
+         result = result.replace(/(<head[^>]*>)/i, `$1\n${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}`);
       } else {
-         result = `${CONSOLE_BRIDGE}\n${result}`;
+         result = `${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}\n${result}`;
       }
 
       if (/(<\/head>)/i.test(result)) {
@@ -97,10 +99,15 @@ window.addEventListener('error',function(e){_s('error',[e.message])});
    }
 
 
+   function setBaseUrl(url) {
+      baseUrl = url;
+   }
+
    // return facade
    return {
       init,
       run,
+      setBaseUrl,
    };
 
 })();

@@ -91,6 +91,7 @@ const Exercises = (() => {
       editors.js.setValue(js ?? '');
 
       applyPaneLayout(collapsed);
+      Preview.setBaseUrl(base);
       Preview.run();
 
       if (readme !== null) {
