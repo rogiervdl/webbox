@@ -30,13 +30,13 @@ const Resizer = (() => {
     * @param {Function}    setSize     - Past de flex-grootte van beide panelen aan
     * @param {Function}    isVerticalFn - Geeft true terug als de richting verticaal is
     */
-   function initResizer(resizerEl, getA, getB, getSize, setSize, isVerticalFn) {
+   function initResizer(resizerEl, getA, getB, getSize, setSize, isVerticalFn, minA = 80, minB = 80) {
       let startPos, startSizeA, startSizeB;
 
       function onMove(e) {
          const delta = (isVerticalFn() ? e.clientY : e.clientX) - startPos;
-         const newA = Math.max(80, startSizeA + delta);
-         const newB = Math.max(80, startSizeB - delta);
+         const newA = Math.max(minA, startSizeA + delta);
+         const newB = Math.max(minB, startSizeB - delta);
          setSize(getA(), getB(), newA, newB);
          Object.values(editors).forEach(function (ed) { ed.layout(); });
       }
@@ -85,6 +85,19 @@ const Resizer = (() => {
             b.style.flex = '1 1 0';
          },
          mainResizerIsVertical
+      );
+
+      initResizer(
+         document.querySelector('#console-resizer'),
+         function () { return document.querySelector('#preview-frame'); },
+         function () { return document.querySelector('#console-panel'); },
+         null,
+         function (a, b, sA, sB) {
+            b.style.flex = `0 0 ${sB}px`;
+         },
+         function () { return true; },
+         60,
+         30
       );
 
       editorResizers.forEach(function (res, i) {

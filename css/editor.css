@@ -150,6 +150,12 @@
    width: var(--resizer-w);
 }
 
+.resizer--console {
+   cursor: row-resize;
+   height: var(--resizer-w);
+   width: auto;
+}
+
 /* layout variants */
 
 .workspace.layout-vertical {

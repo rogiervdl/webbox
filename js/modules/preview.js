@@ -12,6 +12,8 @@ const Preview = (() => {
    const toggleLive   = document.querySelector('#toggle-live');
    let liveDebounceTimer = null;
 
+   const BASE_STYLE = `<style>body { overflow-y: auto !important; }</style>`;
+
    const CONSOLE_BRIDGE = `<script>(function(){
 var _s=function(t,a){try{window.parent.postMessage({__webbox:true,type:t,
 args:Array.prototype.slice.call(a).map(function(x){try{
@@ -42,12 +44,10 @@ window.addEventListener('error',function(e){_s('error',[e.message])});
          result = `${CONSOLE_BRIDGE}\n${result}`;
       }
 
-      if (styleTag) {
-         if (/(<\/head>)/i.test(result)) {
-            result = result.replace(/(<\/head>)/i, `${styleTag}\n$1`);
-         } else {
-            result = `${styleTag}\n${result}`;
-         }
+      if (/(<\/head>)/i.test(result)) {
+         result = result.replace(/(<\/head>)/i, `${styleTag ? styleTag + '\n' : ''}${BASE_STYLE}\n$1`);
+      } else {
+         result = `${styleTag ? styleTag + '\n' : ''}${BASE_STYLE}\n${result}`;
       }
 
       if (scriptTag) {

@@ -12,7 +12,6 @@
    flex: 1 1 0;
    flex-direction: column;
    min-width: 0;
-   overflow: hidden;
 }
 
 .preview-panel__header {
@@ -189,7 +188,7 @@
 #preview-frame {
    background: var(--bg-preview);
    border: none;
-   flex: 1;
+   flex: 1 1 0;
    min-height: 0;
    width: 100%;
 }
