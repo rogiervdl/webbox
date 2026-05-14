@@ -10,25 +10,52 @@ Config.defaults = {
   <title>Mijn pagina</title>
 </head>
 <body>
-  <h1>Hallo, wereld!</h1>
-  <p>Schrijf hier je HTML.</p>
+
+  <h1>Welkom in WebBox 👋</h1>
+  <p>Een online code-editor om HTML, CSS en JavaScript uit te proberen.</p>
+
+  <p>
+    Pas de code aan in de editors links en klik op
+    <strong>▶ Run</strong> om het resultaat te zien.
+    Zet <strong>Live</strong> aan voor automatische verversing.
+  </p>
+
+  <h2>Een oefening laden</h2>
+  <p>Je kan vrij experimenteren, of de startcode van een oefening laden:</p>
+  <ol>
+    <li>Kies een <strong>vak</strong> in de keuzelijst bovenaan.</li>
+    <li>Kies een <strong>oefening</strong> in de tweede keuzelijst.</li>
+    <li>Klik op <strong>🕮 opgave</strong> om de opdracht te lezen.</li>
+  </ol>
+
 </body>
 </html>`,
 
-   css: `/* Jouw stijlen */
-body {
+   css: `body {
   font-family: sans-serif;
-  padding: 20px;
-  background: #f5f5f5;
+  line-height: 1.6;
+  max-width: 600px;
+  padding: 32px;
 }
 
 h1 {
-  color: #333;
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-top: 28px;
 }`,
 
-   js: `// Jouw JavaScript
-console.log('WebBox geladen!');`,
+   js: ``,
 };
+
+// add readme tip
+Config.readmeTip = `
+   <div class="readme-tip">
+      💡 <strong>Tip:</strong> je kan deze opgave altijd opnieuw openen via de <strong>🕮 Opgave</strong> knop bovenaan,
+      of openen in een nieuw tabblad via de <img src="img/icon-external.svg" alt="extern"> knop rechtsboven.
+   </div>
+`;
 
 // add editor options
 Config.editorOptions = {

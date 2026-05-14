@@ -2,27 +2,172 @@
    subjects: [
       {
          id: "dwd",
-         label: "Dynamic Web Fundamentals",
-         exercises: [
-            { 
-               id: "02-schoenkeuze", 
-               label: "02.DomHtml — Schoenkeuze", 
-               startfiles: [ "html", "css" ],
-               collapsed: [ "css" ] 
+         label: "DWD",
+         modules: [
+            {
+               id: "a-syntax", 
+               label: "A.Syntax", 
+               exercises: [
+                  { 
+                     id: "01-consolemeldingen-vs1", 
+                     label: "01. meldingen (vs1)", 
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ] 
+                  },
+                  { 
+                     id: "02-consoleopmaak-vs1", 
+                     label: "02. console opmaak (vs1)", 
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ] 
+                  },
+                  {
+                     id: "03-variabelen-vs1",
+                     label: "03. variabelen (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "04-interpolatie-vs1",
+                     label: "04. string interpolatie (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "05-multiline-vs1",
+                     label: "05. multiline strings (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "06-speciaal-vs1",
+                     label: "06. speciale tekens (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "07-arrays-vs1",
+                     label: "07. arrays (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "08-objecten-vs1",
+                     label: "08. objecten (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "09-datatypes-vs1",
+                     label: "09. datatypes (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "10-conversie-vs1",
+                     label: "10. type conversie (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "11-stringmethodes-vs1",
+                     label: "11. string methodes (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "12-arraymethodes-vs1",
+                     label: "12. array methodes (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "13-selecties-vs1",
+                     label: "13. selecties (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "14-iteraties-vs1",
+                     label: "14. iteraties (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "15-for-vs1",
+                     label: "15. for loops (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "16-functies-vs1",
+                     label: "16. functies (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "17-math-vs1",
+                     label: "17. Math object (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "18-spread-vs1",
+                     label: "18. spread operator (vs1)",
+                     startfiles: [ "html", "js" ],
+                     collapsed: [ "html", "css" ]
+                  }
+               ],
             },
+            {
+               id: "b-domhtml", 
+               label: "B.DOM HTML", 
+               exercises: []
+            },
+            {
+               id: "c-domcss", 
+               label: "C.DOM CSS", 
+               exercises: []
+            },
+            {
+               id: "d-games", 
+               label: "D.Games", 
+               exercises: []
+            },
+            {
+               id: "e-webapi", 
+               label: "E.Web API's", 
+               exercises: []
+            }
          ],
       },
       {
          id: "wdf",
-         label: "Web Development Fundamentals",
-         exercises: [
-            { 
-               id: "06-cssbuttons", 
-               label: "06.CSSDesign — CssButtons", 
-               startfiles: [ "html" ],
-               collapsed: [ "js" ] 
+         label: "WDF",
+         modules: [
+            {
+               id: "a-html", 
+               label: "A.HTML", 
+               exercises: []
             },
-         ],
+            {
+               id: "b-cssdesign", 
+               label: "B.CSS Design", 
+               exercises: [
+               ]
+            },
+            {
+               id: "c-csslayout", 
+               label: "C.CSS layout", 
+               exercises: [
+               ]
+            },
+            {
+               id: "d-responsive", 
+               label: "D.Responsive", 
+               exercises: [
+               ]
+            }
+         ]
       },
    ],
 }

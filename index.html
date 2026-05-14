@@ -24,12 +24,19 @@
          <select id="select-subject" class="select">
             <option value="">Vak...</option>
          </select>
+         <select id="select-module" class="select" disabled>
+            <option value="">Module...</option>
+         </select>
          <select id="select-exercise" class="select" disabled>
             <option value="">Oefening...</option>
          </select>
          <button id="btn-readme" class="btn btn--icon" type="button" title="Toon opgave" disabled>
             <img src="img/icon-book.svg" alt="">
             <span>Opgave</span>
+         </button>
+         <button id="btn-screenshot-pip" class="btn btn--icon" type="button" title="Screenshot in Picture-in-Picture" disabled>
+            <img src="img/icon-pip.svg" alt="">
+            <span>Screenshot</span>
          </button>
       </div>
 
@@ -141,7 +148,12 @@
       <div class="modal__dialog">
          <div class="modal__header">
             <span class="modal__title">Opgave</span>
-            <button id="btn-modal-close" class="btn-close" type="button" title="Sluiten">&times;</button>
+            <div class="modal__header-actions">
+               <button id="btn-readme-newtab" class="btn btn--xs btn--icon" type="button" title="Openen in nieuw tabblad" disabled>
+                  <img src="img/icon-external.svg" alt="">
+               </button>
+               <button id="btn-modal-close" class="btn-close" type="button" title="Sluiten">&times;</button>
+            </div>
          </div>
          <div class="modal__body" id="modal-readme-body"></div>
       </div>

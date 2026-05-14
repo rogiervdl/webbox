@@ -163,6 +163,12 @@
    font-weight: 500;
 }
 
+/* button labels */
+
+.toolbar .btn span {
+   display: none;
+}
+
 /* light theme */
 
 html[data-theme="light"] {
@@ -185,5 +191,13 @@ html[data-theme="light"] {
 
    & .toggle__track {
       background: #aaa;
+   }
+}
+
+/* media queries */
+
+@media (width >= 1200px) {
+   .toolbar .btn span {
+      display: inline;
    }
 }
