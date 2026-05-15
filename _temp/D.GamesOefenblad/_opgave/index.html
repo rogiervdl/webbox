@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Browser API's oefenblad</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap">
+   <link rel="stylesheet" href="vendor/prism-default.css">
+   <link rel="stylesheet" href="vendor/prism-okaida.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/mods.css">
+   <link rel="stylesheet" href="css/oefeningen.css">
+</head>
+
+<body class="prism language-javascript">
+
+   <header class="page-header" aria-label="Paginakop">
+      <h1>Browser API's oefenblad</h1>
+      <p>
+         Dit is een oefenblad bij het hoofdstuk
+         <a href="https://rogiervdl.github.io/JS-course/">JavaScript</a> (localStorage, media, geolocation, speech, geluid, animatie).
+      </p>
+   </header>
+   <main>
+
+      <section class="intro box" aria-label="Inleiding">
+         <h2>Hoe los je dit oefenblad op?</h2>
+         <ol>
+            <li>Open de oefeningenfolder in <strong>VS Code</strong>.</li>
+            <li>Open deze pagina in de browser (via <strong>live view</strong> of direct).</li>
+            <li>Open de <strong>console</strong> van de developer tools.</li>
+            <li>Elke oefening begint met theorie en een <strong>opdracht</strong>.</li>
+            <li>Vul het overeenkomende stukje code in <em>js/scripts.js</em> aan.</li>
+            <li>De bijhorende HTML-fragmenten staan onder elke opgave met een <mark class="lightblue">lichtblauwe achtergrond</mark>.</li>
+         </ol>
+         <p>Overzicht van de oefeningen:</p>
+         <ol>
+            <li><a href="#ex1">clipboard</a></li>
+            <li><a href="#ex2">localStorage</a></li>
+            <li><a href="#ex3">localStorage met JSON</a></li>
+            <li><a href="#ex4">webcam en canvas</a></li>
+            <li><a href="#ex5">web speech</a></li>
+            <li><a href="#ex6">requestAnimationFrame</a></li>
+         </ol>
+      </section>
+
+      <!-- Oefening 1: clipboard -->
+      <section class="exercise" id="ex1">
+         <h2>clipboard</h2>
+         <p class="goal">Doel: gebruik van de Clipboard API om tekst naar het klembord te kopiëren.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Met <code>navigator.clipboard.writeText(<em>tekst</em>)</code> schrijft een string naar het klembord. 
+               Codevoorbeeld:
+            </p>
+            <pre class="code-block prism-okaida"><code>// async: "bevat een asynchrone instructie"
+async function handleBtnCopyClick() {
+   console.log('kopiëren naar klembord...');
+   await navigator.clipboard.writeText(txtTekst.value); // await: "wacht tot asynchrone instructie is voltooid"
+   console.log('...gekopieerd!');
+}
+
+// event handler koppelen
+btnCopy.addEventListener('click', handleBtnCopyClick);
+
+</code></pre>
+            <p>
+               <code>async</code> en <code>await</code> komen uitgebreid aan bod in volgend deel, <a href="https://rogiervdl.github.io/JS-course/05_async.html#asyncawait">web API's</a>;
+               voorlopig houden we het bij volgende sterk vereenvoudigde uitleg:
+            </p>
+            <ul>
+               <li>
+                  sommige JavaScript statements zijn <em>asynchroon</em>, d.w.z. het is <strong>onduidelijk wanneer (en of) ze klaar zijn</strong> met uitvoeren<br> 
+                  voorbeelden: netwerk requests, databank queries, geolocation opvragen, webcam toegang, clipboard gebruiken...
+               </li>
+               <li><code>await</code> betekent: <strong>wacht op het resultaat</strong> voor je verdergaat met de rest van de code</li>
+               <li><code>async</code> betekent: <strong>deze functie is asynchroon</strong> (of bevat een asynchrone statement, waardoor het zelf ook automatisch asynchroon is)</li>
+            </ul>
+            <p class="tip">let op: de Clipboard API vereist zoals veel Javascript API's eerst een interactie met de gebruiker (hier: een klik op de knop).</p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>Probeer het uit: </p>
+            <ul>
+               <li>bij klik op de copy-knop moet de tekst uit de textarea naar het klembord gekopieerd worden.</li>
+               <li>toon ook onderaan de tekst "gekopieerd naar klembord".</li>
+            </ul>
+            <figure class="screenshot">
+               <img src="img/clipboard.png" alt="" width="350">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex1-html">
+            <h3>HTML-fragment</h3>
+            <p>
+               <textarea rows="4" cols="50" placeholder="Tekst om te kopiëren">Typ tekst, en gebruik de knop om naar het klembord te kopiëren. Plak het vervolgens ergens, bv. in een andere app.</textarea>
+               <button type="button" title="Kopiëren">📋</button>
+            </p>
+            <p class="message">...</p>
+         </div>
+
+      </section>
+
+      <!-- Oefening 2: localStorage -->
+      <section class="exercise" id="ex2">
+         <h2>localStorage</h2>
+         <p class="goal">Doel: een tekst bewaren in de browser en weer ophalen met <code>localStorage</code>.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Met <code>localStorage</code> kan je gegevens (enkel strings) in de browser bewarenop (per domein). 
+               De data blijft bewaard tot de gebruiker die wist. Je gebruikt een sleutel (string) en een waarde (string).
+            </p>
+            <pre class="code-block prism-okaida"><code>const ITEM_KEY = 'naam';
+localStorage.setItem(ITEM_KEY, 'Jan');      // opslaan
+const waarde = localStorage.getItem(ITEM_KEY);  // ophalen (of null)
+localStorage.removeItem(ITEM_KEY);             // verwijderen</code></pre>
+            <p>
+               Je kan de bewaarde keys altijd terugvinden in de browser developer tools onder <em>Application</em>:
+            </p>
+            <figure class="screenshot">
+               <img src="img/localStorage.png" alt="localStorage keys" width="450">
+            </figure>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>Bij klik op <em>Opslaan</em>: bewaar de tekst uit het invoerveld in localStorage onder de sleutel <code>spelernaam</code>. Bij klik op <em>Laden</em>: haal die waarde op en toon ze in het invoerveld. Bij het laden van de pagina: als er al een waarde voor <code>spelernaam</code> staat, vul dan het invoerveld.</p>
+         </div>
+
+         <div class="html box" id="ex2-html">
+            <h3>HTML-fragment</h3>
+            <p>
+               <label for="ex2-inpNaam">Spelernaam:</label>
+               <input type="text" id="ex2-inpNaam" placeholder="jouw naam">
+               <button type="button" id="ex2-btnOpslaan">Opslaan</button>
+               <button type="button" id="ex2-btnLaden">Laden</button>
+            </p>
+         </div>
+
+      </section>
+
+      <!-- Oefening 3: localStorage met JSON -->
+      <section class="exercise" id="ex3">
+         <h2>localStorage met JSON</h2>
+         <p class="goal">Doel: complexe objecten bewaren in localStorage door het om te zetten naar en van JSON met <code>JSON.stringify()</code> en <code>JSON.parse()</code></p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Je kan met <code>localStorage</code> alleen strings bewaren. 
+               Om een object op te slaan zetten we het om naar een gestructureerde string met <code>JSON.stringify()</code>; 
+               bij het ophalen zetten we de string weer om naar een object met <code>JSON.parse()</code>. Codevoorbeeld:
+            </p>
+            <pre class="code-block prism-okaida"><code>const items = ['a', 'b', 'c'];
+localStorage.setItem('lijst', JSON.stringify(items));
+
+const opgeslagen = localStorage.getItem('lijst');
+const weer = JSON.parse(opgeslagen);  // ['a', 'b', 'c']</code></pre>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>We maken een eenvoudige todo lijst waar je items kan toevoegen en verwijderen.</p>
+            <ul>
+               <li>declaraties: maak constanten voor het invoerveld, de lijst, de sleutel voor localStorage</li>
+               <li>
+                  taak toevoegen aan de lijst:
+                  <ul>
+                     <li>koppel een <code>keydown</code> event handler aan het invoerveld</li>
+                     <li>als de gebruiker op <code>Enter</code> drukt, voeg de nieuwe taak toe aan de lijst, en wis het veld</li>
+                     <li>bewaar tenslotte de lijst in localStorage met de functie <code>saveLijst()</code> (zie hieronder)</li>
+                  </ul>
+               </li>
+               <li>
+                  functie <code>saveLijst()</code>:
+                  <ul>
+                     <li>haal alle <code>li</code>-elementen uit de lijst op</li>
+                     <li>zet de lijst om naar een array van teksten met <code>map()</code></li>
+                     <li>zet de array om naar een string met <code>JSON.stringify()</code></li>
+                     <li>sla de string op in localStorage</li>
+                  </ul>
+               </li>
+               <li>
+                  verwijderen van een taak:
+                  <ul>
+                     <li>koppel een <code>click</code> event handler aan de hele lijst</li>
+                     <li>gebruik <code>e.target</code> om geklikte element te vinden</li>
+                     <li>controleer eerst met <code>e.target.tagName</code> of het geklikte element een <code>LI</code> is</li>
+                     <li>verwijder het item met <code>remove()</code></li>
+                     <li>bewaar tenslotte de lijst in localStorage met de functie <code>saveLijst()</code></li>
+                  </ul>
+               </li>
+               <li>
+                  schrijf een functie <code>loadLijst()</code> die de lijst laadt bij het laden van de pagina:
+                  <ul>
+                     <li>vraag de data op uit localStorage met <code>localStorage.getItem()</code></li>
+                     <li>zet de string weer om naar een array met <code>JSON.parse()</code></li>
+                     <li>bouw de lijst op met <code>innerHTML</code></li>
+                     <li>roep de functie <code>loadLijst()</code> aan onderaan je code</li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <div class="html box" id="ex3-html">
+            <h3>HTML-fragment</h3>
+            <p>De takenlijst wordt automatisch bewaard. Voeg een taak toe met het tekstveld. Klik op een taak om te verwijderen.</p>
+            <p class="ex3-controls">
+               <input type="text" id="ex3-inpTaak" placeholder="nieuwe taak (Enter)">
+            </p>
+            <div id="ex3-taken">
+               <ol id="ex3-lijst">
+                  <li>boodschappen doen</li>
+                  <li>huiswerk maken</li>
+                  <li>meme bellen</li>
+               </ol>
+            </div>
+         </div>
+
+      </section>
+
+      <!-- Oefening 4: webcam + snapshot -->
+      <section class="exercise" id="ex4">
+         <h2>webcam en canvas</h2>
+         <p class="goal">Doel: de webcam starten, het live beeld tonen en op een knop een <em>foto</em> nemen door het huidige frame naar een canvas te tekenen.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>Bestudeer het <a href="https://rogiervdl.github.io/JS-course/07_media.html#photobooth">Photobooth voorbeeld</a> uit de theorie.</p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               We maken een applicatie waarbij je de webcam kan starten, een snapshot nemen en de lichtheid in % weeregegeven wordt. 
+               Daarbij maken we gebruik van het minder gekende <a href="https://www.w3schools.com/TAgs/tag_progress.asp">progress HTML element</a>. 
+               Stap voor stap:
+            </p>
+            <h4>Deel 1: periodiek nemen van een snapshot</h4>
+            <ol>
+               <li>
+                  Vertrek van de <a href="https://rogiervdl.github.io/JS-course/04_games.html#voorbeeld-2-photobooth">Photobooth demo</a> uit de theorie.
+                  Pas de code zo aan dat er slechts één snapshot kan genomen worden, en gooi heel het filtergedeelte eruit (zowel in de HTML, CSS en Javascript)
+               </li>
+               <li>
+                  Pas de code aan zodat de webcam niet automatisch gestart wordt, maar via de knop. De snapshot wordt automatisch elke seconde genomen; gebruik daarvoor <code>setInterval()</code>, zie <a href="https://rogiervdl.github.io/JS-course/04_games.html#voorbeeld-2-photoboothhttps://rogiervdl.github.io/JS-course/04_games.html#animaties-met-setinterval">online cursus</a>.
+                  Schematisch:
+               </li>
+            </ol>
+            <pre class="code-block prism-okaida"><code>function takeSnapshot(e) {
+   ...
+}
+
+async function handleBtnStartWebcamClick() {
+   ...
+   setInterval(takeSnapshot, 1000); // elke seconde een snapshot
+}
+
+// events koppelen
+btnStartWebcam.addEventListener('click', handleBtnStartWebcamClick);
+</code></pre>
+            <h4>Deel 2: tonen van de lichtheid</h4>
+            <ol start="3">
+               <li>
+                  Breid de functie <code>takeSnapshot()</code> uit zodat de waarde van de progress bar en de tekst met percentage worden bijgewerkt.
+                  Gebruik deze functie om de lichtheid van een <code>canvas</code> te berekenen (en probeer de code ook te begrijpen):
+               </li>
+            </ol>
+            <pre class="code-block prism-okaida"><code>function getLightnessFromCanvas(cnv) {
+   const context = cnv.getContext('2d');
+   const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+   const data = imageData.data;
+   let sumLightness = 0;
+   const pixelCount = data.length / 4;
+   for (let i = 0; i &lt; data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const lightness = (r + g + b) / 3;
+      sumLightness += lightness;
+   }
+   const avgLightness = sumLightness / pixelCount; // 0–255
+   const lightnessPercent = (avgLightness / 255 * 100).toFixed(2);  // 0–100%
+   return lightnessPercent;
+}
+</code></pre>
+            <p>Screenshot:</p>
+            <figure class="screenshot">
+               <img src="img/webcam.png" alt="" width="450">
+            </figure>
+            <p class="tip">tip: gebruik de lamp van je smartphone als lichtbron om te testen</p>
+         </div>
+
+         <div class="html box" id="ex4-html">
+            <h3>HTML-fragment</h3>
+            <div class="gridcontainer">
+               <video></video>
+               <div class="flexcontainer">
+                  <button type="button" class="button">Start webcam</button>
+                  <canvas width="133" height="100"></canvas>
+                  <div class="message">Lichtheid: <span>---</span></div>
+                  <progress max="100" value="0"></progress>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Oefening 5: web speech -->
+      <section class="exercise" id="ex5">
+         <h2>web speech</h2>
+         <p class="goal">Doel: tekst laten voorlezen met de Web Speech API (spraaksynthese).</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               <code>speechSynthesis.speak(utterance)</code> leest een <code>SpeechSynthesisUtterance</code> voor. Je stelt de <code>text</code> van dat object in en kunt opties zoals <code>lang</code> (taal) en <code>rate</code> (snelheid) zetten.
+            </p>
+            <pre class="code-block prism-okaida"><code>const u = new SpeechSynthesisUtterance('Hallo, dit is een test.');
+u.lang = 'nl-BE';
+speechSynthesis.speak(u);</code></pre>
+            <p class="tip">Niet alle browsers ondersteunen alle talen. Gebruik <code>speechSynthesis.getVoices()</code> om beschikbare stemmen te zien.</p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>Bij klik op de knop: haal de tekst uit het invoerveld, maak een <code>SpeechSynthesisUtterance</code>, stel de taal in op <code>nl-BE</code> en roep <code>speechSynthesis.speak(...)</code> aan.</p>
+         </div>
+
+         <div class="html box" id="ex5-html">
+            <h3>HTML-fragment</h3>
+            <p>
+               <input type="text" id="ex5-inpTekst" placeholder="Tekst om voor te lezen" size="40">
+               <button type="button" id="ex5-btnSpreek">Voorlezen</button>
+            </p>
+         </div>
+
+      </section>
+
+      <!-- Oefening 6: requestAnimationFrame -->
+      <section class="exercise" id="ex6">
+         <h2>requestAnimationFrame</h2>
+         <p class="goal">Doel: een vloeiende animatie maken met <code>requestAnimationFrame</code>.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Met <code>requestAnimationFrame(callback)</code> geef je de browser de instructie de volgende uitvoering van de functie <code>callback()</code> te plannen; normaal is dat na zo'n 16ms, dus 60 keer per seconde.
+               In die callback pas je dan aan wat elke frame aangepast moet worden. Schematisch voorbeeld voor een blokje dat van links naar rechts beweegt:
+            </p>
+            <pre class="code-block prism-okaida"><code>let animating = true; // hiermee kan je de animatie starten/stoppen
+let xPosition = 0; // x-positie van het blokje
+
+// callback functie
+function doNextFrame() {
+   if (animating) {
+      // schuif 1px naar rechts
+      xPosition += 1; 
+      blokje.style.left = xPosition + 'px';
+   }
+
+   // plan volgende frame over 1/60 seconde
+   requestAnimationFrame(doNextFrame); 
+}
+
+// start de animatie
+doNextFrame();
+</code></pre>
+            <p class="tip">
+               Gebruik nooit <code>setInterval</code> voor animaties; <code>requestAnimationFrame</code> gebruikt een dynamisch aantal FPS (Frames Per Second) 
+               om de animatie vloeiend te laten lopen.
+            </p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <ol>
+               <li>
+                  Bij druk op de Start-knop:
+                  <ul>
+                     <li>start de animatie van het blokje van links naar rechts</li>
+                     <li>verander de tekst van de knop naar "Stop"</li>
+                  </ul>
+               </li>
+               <li>
+                  Bij druk op de Stop-knop:
+                  <ul>
+                     <li>stop de animatie van het blokje</li>
+                     <li>verander de tekst van de knop naar "Start"</li>
+                  </ul>
+               </li>
+               <li>Als het blokje de rechterkant bereikt, plaats je het blokje terug links en stop je de animatie</li>
+               <li><strong>Extra uitdaging</strong>: voeg een slider toe (type <code>&lt;input type="range"&gt;</code>) waarmee je de snelheid van de animatie kunt instellen.</li>
+            </ol>
+         </div>
+
+         <div class="html box" id="ex6-html">
+            <h3>HTML-fragment</h3>
+            <div class="container">
+               <div class="blokje"></div>
+            </div>
+            <p>
+               <button type="button" class="btnStart">Start</button>
+            </p>
+         </div>
+
+      </section>
+
+   </main>
+
+   <footer class="page-footer" aria-label="Pagina-voetnoot">
+      <p>Browser-API's &mdash; oplossingen in js/scripts.js.</p>
+   </footer>
+
+   <script src="js/scripts.js"></script>
+   <script src="vendor/prism.js"></script>
+</body>
+
+</html>

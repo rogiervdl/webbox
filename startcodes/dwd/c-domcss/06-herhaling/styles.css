@@ -1,0 +1,43 @@
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: "Open Sans", system-ui, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 8px;
+   transition: background-color 0.3s, color 0.3s;
+}
+
+body.donker {
+   background-color: #222;
+   color: #eee;
+}
+
+.palet {
+   display: flex;
+   gap: 0.5rem;
+   list-style: none;
+   padding: 0;
+}
+
+.palet li {
+   border: 2px solid transparent;
+   border-radius: 6px;
+   cursor: pointer;
+   padding: 0.4rem 1rem;
+}
+
+.palet li.actief {
+   border-color: #000;
+   font-weight: bold;
+}
+
+.preview {
+   background-color: tomato;
+   border-radius: 8px;
+   height: 60px;
+   margin: 1rem 0;
+   transition: background-color 0.3s;
+   width: 200px;
+}

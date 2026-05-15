@@ -1,0 +1,137 @@
+/**
+ * Oefeningen – opmaak voor demo's en oefenblokken (Games oefenblad)
+ */
+
+/* Oefening 1: clipboard */
+#ex1 .html {
+   .message {
+      color: #060;
+      font-size: 0.9em;
+      margin-top: 0.5em;
+      font-style: italic;
+   }
+   p {
+      align-items: flex-start;
+      display: flex;
+      gap: 0.5rem;
+   }
+   textarea {
+      flex: 1;
+      min-width: 12em;
+   }
+}
+
+/* Oefening 2: localStorage */
+#ex2 .html {
+   p {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+   }
+   input {
+      min-width: 12em;
+   }
+}
+
+/* Oefening 3: localStorage met JSON */
+#ex3 .html {
+   .ex3-controls {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+   }
+   #ex3-taken {
+      border: 1px solid #999;
+      min-height: 2em;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+   }
+   #ex3-lijst {
+      padding-left: 1rem;
+   }
+   #ex3-lijst li {
+      margin: 0.25rem 0;
+   }
+   #ex3-lijst li:hover {
+      cursor: url(../img/delete.png) 8 8, pointer;
+   }
+   #ex3-lijst li.placeholder {
+      color: #666;
+      font-style: italic;
+      cursor: default;
+   }
+   p {
+      margin-top: 0.5rem;
+   }
+}
+
+/* Oefening 4: webcam + snapshot */
+#ex4 .html {
+   .gridcontainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 2em;
+      .flexcontainer {
+         align-items: flex-start;
+         display: flex;
+         flex-direction: column;
+         gap: 1em;
+      }
+   }
+   video {
+      background-color: white;
+      height: 240px;
+      width: 320px;
+   }
+   canvas {
+      border: 1px solid #ccc;
+   }
+   progress {
+      border-radius: 999px;
+      display: block;
+      height: 16px;
+      max-width: 320px;
+      overflow: hidden;
+      width: 100%;
+   }
+   progress::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 999px;
+   }
+   progress::-webkit-progress-value {
+      background: linear-gradient(90deg, #ff5722, #ffc107);
+      border-radius: 999px;
+   }
+}
+
+/* Oefening 5: web speech */
+#ex5 .html {
+   p {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+   }
+}
+
+/* Oefening 6: requestAnimationFrame */
+#ex6 .html {
+   .container {
+      background-color: #eee;
+      border: 1px solid #999;
+      height: 60px;
+      position: relative;
+      width: 320px;
+   }
+   .blokje {
+      background-color: #06b;
+      height: 40px;
+      left: 0;
+      position: absolute;
+      top: 10px;
+      width: 40px;
+   }
+   p {
+      margin-top: 0.5rem;
+   }
+}

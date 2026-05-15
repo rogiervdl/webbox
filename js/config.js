@@ -12,30 +12,32 @@ Config.defaults = {
 <body>
 
   <h1>Welkom in WebBox 👋</h1>
-  <p>Een online code-editor om HTML, CSS en JavaScript uit te proberen.</p>
-
-  <p>
-    Pas de code aan in de editors links en klik op
-    <strong>▶ Run</strong> om het resultaat te zien.
-    Zet <strong>Live</strong> aan voor automatische verversing.
-  </p>
-
-  <h2>Een oefening laden</h2>
+  <p>Een online code-editor voor eenvoudige HTML, CSS en JavaScript oefeningen.</p>
+  
+  <h2>Hoe gebruiken?</h2>
   <p>Je kan vrij experimenteren, of de startcode van een oefening laden:</p>
   <ol>
-    <li>Kies een <strong>vak</strong> in de keuzelijst bovenaan.</li>
-    <li>Kies een <strong>oefening</strong> in de tweede keuzelijst.</li>
-    <li>Klik op <strong>🕮 opgave</strong> om de opdracht te lezen.</li>
+    <li>Kies een <strong>vak</strong>, <strong>module</strong> en <strong>oefening</strong> in de keuzelijsten bovenaan.</li>
+    <li>Klik op <strong>🕮 opgave</strong> om de opdracht te lezen (indien gegeven).</li>
   </ol>
-
+  <p>Maak daarna je oefening of toepassing:</p>
+  <ol start="3">
+    <li>Pas de code aan in de editors links.</li>
+    <li>Klik op <strong>▶ Run</strong> om het resultaat te zien.</li>
+  </ol>
+  <h2>Tips</h2>
+  <ul>
+    <li>Je kan panels in- en uitklappen met de pijltjes.</li>
+    <li>Verander het thema of de layout met de <strong>☀ Thema</strong> en <strong>⊞ Layout</strong> knoppen rechtsboven.</li>
+    <li>Download je oefening met de <strong>⤓ Download</strong> knop.</li>
+  </ul>
 </body>
 </html>`,
 
    css: `body {
   font-family: sans-serif;
   line-height: 1.6;
-  max-width: 600px;
-  padding: 32px;
+  padding: 1em 2em;
 }
 
 h1 {
@@ -46,7 +48,7 @@ h2 {
   margin-top: 28px;
 }`,
 
-   js: ``,
+   js: `console.log('webbox is geladen!');`,
 };
 
 // add readme tip

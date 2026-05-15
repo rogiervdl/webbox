@@ -1,0 +1,88 @@
+/**
+ * Oefeningen – opmaak voor demo's en oefenblokken
+ */
+
+/* Oefening 1: basic fetch */
+#ex1 .html {
+
+   /* @see https://freefrontend.com/css-quote-styles/ */
+   .sidekick {
+      position: relative;
+      padding-left: 1em;
+      border-left: 0.2em solid #039be5;
+      font-family: 'Roboto', serif;
+      font-size: 24px;
+      line-height: 1.5em;
+      font-weight: 100;
+   }
+   .sidekick span::before,
+   .sidekick span::after {
+      font-family: Calibri;
+      color: #039be5;
+      font-size: 34px;
+   }
+   .sidekick span::before {
+      content: '\201c';
+   }
+   .sidekick span::after {
+      content: '\201e'
+   }
+   .sidekick cite {
+      font-size: 50%;
+      text-align: center;
+      top: 50%
+   }
+   .sidekick cite::before {
+      content: ' \2015 '
+   }
+   .sidekick span {
+      color: #039be5;
+   }
+   .message {
+      font-size: smaller;
+      font-style: italic;
+      margin-left: 1em;
+   }
+}
+
+#ex2 .html {
+   .output {
+      background: #f4f4f4;
+      border-radius: 5px;
+      margin-top: 15px;
+      padding: 10px;
+   }
+}
+
+#ex3 .html {
+   .movies {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8em;
+      list-style: none;
+      margin-top: 1em;
+      padding: 0;
+   }
+
+   .movies li {
+      align-items: flex-start;
+      display: flex;
+      gap: 0.8em;
+   }
+
+   .movies img {
+      border-radius: 4px;
+      flex-shrink: 0;
+      width: 46px;
+   }
+
+   .movies strong {
+      display: block;
+   }
+
+   .movies p {
+      color: #555;
+      font-size: smaller;
+      margin: 0.2em 0 0;
+   }
+}

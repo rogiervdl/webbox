@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Web API's en asynchrone JavaScript oefenblad</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&amp;display=swap">
+   <link rel="stylesheet" href="vendor/prism-default.css">
+   <link rel="stylesheet" href="vendor/prism-okaida.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/mods.css">
+   <link rel="stylesheet" href="css/exercises.css">
+</head>
+
+<body class="prism language-javascript">
+
+   <header class="page-header" aria-label="Paginakop">
+      <h1>Web API's en asynchrone JavaScript oefenblad</h1>
+      <p>
+         Dit is een oefenblad bij het hoofdstuk
+         <a href="https://rogiervdl.github.io/JS-course/05_async.html">05. Web API's</a>.
+      </p>
+   </header>
+
+   <main>
+
+      <section class="intro box" aria-label="Inleiding">
+         <h2>Hoe werk je dit oefenblad af?</h2>
+         <ol>
+            <li>Open de oefeningenfolder in <strong>VS Code</strong>.</li>
+            <li>Open deze pagina in VS Code via <strong>live view</strong>.</li>
+            <li>Open de <strong>console</strong> van de developer tools.</li>
+            <li>Elke oefening begint met een stukje theorie, en één of meer <strong>opdrachten</strong>.</li>
+            <li>Vul telkens het overeenkomende stukje code in <em>js/scripts.js</em> aan</li>
+            <li>De bijhorende HTML fragmenten vind je onder elke opgave met een <mark class="lightblue">lichtblauwe achtergrond</mark></li>
+         </ol>
+         <p>Overzicht van de oefeningen:</p>
+         <ol>
+            <li><a href="#ex1">Basic fetch</a></li>
+            <li><a href="#ex2">Request parameters, API keys</a></li>
+            <li><a href="#ex3">Bearer token, request headers</a></li>
+         </ol>
+      </section>
+
+      <section class="exercise" id="ex1">
+         <h2>Basic fetch</h2>
+         <p class="goal">Doel: een basis <strong>fetch</strong> op een open API. </p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Kort gezegd is een API call een <strong>url die gestructureerde data teruggeeft</strong> vanop een externe server.
+               Neem b.v. de <a href="https://dog.ceo/dog-api/">Dog API</a>. In de documentatie vind je volgende URL's:
+            </p>
+            <ul>
+               <li><a href="https://dog.ceo/api/breeds/image/random">https://dog.ceo/api/breeds/image/random</a>: een random foto van een hond</li>
+               <li><a href="https://dog.ceo/api/breeds/image/random/3">https://dog.ceo/api/breeds/image/random/3</a>: drie random foto's van honden</li>
+               <li><a href="https://dog.ceo/api/breeds/list/all">https://dog.ceo/api/breeds/list/all</a>: een lijst van alle rassen</li>
+            </ul>
+            <p>Vanaf nu noemen we dergelijke URL's <mark>API endpoints</mark>. Klik bijvoorbeeld op de tweede link: je krijgt geen HTML, maar data terug in een Javascript object-achtige notatie, <mark>JSON</mark> (JavaScript Object Notation) genoemd:</p>
+            <pre class="code-block prism-okaida"><code>{
+   "message": [
+      "https:\/\/images.dog.ceo\/breeds\/terrier-dandie\/n02096437_3112.jpg",
+      "https:\/\/images.dog.ceo\/breeds\/bulldog-english\/jager-1.jpg",
+      "https:\/\/images.dog.ceo\/breeds\/otterhound\/n02091635_3475.jpg"
+   ],
+   "status": "success"
+}</code></pre>
+            <p>De data van deze URL kan je opvragen en verwerken in Javascript in drie stappen:</p>
+            <ol>
+               <li>vraag de URL op met <code>fetch()</code></li>
+               <li>zet de response body om naar JSON</li>
+               <li>haal de gewenste data uit de JSON en verwerk het</li>
+            </ol>
+            <p>Een voorbeeld van een functie <code>fetchRandomFotos()</code> met een fetch op het tweede endpoint, die een array van url's teruggeeft (kattenfoto's):</p>
+            <pre class="code-block prism-okaida"><code>async function fetchRandomFotos(num) {
+   const url = `https://dog.ceo/api/breeds/image/random/${num}`;
+
+   // 1. doe een request op de URL en wacht op antwoord
+   const response = await fetch(url);
+   
+   // 2. zet de data uit de body om naar JSON en wacht tot het klaar is
+   const data = await response.json();
+   console.log(data); // altijd een goed idee de data te inspecteren in de console
+
+   // 3. verwerk de data, in dit geval: return de array van foto's in 'message'
+   return data.message;
+}</code></pre>
+            <p>Je kan deze functie dan gebruiken in b.v. een button click event handler:</p>
+            <pre class="code-block prism-okaida"><code>async function handleBtnFetchClick() {
+   const fotos = await fetchRandomFotos(5); // fetch 5 random foto's en wacht op het resultaat
+   // ... verwerk nu de array van URL's, b.v. om 5 img's te tonen
+}
+btnFetch.addEventListener('click', handleBtnFetchClick);
+</code></pre>
+            <p>Op gelijkaardige manier kan je functies schrijven en gebruiken voor de andere twee endpoints.</p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht A &ndash; geef me een kat</h3>
+            <p>We gebruiken de <a href="https://cataas.com/doc.html">Cat as a service (CATAAS)</a> API.</p>
+            <ol>
+               <li>schrijf een asynchrone functie <code>fetchCatImage()</code> die de URL van een random afbeelding teruggeeft; gebruik dit eindpunt: <code>https://cataas.com/cat?json=true</code></li>
+               <li>gebruik deze functie om in de click event handler van de button een random afbeelding op te vragen, en te koppelen aan de <code>src</code> van de afbeelding</li>
+            </ol>
+            <p>Screenshot:</p>
+            <figure class="screenshot">
+               <img src="img/catapi.png" alt="" width="700">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex1a-html">
+            <h3>HTML-fragment</h3>
+            <button type="button" class="button">Geef me een kat!</button>
+            <p><img class="cat" src="img/placeholder.png" alt="Resultaat" width="300"></p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht B &ndash; random quote</h3>
+            <p>We gebruiken de <a href="https://api.chucknorris.io/">Chuck Norris API</a>.</p>
+            <ol>
+               <li>schrijf een asynchrone functie, b.v. <code>fetchRandomQuote()</code>, die een random Chuck Norris quote teruggeeft</li>
+               <li>schrijf een tweede asynchrone functie, b.v. <code>showRandomQuote()</code>, die een quote opvraagt met de eerste functie, en instelt in de blockquote</li>
+               <li>roep deze tweede functie op bij de start van de applicatie</li>
+               <li>koppel deze tweede functie tenslotte ook aan het <code>click</code> event van de "volgende quote" knop</li>
+            </ol>
+            <p>Screenshot:</p>
+            <figure class="screenshot">
+               <img src="img/chucknorrisquote.png" alt="" width="500">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex1b-html">
+            <h3>HTML-fragment</h3>
+            <blockquote id="quote" class="sidekick">
+               <span>...</span>
+               <cite>Chuck Norris Quotes</cite>
+            </blockquote>
+            <button type="button" class="button next">volgende quote</button>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht C &ndash; categories list</h3>
+            <p>We gaan verder met de <a href="https://api.chucknorris.io/">Chuck Norris API</a>.</p>
+            <ol>
+               <li>schrijf een asynchrone functie die alle categorieën opvraagt, b.v. <code>fetchQuoteCategories()</code></li>
+               <li>schrijf een tweede asynchrone functie, b.v. <code>initCategoriesDropdown()</code>, die alle categorieën opvraagt met de eerste functie, en daarmee de dropdown opvult met <code>option</code> elementen</li>
+               <li>roep deze tweede functie op bij de start van de applicatie</li>
+            </ol>
+            <p>Screenshots:</p>
+            <figure class="screenshot">
+               <img src="img/chucknorriscats-before.png" alt="" width="200">
+               <img src="img/chucknorriscats-after.png" alt="" width="200">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex1c-html">
+            <h3>HTML-fragment</h3>
+            <select class="categories">
+            </select>
+            <span class="message">building list...</span>
+         </div>
+      </section>
+
+      <section class="exercise" id="ex2">
+         <h2>Request parameters, API keys</h2>
+         <p class="goal">Doel: gebruik van <code>URLSearchParams()</code> voor het toevoegen van parameters aan een API call. </p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               De enige correcte manier om parameters toe te voegen aan een API call is met <code>URLSearchParams()</code>.
+               Voorbeeld voor de <a href="https://cataas.com/doc.html">Cat API</a>, een functie die een katfoto teruggeeft in vierkant formaat met een blur:
+            </p>
+            <pre class="code-block prism-okaida"><code>async function fetchSquareBlurredCat() {
+   // build request parameters
+   const params = new URLSearchParams({
+      type: 'square',
+      blur: 2,
+      json: true
+   });
+
+   // build url with parameters
+   const url = `https://cataas.com/cat?${params.toString()}`;
+
+   // fetch data
+   const resp = await fetch(url)
+   const data = await resp.json();
+
+   // return url
+   return data.url;
+}</code></pre>
+            <p>Eventueel kan je de functie flexibeler maken met functie parameters:</p>
+            <pre class="code-block prism-okaida"><code>async function fetchCat(typ, blr) {
+   // build request parameters
+   const params = new URLSearchParams({
+      type: typ,
+      blur: blr,
+      json: true
+   });
+   ...
+}</code></pre>
+            <p>Veel API's vereisen dat je eerst registreert voor een zgn. <mark>API key</mark> om hun eindpunten te kunnen gebruiken; deze geef je dan mee als extra parameter. Een voorbeeld vind je in de <a href="https://rogiervdl.github.io/JS-course/05_async.html#flickr-api-voorbeeld-api-key-request-parameters">online Javascript cursus</a>. </p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht: OpenWeatherMap</h3>
+            <p>We gebruiken <a href="https://openweathermap.org/api">https://openweathermap.org/api</a></p>
+            <ol>
+               <li>Vraag eerst een API key aan op <a href="https://openweathermap.org/api">https://openweathermap.org/api</a>.</li>
+               <li>
+                  Schrijf een methode <code>getWeatherInfo(city)</code> die weer info geeft op basis van een stad. De basis URL is <code>https://api.openweathermap.org/data/2.5/weather</code>. Geef volgende parameters mee:
+                  <ul>
+                     <li><strong>q</strong>: naam van de stad</li>
+                     <li><strong>units</strong>: 'metrics'</li>
+                     <li><strong>lang</strong>: 'nl'</li>
+                     <li><strong>appid</strong>: jouw API key</li>
+                  </ul>
+                  Doe een fetch met de parameters, en inspecteer de response data. Return een tekst naar voorbeeld van onderstaande screenshot.
+               </li>
+               <li>Schrijf tenslotte een event handler op het <code>change</code> event van de input om de weerinfo te tonen.</li>
+            </ol>
+            <p>Screenshot:</p>
+            <figure class="screenshot">
+               <img src="img/openweather.png" alt="Weather resultaat" width="700">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex2-html">
+            <h3>HTML-fragment</h3>
+            <div class="row">
+               <input type="search" placeholder="Stad (bijv. Brussel)">
+            </div>
+            <p class="output">
+               Voer een stad in en druk op enter...
+            </p>
+         </div>
+      </section>
+
+      <section class="exercise" id="ex3">
+         <h2>Bearer token, request headers</h2>
+         <p class="goal">Doel: authenticatie via een <strong>Authorization header</strong> met Bearer token.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Sommige API's vereisen dat je naast of in plaats van een query parameter een <mark>Bearer token</mark> meegeeft in de HTTP <strong>request header</strong>.
+               Dit is veiliger dan een API key in de URL, want de header is niet zichtbaar in de browserbalk of serverlogboeken.
+            </p>
+            <p>De Authorization header heeft volgende opbouw:</p>
+            <pre class="code-block prism-okaida"><code>Authorization: Bearer jouw_token_hier</code></pre>
+            <p>In <code>fetch()</code> geef je headers mee als tweede argument:</p>
+            <pre class="code-block prism-okaida"><code>async function fetchData() {
+   const token = 'jouw_bearer_token';
+   const url = 'https://api.example.com/data';
+   const options = {
+      headers: {
+         'Authorization': `Bearer ${token}`
+      }
+   };
+
+   const response = await fetch(url, options);
+   const data = await response.json();
+   return data;
+}</code></pre>
+            <p>Je kan headers uiteraard combineren met <code>URLSearchParams</code>:</p>
+            <pre class="code-block prism-okaida"><code>async function fetchData() {
+   const token = 'jouw_bearer_token';
+   const params = new URLSearchParams({ 
+      // ... query parameters hier
+   });
+   const url = `https://api.example.com/search?${params}`;
+   const options = {
+      headers: {
+         'Authorization': `Bearer ${token}`
+      }
+   };
+
+   const response = await fetch(url, options);
+   const data = await response.json();
+   return data;
+}</code></pre>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht: The Movie Database</h3>
+            <p>We gebruiken de <a href="https://www.themoviedb.org/">The Movie Database (TMDB) API</a>, een gratis filmendatabase.</p>
+            <ol>
+               <li>Maak een gratis account aan op <a href="https://www.themoviedb.org/signup">https://www.themoviedb.org/</a> en ga naar <em>Instellingen &rarr; API</em>. Kopieer de <strong>API Read Access Token</strong> (de lange JWT-string onderaan, niet de korte API key).</li>
+               <li>
+                  Schrijf een asynchrone functie <code>searchMovies(term)</code> die films zoekt op basis van een zoekterm:
+                  <ul>
+                     <li>Gebruik endpoint <code>https://api.themoviedb.org/3/search/movie</code></li>
+                     <li>Geef de <code>term</code> zoekterm mee als query parameter <strong>query</strong></li>
+                     <li>Geef de token mee als Bearer token in de <strong>Authorization</strong> header</li>
+                     <li>Return <code>data.results</code></li>
+                  </ul>
+               </li>
+               <li>Schrijf een event handler op de knop die de resultaten toont als een lijst van films (poster, titel, jaar en beschrijving). Posterpaden zijn relatief: gebruik <code>https://image.tmdb.org/t/p/w92</code> als basisURL voor de poster.</li>
+            </ol>
+            <p>Screenshot:</p>
+            <figure class="screenshot">
+               <img src="img/movies.png" alt="" width="700">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex3-html">
+            <h3>HTML-fragment</h3>
+            <div class="row">
+               <input type="search" placeholder="Zoek een film...">
+               <button type="button">Zoek</button>
+            </div>
+            <ul class="movies"></ul>
+         </div>
+      </section>
+
+   </main>
+
+   <footer class="page-footer" aria-label="Pagina-voetnoot">
+      <p>Web API's en asynchrone JavaScript oefenblad</p>
+   </footer>
+
+   <script src="js/scripts.js"></script>
+   <script src="vendor/prism.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CSS manipulatie oefenblad</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap">
+   <link rel="stylesheet" href="vendor/prism-default.css">
+   <link rel="stylesheet" href="vendor/prism-okaida.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/mods.css">
+   <link rel="stylesheet" href="css/oefeningen.css">
+</head>
+
+<body class="prism language-javascript">
+
+   <header class="page-header" aria-label="Paginakop">
+      <h1>CSS manipulatie oefenblad</h1>
+      <p>
+         Dit is een oefenblad bij het hoofdstuk
+         <a href="https://rogiervdl.github.io/JS-course/03_domcss.html">CSS manipulatie</a>.
+      </p>
+   </header>
+   <main>
+
+      <section class="intro box" aria-label="Inleiding">
+         <h2>Hoe los je dit oefenblad op?</h2>
+         <ol>
+            <li>Open de oefeningenfolder in <strong>VS Code</strong>.</li>
+            <li>Open deze pagina in VS Code via <strong>live view</strong>.</li>
+            <li>Open de <strong>console</strong> van de developer tools.</li>
+            <li>Elke oefening begint met een stukje theorie, en één of meer <strong>opdrachten</strong>.</li>
+            <li>Vul telkens het overeenkomende stukje code in <em>js/scripts.js</em> aan</li>
+            <li>De bijhorende HTML fragmenten vind je onder elke opgave met een <mark class="lightblue">lichtblauwe achtergrond</mark></li>
+
+         </ol>
+         <p>Overzicht van de oefeningen:</p>
+         <ol>
+            <li><a href="#ex1">manipulatie via style property</a></li>
+            <li><a href="#ex2">manipulatie via classList</a></li>
+            <li><a href="#ex3">verschil <code>e.target</code> en <code>this</code></a></li>
+            <li><a href="#ex4">dataset (data-* attributen, pralines)</a></li>
+            <li><a href="#ex5">rekeningnummer validator</a></li>
+         </ol>
+      </section>
+
+      <!-- Oefening 1: manipulatie via style property (Tekststijl) -->
+      <section class="exercise" id="ex1">
+         <h2>manipulatie via <code>style</code> property</h2>
+         <p class="goal">Doel: de stijl van een alineatekst aanpassen via de <code>style</code>-property, gekoppeld aan een slider, kleurkiezer en checkboxes.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Elk element heeft een <code>style</code>-property waarmee je <strong>inline CSS</strong> kan instellen.
+               De namen van de CSS-eigenschappen zijn gelijk aan in CSS, maar in <em>camelCase</em> in plaats van met koppeltekens:
+            </p>
+            <pre class="code-block prism-okaida"><code>const parText = document.querySelector('#txt');
+
+parText.style.fontSize = '18px';
+parText.style.color = '#333';
+parText.style.fontWeight = 'bold';   // of 'normal'
+parText.style.fontStyle = 'italic';  // of 'normal'
+parText.style.textTransform = 'uppercase';  // of 'inherit'</code></pre>
+            <p>
+               Let op de schrijfwijze:
+            </p>
+            <ul>
+               <li><code>font-size</code> wordt <code>fontSize</code></li>
+               <li><code>font-weight</code> wordt <code>fontWeight</code></li>
+               <li><code>font-style</code> wordt <code>fontStyle</code></li>
+               <li><code>text-transform</code> wordt <code>textTransform</code></li>
+            </ul>
+            <p class="tip">De waarde is een string zoals in CSS, dus <code>'18px'</code> en niet <code>18</code>. Bij een range-input gebruik je <code>this.value</code> of <code>inpSize.value</code> en plak je <code>+ 'px'</code>.</p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               Je hoeft niet alles te maken; kies er een paar uit (of maak ze allemaal, als je dat wil). De paragraaf onder de controles moet zich in realtime aanpassen:
+            </p>
+            <ol>
+               <li><strong>Hoofdletters:</strong> gebruik het <code>click</code> event van de knop bovenaan om de tekst om te zetten in hoofdletters of normale letters.</li>
+               <li><strong>Achtergrond:</strong> gebruik het <code>change</code> event van het dropdownmenu om de achtergrondkleur van de paragraaf in te stellen (pastelkeuzes of standaard).</li>
+               <li><strong>Lettergrootte:</strong> gebruik het <code>input</code> event van de slider om de lettergrootte van de paragraaf in te stellen (in px).</li>
+               <li><strong>Kleur:</strong> gebruik het <code>change</code> event van het kleurvak om de tekstkleur van de paragraaf in te stellen.</li>
+               <li><strong>Stijl:</strong> gebruik het <code>change</code> event van de checkbox om de stijl van de paragraaf in te stellen (schuin of niet).</li>
+            </ol>
+            <p>Vul de code aan in <code>js/scripts.js</code> onder het blok <em>Oefening 1</em>.</p>
+            <figure class="screenshot">
+               <img src="img/style.png" alt="" width="600">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex1-html">
+            <h3>HTML-fragment</h3>
+            <div class="ex1-controls">
+               <div class="ex1-row">
+                  <label for="ex1-btnToggleCase">hoofdletters:</label>
+                  <div><button type="button" id="ex1-btnToggleCase">zet aan</button></div>
+               </div>
+               <div class="ex1-row">
+                  <label for="ex1-selBgColor">achtergrond:</label>
+                  <div>
+                     <select id="ex1-selBgColor">
+                        <option value="#ddd">grijs</option>
+                        <option value="#ffe4ec">roze</option>
+                        <option value="#e4f4ff">blauw</option>
+                        <option value="#e8ffe4">mint</option>
+                        <option value="#fff4e4">perzik</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="ex1-row">
+                  <label for="ex1-inpSize">lettergrootte</label>
+                  <div class="slider"><input type="range" id="ex1-inpSize" step="1" min="8" max="24" value="14"> <span id="ex1-lblSize">14</span> px</div>
+               </div>
+               <div class="ex1-row">
+                  <label for="ex1-inpColor">kleur:</label>
+                  <div><input type="color" id="ex1-inpColor" value="#000000"></div>
+               </div>
+               <div class="ex1-row">
+                  <label>stijl:</label>
+                  <div>
+                     <label><input type="checkbox" id="ex1-inpItalic"> schuin</label>
+                  </div>
+               </div>
+            </div>
+            <p id="ex1-txt">
+               One advanced diverted domestic sex repeated bringing you old. Possible procured her trifling laughter thoughts
+               property she met way. Companions shy had solicitude favourable own. Which could saw guest man now heard but.
+               Lasted my coming uneasy marked so should. Gravity letters it amongst herself dearest an windows by.
+            </p>
+         </div>
+
+      </section>
+
+      <!-- Oefening 2: classList (twee deeloefeningen) -->
+      <section class="exercise" id="ex2">
+         <h2>manipulatie via <code>classList</code></h2>
+         <p class="goal">Doel: opmaak groeperen onder CSS-klassen en die toevoegen of verwijderen met <code>classList</code>.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               In plaats van voor elk element apart <code>style</code>-eigenschappen te zetten, groepeer je opmaak beter in CSS-klassen.
+               Je kan die klassen dan in JavaScript toevoegen of verwijderen met <code>element.classList</code>.
+            </p>
+            <pre class="code-block prism-okaida"><code>const div = document.querySelector('.blok');
+
+div.classList.add('huidig');        // voeg een class toe
+div.classList.remove('oud');        // verwijder een class
+div.classList.toggle('geselecteerd'); // voeg toe als hij er niet op staat, anders verwijder
+div.classList.remove('stijl1', 'stijl2', 'stijl3');  // verwijder meerdere classes tegelijk</code></pre>
+            <p>De echte opmaak schrijf je in CSS, bijvoorbeeld:</p>
+            <pre class="code-block prism-okaida"><code>.huidig {
+   border: 3px solid #0a0;
+   background-color: #dcfce7;
+}
+.oud {
+   opacity: 0.5;
+}
+.geselecteerd {
+   outline: 2px solid #06b;
+}</code></pre>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht 1</h3>
+            <p>Bij een klik op de knop moet de class <code>bordered</code> op de afbeelding aan- of uitgezet (<em>getoggeld</em>) worden. Gebruik <code>classList.toggle(...)</code>.</p>
+            <figure class="screenshot">
+               <img src="img/classlist.png" alt="" width="100">
+            </figure>
+         </div>
+
+         <div class="html box" id="ex2-html1">
+            <h3>HTML-fragment</h3>
+            <img src="img/vaas.jpg" alt="Vaas" width="120">
+            <p><button type="button">Toggle rand</button></p>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht 2</h3>
+            <p>
+               Deze keer zijn er drie stijlen gedefinieerd in CSS (zie <em>css/oefeningen.css</em> ): <code>.stijl1</code>, <code>.stijl2</code> en <code>.stijl3</code>. 
+               Elke knop wijst een stijl toe. Er kan maar één stijl tegelijk zijn. Mogelijke strategie:
+            </p>
+            <ol>
+               <li>declareer constanten voor de afbeelding, en voor alle buttons (gebruik <code>querySelectorAll()</code>) </li>
+               <li>voeg dezelfde click event handler toe aan alle buttons, bv. met <code>forEach()</code></li>
+               <li>
+                  in die handler: 
+                  <ul>
+                     <li>verwijder <code>stijl1</code>, <code>stijl2</code> en <code>stijl3</code> uit de <code>classList</code> van de afbeelding</li>
+                     <li>wijs de juiste class weer toe afhankelijk van de geklikte button (gebruik <code>e.target</code> zoals gezien vorige les)</li>
+                     <li>zoek zelf uit hoe je de <code>active</code> class van de vorige button verwijdert, en aan de huidige button toevoegt</li>
+                  </ul>
+               </li>
+            </ol>
+            <figure class="screenshot">
+               <img src="img/classlist2.png" alt="" width="150">
+            </figure>
+            <p class="tip">Zoek het niet te ver, de modeloplossing is 9 regels code.</p>
+         </div>
+
+         <div class="html box" id="ex2-html2">
+            <h3>HTML-fragment</h3>
+            <img src="img/vaas.jpg" alt="Vaas" width="120">
+            <div class="buttons">
+               <button type="button" id="ex2-btnStijl1" class="active stylebutton" data-stijl="stijl1">style1</button>
+               <button type="button" class="stylebutton" id="ex2-btnStijl2" data-stijl="stijl2">style2</button>
+               <button type="button" class="stylebutton" id="ex2-btnStijl3" data-stijl="stijl3">style2</button>
+               <button type="button" class="stylebutton" id="ex2-btnStijl4" data-stijl="stijl4">style4</button>
+            </div>
+         </div>
+
+      </section>
+
+      <!-- Oefening 3: verschil <code>e.target</code> en <code>this</code> -->
+      <section class="exercise" id="ex3">
+         <h2>verschil <code>e.target</code> en <code>this</code></h2>
+         <p class="goal">Doel: het verschil begrijpen tussen <code>e.target</code> (het element waar het event plaatsvond) en <code>this</code> (het element waarop de listener gekoppeld is).</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Bij een event handler is 
+            </p>
+            <ul>
+               <li><code>e.target</code>: het element waarop de event actie (<code>click</code>, <code>mouseover</code>, <code>keydown</code>...) <strong>plaatsvond</strong></li>
+               <li><code>this</code>: het element waarop de listener met <code>addEventListener</code> is <strong>gekoppeld</strong></li>
+            </ul>
+            <p>Voorbeeld: een link rond een afbeelding. De <code>click</code>-listener zet je op het <code>&lt;a&gt;</code>-element:</p>
+            <pre class="code-block language-html"><code>&lt;a href="#" id="lnkVoorbeeld"&gt;
+   &lt;img src="foto.jpg" alt="beschrijving"&gt;
+&lt;/a&gt;</code></pre>
+            <pre class="code-block prism-okaida"><code>const lnkVoorbeeld = document.querySelector('#lnkVoorbeeld');
+
+function handleLnkClick(e) {
+   console.log(e.target.tagName);             // IMG — het element waarop geklikt is
+   console.log(this.tagName);                 // A — het element waar de listener op zit
+   console.log(e.target.parentNode.tagName);  // A — dit kan ook: A is de parent van IMG
+}
+
+lnkVoorbeeld.addEventListener('click', handleLnkClick);</code></pre>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               Gegeven is een horizontaal menu met in elke <code>li</code> een geneste <code>a</code>, en een class <code>selected</code> die de actieve knop toont.
+            </p>
+            <ol>
+               <li>Definieer een click event handler voor alle <code>li</code>-elementen met <code>forEach</code> over.</li>
+               <li>
+                  In de handler:
+                  <ul>
+                     <li>voorkom de standaardactie van de link met <code>preventDefault</code></li>
+                     <li>haal de geklikte link en de bijhorende <code>li</code> op (zie theorie hierboven)</li>
+                     <li>toon de tekst van de aangeklikte link in de paragraaf eronder</li>
+                     <li>verwijder de class <code>selected</code> van alle <code>li</code>-elementen</li>
+                     <li>voeg de class <code>selected</code> toe aan de geklikte <code>li</code></li>
+                  </ul>
+               </li>
+            </ol>
+         </div>
+      </div>
+
+      <div class="html box" id="ex3-html">
+         <h3>HTML-fragment</h3>
+         <ul class="ex3-menu">
+            <li class="selected"><a href="#">Home</a></li>
+            <li><a href="#">Producten</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Over ons</a></li>
+         </ul>
+         <p class="message">geselecteerd: <span>Home</span></p>
+      </div>
+
+      <!-- Oefening 4: dataset (data-* attributen, pralines) -->
+      <section class="exercise" id="ex4">
+         <h2><code>data-*</code> attributen en <code>dataset</code></h2>
+         <p class="goal">Doel: extra informatie opslaan in <code>data-*</code> attributen en uitlezen met <code>dataset</code>.</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Met <code>data-*</code> attributen kan je extra gegevens koppelen aan HTML elementen, 
+               die in JavaScript gelezen kunnen worden via de <code>dataset</code>-property. Neem volgende HTML:
+            </p>
+            <pre class="code-block language-html"><code>&lt;ul id="zaden"&gt;
+   &lt;li data-afstand="10cm" data-zaaitijd="maart tot juni"&gt;wortelen&lt;/li&gt;
+   &lt;li data-afstand="30cm" data-zaaitijd="februari tot maart"&gt;selder&lt;/li&gt;
+   &lt;li data-afstand="3cm" data-zaaitijd="maart tot september"&gt;radijs&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <p>Javascript om de <code>data-*</code> attributen te lezen en te loggen in de console met <code>dataset</code>:</p>
+            <pre class="code-block prism-okaida"><code>const zaden = document.querySelectorAll('#zaden li');
+
+zaden.forEach(zaad => {
+   console.log(zaad.dataset.afstand);
+   console.log(zaad.dataset.zaaitijd);
+});</code></pre>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>
+               Gegeven is een lijst pralines met custom attributen <code>data-name</code> en <code>data-cal</code> (inspecteer de HTML om ze te zien). 
+               Bij een klik op een praline:
+            </p>
+            <ol>
+               <li>Toon de naam en het aantal calorieën uit <code>dataset</code>; de beschrijving haal je uit de <code>alt</code> van de afbeelding. Toon alles in het definitielijstje onder de lijst.</li>
+               <li>Zorg dat de huidig aangeklikte praline de class <code>selected</code> krijgt (bijhorende CSS staat in <em>css/oefeningen.css</em>).</li>
+            </ol>
+            <figure class="screenshot">
+               <img src="img/dataset.png" alt="" width="400">
+            </figure>
+            <p>Vul de code aan in <code>js/scripts.js</code> onder het blok <em>Oefening 4: dataset (pralines)</em>.</p>
+         </div>
+
+         <div class="html box" id="ex4-html">
+            <h3>HTML-fragment</h3>
+            <p>Klik op een praline voor meer informatie.</p>
+            <ul class="pralines ex4-pralines">
+               <li data-name="Manon Café" data-cal="99"><img src="img/manon-cafe.jpg" alt="intense smaak van 100% arabicakoffie"></li>
+               <li data-name="Noisette Masquée" data-cal="116"><img src="img/noisette-masquee.jpg" alt="gehuld in een jasje van witte chocolade"></li>
+               <li data-name="Carré Croquant" data-cal="79"><img src="img/carre-croquant.jpg" alt="mix van praliné en gepofte rijst"></li>
+               <li data-name="Fine Orange" data-cal="143"><img src="img/fine-orange.jpg" alt="juweel van zacht-bittere smaken"></li>
+            </ul>
+            <dl class="ex4-info">
+               <dt>Naam:</dt>
+               <dd class="name">&nbsp;</dd>
+               <dt>Calorieën:</dt>
+               <dd class="cals">&nbsp;</dd>
+               <dt>Beschrijving:</dt>
+               <dd class="desc">&nbsp;</dd>
+            </dl>
+         </div>
+
+      </section>
+
+      <!-- Oefening 5: rekeningnummer validator -->
+      <section class="exercise" id="ex5">
+         <h2>rekeningnummer validator</h2>
+         <p class="goal">Doel: input valideren tijdens het typen met <code>input</code> en <code>keydown</code> events</p>
+
+         <div class="info box">
+            <h3>Theorie</h3>
+            <p>
+               Relevante events voor tekstvakken:
+            </p>
+            <ul>
+               <li><strong><code>input</code></strong>: als de tekst verandert, bv. door te typen, door een waarde te plakken...</li>
+               <li><strong><code>keydown</code></strong>: wanneer een toets ingedrukt wordt, vóór het verschijnt</li>
+               <li><strong><code>keyup</code></strong>: wanneer een toets ingedrukt werd, nadat het verschenen is</li>
+            </ul>
+            <p>
+               Voorbeeldfragment waarbij je alleen de letter 'x' of 'y' kan intikken (de rest wordt tegengehouden):
+            </p>
+            <pre class="code-block prism-okaida"><code>function handleInpTestKeydown(e) {
+   const toets = e.key;
+   if (!'xy'.includes(toets)) e.preventDefault(); // hou toets tegen als het geen x of y is
+}
+
+inpXY.addEventListener('keydown', handleInpTestKeydown);
+</code></pre>
+         </div>
+
+         <div class="assignment box">
+            <h3>Opdracht</h3>
+            <p>We maken een input om een rekeningnummer van formaat <strong>539-0075470-34</strong> in te tikken:</p>
+            <ul>
+               <li>alleen cijfers mogen getypt worden, en er mogen niet meer dan 14 karakters zijn, de rest moet tegengehouden worden</li>
+               <li>de streepjes moeten automatisch verschijnen na karakter 3 en 11</li>
+               <li>als er 14 karakters zijn (rekeningnummer is volledig), moeten het gevalideerd worden: indien juist, geef het een groene achtergrond, anders rood</li>
+               <li>de wissenknop moet verborgen zijn, en verschijnen als het tekstvak niet leeg is</li>
+            </ul>
+            <p>
+               <em>
+                  Let op: dit is slechts een onvolledige uitvoering. Je zal bijvoorbeeld geen pijltjestoetsen of backspace kunnen gebruiken. 
+                  Om dit goed te implementeren is verrassend moeilijk, en valt buiten dit oefenblad (maar je mag altijd proberen uiteraard).
+               </em>
+            </p>
+            <p>Stappenplan:</p>
+            <ul>
+               <li>
+                  Maak in <em>css/oefeningen.css</em> (onder <code>#ex5</code>) drie klassen: 
+                  <ul>
+                     <li><code>.right</code> voor een groene achtergrond (<code>#b8e6b8</code>)</li>
+                     <li><code>.wrong</code> voor een rode achtergrond (<code>#f0b0b0</code>)</li>
+                     <li><code>.hidden</code> om te verbergen</li> 
+                  </ul>
+               </li>
+               <li>
+                  Koppel <code>keydown</code> aan het tekstveld: 
+                  <ul>
+                     <li>sta alleen cijfers toe (gebruik <code>/[0-9]/.test(...waarde...)</code>), en sta niet meer dan 14 karakters toe; andere karakters moeten tegengehouden worden.</li>
+                  </ul>
+               </li>
+               <li>
+                  Koppel <code>input</code> aan het tekstveld: 
+                  <ul>
+                     <li>voeg een streepje toe als er 3 of 11 tekens zijn</li>
+                     <li>toon de wissen-knop enkel als het tekstveld niet leeg is</li>
+                     <li>als er 14 tekens zijn (rekeningnummer is volledig): controleer of het geldig is, en wijs de <code>.right</code> of <code>.wrong</code> klasse toe aan het tekstveld.</li>
+                  </ul>
+               </li>
+               <li>Implementeer tenslotte de wissen-knop</li>
+            </ul>
+            <p>Gebruik deze functie voor het valideren van een rekeningnummer:</p>
+            <pre class="code-block prism-okaida"><code>function valideerNummer(nr) {
+   nr = nr.replace(/\D/g, '');
+   if (nr.length != 12) return false;
+   const eerste10 = parseInt(nr.slice(0, 10), 10);
+   const controle = parseInt(nr.slice(10, 12), 10);
+   return eerste10 % 97 === controle;
+}</code></pre>
+            <figure class="screenshot">
+               <img src="img/keyboard.png" alt="" width="200">
+            </figure>
+            <p class="tip">deze implementatie is onvolledig en zal nog geen ideale gebruikerservaring bieden, vooral bij het wissen of kopiëren van een waarde, maar voor deze oefening is dit voldoende </p>
+            <p>Vul de code aan in <code>js/scripts.js</code> onder het blok <em>Oefening 5: rekeningnummer validator</em>.</p>
+
+         </div>
+
+         <div class="html box" id="ex5-html">
+            <h3>HTML-fragment</h3>
+            <p>Begin met typen, streepjes worden automatisch aangevuld</p>
+            <p class="flex-row"><input type="text" placeholder="bv. 539-0075470-34"> <button type="button" id="ex5-btnWis" title="Veld wissen">✕</button></p>
+         </div>
+
+      </section>
+
+   </main>
+
+   <footer class="page-footer" aria-label="Pagina-voetnoot">
+      <p>CSS manipulatie oplossingen &mdash; zie het script bij elke oefening.</p>
+   </footer>
+
+   <script src="js/scripts.js"></script>
+   <script src="vendor/prism.js"></script>
+</body>
+
+</html>

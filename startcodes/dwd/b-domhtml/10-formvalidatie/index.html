@@ -1,0 +1,24 @@
+<form novalidate id="ex10-form">
+   <div class="html-section">
+      <label>E-mail</label>
+      <input type="email" placeholder="naam@voorbeeld.nl" required>
+   </div>
+   <div class="html-section">
+      <label>Onderwerp</label>
+      <select required>
+         <option value="">— kies —</option>
+         <option value="vraag">Vraag</option>
+         <option value="opmerking">Opmerking</option>
+         <option value="anders">Anders</option>
+      </select>
+   </div>
+   <div class="html-section">
+      <label>Bericht</label>
+      <textarea placeholder="Schrijf hier je bericht..." rows="4" required></textarea>
+   </div>
+   <div class="html-section">
+      <label><input type="checkbox"> ik ga akkoord met de <a href="">voorwaarden</a></label>
+   </div>
+   <div class="errors"></div>
+   <button type="submit">Versturen</button>
+</form>

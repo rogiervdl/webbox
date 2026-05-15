@@ -1,0 +1,185 @@
+/**
+ * Oefeningen – opmaak voor demo's en oefenblokken
+ */
+
+/* Oefening 1: style property */
+#ex1 .html {
+   .ex1-controls {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      gap: 0.5rem 1rem;
+      align-items: center;
+   }
+
+   .ex1-controls .ex1-row {
+      display: contents;
+   }
+
+   .ex1-controls .ex1-row > label:first-child {
+      min-width: 6em;
+   }
+
+   #ex1-txt {
+      background-color: #ddd;
+      border: 1px solid #444;
+      padding: 10px;
+   }
+
+   [type=color] {
+      padding: 2px;
+   }
+
+   .slider {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+   }
+   .italic {
+      font-style: italic;
+   }
+}
+
+/* Oefening 2: classList (twee deeloefeningen) */
+#ex2 .html {
+   img.bordered {
+      border: 4px solid #333;
+      border-radius: 8px;
+   }
+
+   .buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1em 0;
+   }
+
+   .buttons button {
+      padding: 0.35rem 0.75rem;
+   }
+
+   .buttons .active {
+      background-color: #000;
+      color: #fff;
+   }
+
+   img.stijl1 {
+      border: 4px solid #333;
+      border-radius: 8px;
+   }
+
+   img.stijl2 {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+   }
+
+   img.stijl3 {
+      filter: sepia(0.8);
+   }
+
+   img.stijl4 {
+      width: 20px;
+   }
+}
+
+/* Oefening 3: klikmenu (e.target vs this) */
+#ex3 .html {
+   .ex3-menu {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+   }
+   .ex3-menu a {
+      background-color: #e8edf4;
+      border: 1px solid #b8c5d6;
+      border-radius: 8px;
+      color: #1e293b;
+      display: inline-block;
+      padding: 0.45rem 1rem;
+      text-decoration: none;
+   }
+
+   .ex3-menu a:hover {
+      background-color: #dce6f2;
+   }
+
+   .ex3-menu li.selected a {
+      background-color: #bfdbfe;
+      border-color: #2563eb;
+      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.35);
+      color: #1e3a8a;
+      font-weight: 600;
+   }
+   .message {
+      font-size: smaller;
+      padding: 5px 10px;
+   }
+   .message span {
+      font-style: italic;
+   }
+}
+
+/* Oefening 4: dataset (pralines) */
+#ex4 .html {
+   .ex4-pralines {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+   }
+
+   .ex4-pralines li {
+      cursor: pointer;
+      width: 120px;
+   }
+
+   .ex4-pralines img {
+      display: block;
+      max-width: 100%;
+      transition: filter 0.2s;
+   }
+
+   .ex4-pralines li.selected img {
+      filter: brightness(0.9);
+   }
+
+   .ex4-info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.25rem 2rem;
+      align-items: baseline;
+   }
+
+   .ex4-info dt {
+      font-weight: bold;
+   }
+
+   .ex4-info dd {
+      margin: 0;
+   }
+}
+
+/* Oefening 5: rekeningnummer validator */
+#ex5 .html {
+   .flex-row {
+      display: flex;
+      gap: 0.5em;
+   }
+   #ex5-btnWis {
+      background-color: transparent;
+      border-color: transparent;
+      margin-top: 0.25em;
+      padding: 5px;
+   }
+   /* vul hier aan */
+   .right {
+      background-color: #b8e6b8;
+   }
+   .wrong {
+      background-color: #f0b0b0;
+   }
+   .hidden {
+      display: none;
+   }
+}

@@ -1,0 +1,167 @@
+/**
+ * Oefeningen – opmaak voor demo's en oefenblokken
+ */
+
+/* Oefening 1: querySelector() */
+#ex1 {
+   .html {
+      .photodesc {
+         align-items: flex-start;
+         display: flex;
+         gap: 1rem;
+         margin: 0.5rem 0 0 0;
+      }
+      .date {
+         font-style: italic;
+      }
+      .rechts p {
+         margin: 0;
+      }
+      .rechts ul {
+         padding-left: 1em;
+      }
+   }
+}
+
+/* Oefening 4: innerHTML en innerText */
+#ex4 {
+	.theorie-demo {
+		margin-top: 0.75rem;
+	}
+	#klik-test .message {
+		min-height: 1.5em;
+	}
+	#btn-dice {
+		background-color: transparent;
+		border: none;
+		font-size: 48px;
+		padding: 0;
+	}
+	#uitvoer-dice {
+		font-size: 3rem;
+		font-weight: bold;
+		line-height: 1.2;
+		margin: 0.25rem 0 0 0;
+	}
+	#uitvoer-tekens {
+		color: #475569;
+		font-size: 0.7rem;
+		margin: 0.5rem 0 0 0;
+	}
+}
+
+/* Oefening 5: HTML-attributen lezen en schrijven */
+#ex5 {
+	.html {
+		align-items: flex-start;
+		display: flex;
+		gap: 1em;
+	}
+	.rechts {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+}
+
+/* Oefening 7: e.target */
+#ex7 {
+	.items {
+      align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+		margin-bottom: 1rem;
+	}
+	.items > * {
+		align-items: center;
+		border: 2px solid #94a3b8;
+      border-radius: 6px;
+		box-sizing: border-box;
+		cursor: pointer;
+		display: flex;
+		height: 80px;
+		justify-content: center;
+		padding: 0.35rem 0.6rem;
+		width: 80px;
+	}
+	.items > img {
+		object-fit: contain;
+		padding: 0.25rem;
+	}
+	.items a {
+		color: #0563c1;
+		text-decoration: underline;
+	}
+	.resultaat {
+		background-color: #f1f5f9;
+		border-radius: 6px;
+		font-family: Source Code Pro, monospace;
+		font-size: 0.9rem;
+		margin: 0.5rem 0 0 0;
+		padding: 0.5rem 0.75rem;
+	}
+}
+
+/* Oefening 9: event bubbling */
+#ex9 {
+	.kleuren {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+	.kleuren > div {
+		border: 2px solid #94a3b8;
+		border-radius: 8px;
+		cursor: pointer;
+		height: 48px;
+		width: 48px;
+	}
+	.kleuren > div:hover {
+		border-color: #475569;
+	}
+	#rood {
+		background-color: #c00;
+	}
+	#groen {
+		background-color: #0a0;
+	}
+	#blauw {
+		background-color: #05f;
+	}
+	#geel {
+		background-color: #fc0;
+	}
+	#zwart {
+		background-color: #000;
+	}
+	#wit {
+		background-color: #fff;
+		border-color: #64748b;
+	}
+	.uitvoer {
+		color: #475569;
+		font-size: 0.95rem;
+		margin: 0;
+	}
+	.resultaat {
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 0.5rem 0 0 0;
+	}
+}
+
+/* Oefening 10: Formvalidatie */
+#ex10 {
+	.html-section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		margin-bottom: 1rem;
+	}
+   .errors {
+      margin-bottom: 1.5em;
+   }
+}

@@ -9,7 +9,10 @@ const Exercises = (() => {
    let currentReadme = '';
    let currentExerciseLabel = '';
    let currentExerciseBaseUrl = '';
-   let currentScreenshotUrl = '';
+
+   const LS_SUBJECT  = 'webbox-subject';
+   const LS_MODULE   = 'webbox-module';
+   const LS_EXERCISE = 'webbox-exercise';
 
    const FILE_MAP = {
       html: 'index.html',
@@ -28,12 +31,12 @@ const Exercises = (() => {
    const selectModule      = document.querySelector('#select-module');
    const selectExercise    = document.querySelector('#select-exercise');
    const btnReadme         = document.querySelector('#btn-readme');
-   const btnScreenshotPip  = document.querySelector('#btn-screenshot-pip');
    const modal             = document.querySelector('#modal-readme');
    const modalBody         = document.querySelector('#modal-readme-body');
    const btnModalClose     = document.querySelector('#btn-modal-close');
    const btnReadmeNewTab   = document.querySelector('#btn-readme-newtab');
    const modalBackdrop     = document.querySelector('.modal__backdrop');
+   const brand             = document.querySelector('.toolbar__brand');
 
    /**
     * Laadt en parseert startcodes/index.json5.
@@ -45,6 +48,7 @@ const Exercises = (() => {
          const text = await response.text();
          subjectsData = JSON5.parse(text).subjects;
          populateSubjects();
+         restoreSelection();
       } catch (e) {
          console.warn('Exercises: kon index.json5 niet laden', e);
       }
@@ -89,7 +93,7 @@ const Exercises = (() => {
       const subject = subjectsData.find(function (s) { return s.id === subjectId; });
       const mod = subject?.modules.find(function (m) { return m.id === moduleId; });
       if (!mod) return;
-      mod.exercises.forEach(function (exercise) {
+      mod.exercises.filter(function (exercise) { return !exercise.hidden; }).forEach(function (exercise) {
          const option = document.createElement('option');
          option.value = exercise.id;
          option.textContent = exercise.label;
@@ -109,10 +113,9 @@ const Exercises = (() => {
       const base = `startcodes/${subjectId}/${moduleId}/${exerciseId}/`;
       currentExerciseBaseUrl = base;
       currentReadme = '';
-      currentScreenshotUrl = '';
       btnReadme.disabled = true;
+      btnReadme.title = 'geen opgave gegeven';
       btnReadmeNewTab.disabled = true;
-      btnScreenshotPip.disabled = true;
 
       const subject   = subjectsData.find(function (s) { return s.id === subjectId; });
       const mod       = subject?.modules.find(function (m) { return m.id === moduleId; });
@@ -121,17 +124,19 @@ const Exercises = (() => {
       const startfiles = exercise?.startfiles ?? ['html', 'css', 'js'];
       const collapsed  = exercise?.collapsed  ?? [];
 
+      // PiP aanvragen vóór de fetch, terwijl we nog in de user gesture context zitten
+      const pipWindow = startfiles.includes('md') ? await requestPipWindow() : null;
+
       const fetches = {};
       ['html', 'css', 'js'].forEach(function (key) {
          fetches[key] = startfiles.includes(key) ? fetchText(`${base}${FILE_MAP[key]}`) : Promise.resolve(null);
       });
 
-      const [html, css, js, readme, screenshotExists] = await Promise.all([
+      const [html, css, js, readme] = await Promise.all([
          fetches.html,
          fetches.css,
          fetches.js,
-         fetchText(`${base}readme.md`),
-         checkExists(`${base}img/screenshot.png`),
+         startfiles.includes('md') ? fetchText(`${base}readme.md`) : Promise.resolve(null),
       ]);
 
       editors.html.setValue(html ?? '');
@@ -148,13 +153,13 @@ const Exercises = (() => {
       if (readme !== null) {
          currentReadme = readme;
          btnReadme.disabled = false;
+         btnReadme.title = 'Toon opgave';
          btnReadmeNewTab.disabled = false;
-         showReadme();
-      }
-
-      if (screenshotExists) {
-         currentScreenshotUrl = `${base}img/screenshot.png`;
-         btnScreenshotPip.disabled = false;
+         if (pipWindow) {
+            fillPipWindow(pipWindow);
+         } else {
+            showReadme();
+         }
       }
    }
 
@@ -189,35 +194,56 @@ const Exercises = (() => {
    }
 
    /**
-    * Controleert of een bestand bestaat via HEAD request.
+    * Vraagt een nieuw PiP-venster aan. Geeft null terug als PiP niet beschikbaar is of mislukt.
     *
-    * @param {string} url
-    * @returns {Promise<boolean>}
+    * @returns {Promise<Window|null>}
     */
-   async function checkExists(url) {
+   async function requestPipWindow() {
+      if (!window.documentPictureInPicture) return null;
       try {
-         const response = await fetch(url, { method: 'HEAD' });
-         return response.ok;
+         return await window.documentPictureInPicture.requestWindow({ width: 600, height: 500, disallowReturnToOpener: true });
       } catch (e) {
-         return false;
+         return null;
       }
    }
 
    /**
-    * Toont de screenshot van de oefening in een Picture-in-Picture venster.
+    * Vult een PiP-venster met de gerenderde README van de huidige oefening.
+    *
+    * @param {Window} pipWindow
     */
-   async function openScreenshotInPiP() {
-      if (!window.documentPictureInPicture) {
-         alert('Picture-in-Picture wordt niet ondersteund in deze browser.');
-         return;
-      }
-      const pipWindow = await window.documentPictureInPicture.requestWindow({ width: 540, height: 420, disallowReturnToOpener: true });
+   function fillPipWindow(pipWindow) {
+      const absBase = new URL(currentExerciseBaseUrl, window.location.href).href;
+      pipWindow.document.title = currentExerciseLabel;
       pipWindow.document.head.innerHTML = `<style>
          * { box-sizing: border-box; margin: 0; padding: 0; }
-         body { background: #1e1e1e; height: 100vh; }
-         img { display: block; height: 100%; object-fit: contain; width: 100%; }
-      </style>`;
-      pipWindow.document.body.innerHTML = `<img src="${new URL(currentScreenshotUrl, window.location.href).href}" alt="">`;
+         body { background: #1e1e1e; color: #ccc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.7; overflow-y: auto; padding: 20px 24px; }
+         h1 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+         h2 { font-size: 16px; margin-bottom: 10px; margin-top: 20px; }
+         h3 { font-size: 14px; margin-bottom: 8px; margin-top: 16px; }
+         p { margin-bottom: 10px; }
+         ul, ol { margin-bottom: 10px; padding-left: 22px; }
+         li { margin-bottom: 3px; }
+         code { background: rgba(255 255 255 / 10%); border-radius: 3px; font-family: Consolas, monospace; font-size: 12px; padding: 1px 5px; }
+         pre { background: rgba(255 255 255 / 6%); border-radius: 4px; margin-bottom: 10px; overflow-x: auto; padding: 12px; }
+         pre code { background: none; padding: 0; }
+         img { border-radius: 4px; max-width: 100%; }
+         strong { font-weight: 600; }
+      </style><base href="${absBase}">`;
+      pipWindow.document.body.innerHTML = `<h1>${currentExerciseLabel}</h1>${marked.parse(currentReadme)}`;
+      fixImagePaths(pipWindow.document.body, absBase);
+   }
+
+   /**
+    * Opent de README in PiP. Valt terug op de modal als PiP niet beschikbaar is.
+    */
+   async function openReadmeInPiP() {
+      const pipWindow = await requestPipWindow();
+      if (pipWindow) {
+         fillPipWindow(pipWindow);
+      } else {
+         showReadme();
+      }
    }
 
    /**
@@ -235,12 +261,14 @@ const Exercises = (() => {
     * Zet relatieve afbeeldingspaden om naar absolute paden t.o.v. de oefening.
     *
     * @param {HTMLElement} container - De container met de gerenderde markdown
+    * @param {string} [base] - Optionele base URL; gebruikt currentExerciseBaseUrl als niet opgegeven
     */
-   function fixImagePaths(container) {
+   function fixImagePaths(container, base) {
+      const resolvedBase = base ?? currentExerciseBaseUrl;
       container.querySelectorAll('img').forEach(function (img) {
          const src = img.getAttribute('src');
          if (src && !src.startsWith('http') && !src.startsWith('/')) {
-            img.src = `${currentExerciseBaseUrl}${src}`;
+            img.src = `${resolvedBase}${src}`;
          }
       });
    }
@@ -289,7 +317,54 @@ ${marked.parse(currentReadme)}
       modal.setAttribute('aria-hidden', 'true');
    }
 
+   /**
+    * Herstelt de laatste selectie vanuit localStorage.
+    */
+   function restoreSelection() {
+      const savedSubject = localStorage.getItem(LS_SUBJECT);
+      if (!savedSubject) return;
+      selectSubject.value = savedSubject;
+      if (selectSubject.value !== savedSubject) return;
+
+      populateModules(savedSubject);
+
+      const savedModule = localStorage.getItem(LS_MODULE);
+      if (!savedModule) return;
+      selectModule.value = savedModule;
+      if (selectModule.value !== savedModule) return;
+
+      populateExercises(savedSubject, savedModule);
+
+      const savedExercise = localStorage.getItem(LS_EXERCISE);
+      if (!savedExercise) return;
+      selectExercise.value = savedExercise;
+      if (selectExercise.value !== savedExercise) return;
+
+      loadExercise(savedSubject, savedModule, savedExercise);
+   }
+
    // event handlers
+   function handleBrandClick() {
+      selectSubject.value = '';
+      selectModule.innerHTML = '<option value="">Module...</option>';
+      selectModule.disabled = true;
+      selectExercise.innerHTML = '<option value="">Oefening...</option>';
+      selectExercise.disabled = true;
+      btnReadme.disabled = true;
+      btnReadme.title = 'geen opgave gegeven';
+      btnReadmeNewTab.disabled = true;
+      currentReadme = '';
+      currentExerciseLabel = '';
+      currentExerciseBaseUrl = '';
+      localStorage.removeItem(LS_SUBJECT);
+      localStorage.removeItem(LS_MODULE);
+      localStorage.removeItem(LS_EXERCISE);
+      editors.html.setValue(Config.defaults.html);
+      editors.css.setValue(Config.defaults.css);
+      editors.js.setValue(Config.defaults.js);
+      Preview.run();
+   }
+
    function handleSubjectChange() {
       selectModule.innerHTML = '<option value="">Module...</option>';
       selectModule.disabled = true;
@@ -297,12 +372,13 @@ ${marked.parse(currentReadme)}
       selectExercise.disabled = true;
       btnReadme.disabled = true;
       btnReadmeNewTab.disabled = true;
-      btnScreenshotPip.disabled = true;
       currentReadme = '';
-      currentScreenshotUrl = '';
 
       const subjectId = selectSubject.value;
       if (!subjectId) return;
+      localStorage.setItem(LS_SUBJECT, subjectId);
+      localStorage.removeItem(LS_MODULE);
+      localStorage.removeItem(LS_EXERCISE);
       populateModules(subjectId);
    }
 
@@ -311,13 +387,13 @@ ${marked.parse(currentReadme)}
       selectExercise.disabled = true;
       btnReadme.disabled = true;
       btnReadmeNewTab.disabled = true;
-      btnScreenshotPip.disabled = true;
       currentReadme = '';
-      currentScreenshotUrl = '';
 
       const subjectId = selectSubject.value;
       const moduleId  = selectModule.value;
       if (!subjectId || !moduleId) return;
+      localStorage.setItem(LS_MODULE, moduleId);
+      localStorage.removeItem(LS_EXERCISE);
       populateExercises(subjectId, moduleId);
    }
 
@@ -328,24 +404,19 @@ ${marked.parse(currentReadme)}
       if (!subjectId || !moduleId || !exerciseId) {
          btnReadme.disabled = true;
          btnReadmeNewTab.disabled = true;
-         btnScreenshotPip.disabled = true;
          currentReadme = '';
-         currentScreenshotUrl = '';
          return;
       }
+      localStorage.setItem(LS_EXERCISE, exerciseId);
       loadExercise(subjectId, moduleId, exerciseId);
    }
 
    function handleBtnReadmeClick() {
-      if (currentReadme) showReadme();
+      if (currentReadme) openReadmeInPiP();
    }
 
    function handleBtnReadmeNewTabClick() {
       if (currentReadme) openReadmeInNewTab();
-   }
-
-   function handleBtnScreenshotPipClick() {
-      if (currentScreenshotUrl) openScreenshotInPiP();
    }
 
    function handleModalClose() {
@@ -369,12 +440,12 @@ ${marked.parse(currentReadme)}
       editors = editorInstances;
 
       // event bindings
+      brand.addEventListener('click', handleBrandClick);
       selectSubject.addEventListener('change', handleSubjectChange);
       selectModule.addEventListener('change', handleModuleChange);
       selectExercise.addEventListener('change', handleExerciseChange);
       btnReadme.addEventListener('click', handleBtnReadmeClick);
       btnReadmeNewTab.addEventListener('click', handleBtnReadmeNewTabClick);
-      btnScreenshotPip.addEventListener('click', handleBtnScreenshotPipClick);
       btnModalClose.addEventListener('click', handleModalClose);
       modalBackdrop.addEventListener('click', handleModalBackdropClick);
       document.addEventListener('keydown', handleKeydown);
