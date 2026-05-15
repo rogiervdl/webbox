@@ -318,24 +318,62 @@ ${marked.parse(currentReadme)}
    }
 
    /**
-    * Herstelt de laatste selectie vanuit localStorage.
+    * Parseert de URL-hash naar een selectie-object.
+    *
+    * @returns {{ subjectId: string, moduleId: string, exerciseId: string }|null}
+    */
+   function getHashSelection() {
+      const hash = location.hash.slice(1);
+      if (!hash) return null;
+      const parts = hash.split('/');
+      if (parts.length < 1 || parts.length > 3) return null;
+      return {
+         subjectId: parts[0] || null,
+         moduleId: parts[1] || null,
+         exerciseId: parts[2] || null,
+      };
+   }
+
+   /**
+    * Zet de URL-hash op basis van de huidige selectie.
+    *
+    * @param {string} subjectId
+    * @param {string} moduleId
+    * @param {string} exerciseId
+    */
+   function setHash(subjectId, moduleId, exerciseId) {
+      history.replaceState(null, '', `#${subjectId}/${moduleId}/${exerciseId}`);
+   }
+
+   /**
+    * Verwijdert de URL-hash.
+    */
+   function clearHash() {
+      history.replaceState(null, '', location.pathname + location.search);
+   }
+
+   /**
+    * Herstelt de laatste selectie vanuit de URL-hash of localStorage.
     */
    function restoreSelection() {
-      const savedSubject = localStorage.getItem(LS_SUBJECT);
+      const fromHash = getHashSelection();
+      const savedSubject = fromHash?.subjectId ?? localStorage.getItem(LS_SUBJECT);
       if (!savedSubject) return;
       selectSubject.value = savedSubject;
       if (selectSubject.value !== savedSubject) return;
 
       populateModules(savedSubject);
+      if (fromHash && !fromHash.moduleId) return;
 
-      const savedModule = localStorage.getItem(LS_MODULE);
+      const savedModule = fromHash?.moduleId ?? localStorage.getItem(LS_MODULE);
       if (!savedModule) return;
       selectModule.value = savedModule;
       if (selectModule.value !== savedModule) return;
 
       populateExercises(savedSubject, savedModule);
+      if (fromHash && !fromHash.exerciseId) return;
 
-      const savedExercise = localStorage.getItem(LS_EXERCISE);
+      const savedExercise = fromHash?.exerciseId ?? localStorage.getItem(LS_EXERCISE);
       if (!savedExercise) return;
       selectExercise.value = savedExercise;
       if (selectExercise.value !== savedExercise) return;
@@ -359,6 +397,7 @@ ${marked.parse(currentReadme)}
       localStorage.removeItem(LS_SUBJECT);
       localStorage.removeItem(LS_MODULE);
       localStorage.removeItem(LS_EXERCISE);
+      clearHash();
       editors.html.setValue(Config.defaults.html);
       editors.css.setValue(Config.defaults.css);
       editors.js.setValue(Config.defaults.js);
@@ -408,6 +447,7 @@ ${marked.parse(currentReadme)}
          return;
       }
       localStorage.setItem(LS_EXERCISE, exerciseId);
+      setHash(subjectId, moduleId, exerciseId);
       loadExercise(subjectId, moduleId, exerciseId);
    }
 
