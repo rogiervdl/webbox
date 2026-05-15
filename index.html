@@ -138,6 +138,20 @@
 
    </main>
 
+   <!-- bevestigingsdialoog bewaarde versie -->
+   <div class="modal" id="modal-confirm" aria-hidden="true">
+      <div class="modal__backdrop"></div>
+      <div class="modal__dialog modal__dialog--sm">
+         <div class="modal__body">
+            <p>Er is een bewaarde versie gevonden. Wil je deze laden of herbeginnen vanaf de startcode?</p>
+            <div class="modal__actions">
+               <button id="btn-confirm-bewaarde" class="btn btn--primary" type="button">Bewaarde versie</button>
+               <button id="btn-confirm-startcode" class="btn" type="button">Startcode</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <!-- opgave modal -->
    <div class="modal" id="modal-readme" aria-hidden="true">
       <div class="modal__backdrop"></div>

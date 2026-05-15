@@ -80,6 +80,17 @@
    z-index: 1;
 }
 
+.modal__dialog--sm {
+   max-width: 420px;
+}
+
+.modal__actions {
+   display: flex;
+   gap: 8px;
+   justify-content: flex-end;
+   margin-top: 20px;
+}
+
 .modal__header {
    align-items: center;
    border-bottom: 1px solid var(--border);

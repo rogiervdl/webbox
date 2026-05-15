@@ -10,9 +10,13 @@ const Exercises = (() => {
    let currentExerciseLabel = '';
    let currentExerciseBaseUrl = '';
 
-   const LS_SUBJECT  = 'webbox-subject';
-   const LS_MODULE   = 'webbox-module';
-   const LS_EXERCISE = 'webbox-exercise';
+   const LS_SUBJECT    = 'webbox-subject';
+   const LS_MODULE     = 'webbox-module';
+   const LS_EXERCISE   = 'webbox-exercise';
+   const LS_CODE_PREFIX = 'webbox-code';
+
+   let saveTimeout = null;
+   let isLoading = false;
 
    const FILE_MAP = {
       html: 'index.html',
@@ -30,13 +34,17 @@ const Exercises = (() => {
    const selectSubject     = document.querySelector('#select-subject');
    const selectModule      = document.querySelector('#select-module');
    const selectExercise    = document.querySelector('#select-exercise');
-   const btnReadme         = document.querySelector('#btn-readme');
-   const modal             = document.querySelector('#modal-readme');
-   const modalBody         = document.querySelector('#modal-readme-body');
-   const btnModalClose     = document.querySelector('#btn-modal-close');
-   const btnReadmeNewTab   = document.querySelector('#btn-readme-newtab');
-   const modalBackdrop     = document.querySelector('.modal__backdrop');
-   const brand             = document.querySelector('.toolbar__brand');
+   const btnReadme            = document.querySelector('#btn-readme');
+   const modal                = document.querySelector('#modal-readme');
+   const modalBody            = document.querySelector('#modal-readme-body');
+   const btnModalClose        = document.querySelector('#btn-modal-close');
+   const btnReadmeNewTab      = document.querySelector('#btn-readme-newtab');
+   const modalBackdrop        = document.querySelector('#modal-readme .modal__backdrop');
+   const brand                = document.querySelector('.toolbar__brand');
+   const modalConfirm         = document.querySelector('#modal-confirm');
+   const btnConfirmBewaarde   = document.querySelector('#btn-confirm-bewaarde');
+   const btnConfirmStartcode  = document.querySelector('#btn-confirm-startcode');
+   const modalConfirmBackdrop = document.querySelector('#modal-confirm .modal__backdrop');
 
    /**
     * Laadt en parseert startcodes/index.json5.
@@ -109,7 +117,7 @@ const Exercises = (() => {
     * @param {string} moduleId   - ID van de module
     * @param {string} exerciseId - ID van de oefening
     */
-   async function loadExercise(subjectId, moduleId, exerciseId) {
+   async function loadExercise(subjectId, moduleId, exerciseId, confirmIfSaved = false) {
       const base = `startcodes/${subjectId}/${moduleId}/${exerciseId}/`;
       currentExerciseBaseUrl = base;
       currentReadme = '';
@@ -124,7 +132,14 @@ const Exercises = (() => {
       const startfiles = exercise?.startfiles ?? ['html', 'css', 'js'];
       const collapsed  = exercise?.collapsed  ?? [];
 
-      // PiP aanvragen vóór de fetch, terwijl we nog in de user gesture context zitten
+      const hasSaved = ['html', 'css', 'js'].some(function (type) {
+         return localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, type)) !== null;
+      });
+
+      // bevestigingsdialoog eerst: de button click dient als user gesture voor PiP
+      const useSaved = hasSaved && confirmIfSaved ? await confirmRestore() : hasSaved;
+
+      // PiP aanvragen na bevestiging, terwijl we nog in de user gesture context zitten
       const pipWindow = startfiles.includes('md') ? await requestPipWindow() : null;
 
       const fetches = {};
@@ -139,9 +154,11 @@ const Exercises = (() => {
          startfiles.includes('md') ? fetchText(`${base}readme.md`) : Promise.resolve(null),
       ]);
 
-      editors.html.setValue(html ?? '');
-      editors.css.setValue(css ?? '');
-      editors.js.setValue(js ?? '');
+      isLoading = true;
+      editors.html.setValue((useSaved ? localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, 'html')) : null) ?? html ?? '');
+      editors.css.setValue((useSaved ? localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, 'css')) : null) ?? css ?? '');
+      editors.js.setValue((useSaved ? localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, 'js')) : null) ?? js ?? '');
+      isLoading = false;
 
       applyPaneLayout(collapsed);
       Preview.setBaseUrl(base);
@@ -342,7 +359,8 @@ ${marked.parse(currentReadme)}
     * @param {string} exerciseId
     */
    function setHash(subjectId, moduleId, exerciseId) {
-      history.replaceState(null, '', `#${subjectId}/${moduleId}/${exerciseId}`);
+      const parts = [subjectId, moduleId, exerciseId].filter(Boolean);
+      history.replaceState(null, '', `#${parts.join('/')}`);
    }
 
    /**
@@ -350,6 +368,69 @@ ${marked.parse(currentReadme)}
     */
    function clearHash() {
       history.replaceState(null, '', location.pathname + location.search);
+   }
+
+   /**
+    * Bouwt de localStorage-sleutel voor de editorinhoud van een oefening.
+    *
+    * @param {string} subjectId
+    * @param {string} moduleId
+    * @param {string} exerciseId
+    * @param {string} type - 'html', 'css' of 'js'
+    * @returns {string}
+    */
+   function codeKey(subjectId, moduleId, exerciseId, type) {
+      return `${LS_CODE_PREFIX}/${subjectId}/${moduleId}/${exerciseId}/${type}`;
+   }
+
+   /**
+    * Slaat de huidige editorinhoud op in localStorage.
+    */
+   function saveCode() {
+      const subjectId  = selectSubject.value;
+      const moduleId   = selectModule.value;
+      const exerciseId = selectExercise.value;
+      if (!subjectId || !moduleId || !exerciseId) return;
+      localStorage.setItem(codeKey(subjectId, moduleId, exerciseId, 'html'), editors.html.getValue());
+      localStorage.setItem(codeKey(subjectId, moduleId, exerciseId, 'css'), editors.css.getValue());
+      localStorage.setItem(codeKey(subjectId, moduleId, exerciseId, 'js'), editors.js.getValue());
+   }
+
+   /**
+    * Toont een dialoogvenster en vraagt of de bewaarde versie geladen moet worden.
+    * Geeft true terug voor "bewaarde versie", false voor "startcode".
+    *
+    * @returns {Promise<boolean>}
+    */
+   function confirmRestore() {
+      return new Promise(function (resolve) {
+         modalConfirm.setAttribute('aria-hidden', 'false');
+
+         function finish(useSaved) {
+            modalConfirm.setAttribute('aria-hidden', 'true');
+            btnConfirmBewaarde.removeEventListener('click', onBewaarde);
+            btnConfirmStartcode.removeEventListener('click', onStartcode);
+            modalConfirmBackdrop.removeEventListener('click', onBackdrop);
+            resolve(useSaved);
+         }
+
+         function onBewaarde() { finish(true); }
+         function onStartcode() { finish(false); }
+         function onBackdrop() { finish(true); }
+
+         btnConfirmBewaarde.addEventListener('click', onBewaarde);
+         btnConfirmStartcode.addEventListener('click', onStartcode);
+         modalConfirmBackdrop.addEventListener('click', onBackdrop);
+      });
+   }
+
+   /**
+    * Plant een debounced opslaan in (1s na de laatste wijziging).
+    */
+   function scheduleSave() {
+      if (isLoading) return;
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(saveCode, 1000);
    }
 
    /**
@@ -414,10 +495,14 @@ ${marked.parse(currentReadme)}
       currentReadme = '';
 
       const subjectId = selectSubject.value;
-      if (!subjectId) return;
+      if (!subjectId) {
+         clearHash();
+         return;
+      }
       localStorage.setItem(LS_SUBJECT, subjectId);
       localStorage.removeItem(LS_MODULE);
       localStorage.removeItem(LS_EXERCISE);
+      setHash(subjectId);
       populateModules(subjectId);
    }
 
@@ -433,6 +518,7 @@ ${marked.parse(currentReadme)}
       if (!subjectId || !moduleId) return;
       localStorage.setItem(LS_MODULE, moduleId);
       localStorage.removeItem(LS_EXERCISE);
+      setHash(subjectId, moduleId);
       populateExercises(subjectId, moduleId);
    }
 
@@ -448,7 +534,7 @@ ${marked.parse(currentReadme)}
       }
       localStorage.setItem(LS_EXERCISE, exerciseId);
       setHash(subjectId, moduleId, exerciseId);
-      loadExercise(subjectId, moduleId, exerciseId);
+      loadExercise(subjectId, moduleId, exerciseId, true);
    }
 
    function handleBtnReadmeClick() {
@@ -480,6 +566,10 @@ ${marked.parse(currentReadme)}
       editors = editorInstances;
 
       // event bindings
+      editors.html.onDidChangeModelContent(scheduleSave);
+      editors.css.onDidChangeModelContent(scheduleSave);
+      editors.js.onDidChangeModelContent(scheduleSave);
+
       brand.addEventListener('click', handleBrandClick);
       selectSubject.addEventListener('change', handleSubjectChange);
       selectModule.addEventListener('change', handleModuleChange);
