@@ -1,0 +1,23 @@
+## Opdracht
+
+We bouwen een **productbeoordelaar**: je kan een aantal sterren selecteren en een bericht ingeven; bij verzenden verschijnt de beoordeling onderaan.
+
+1. Declareeer constanten voor het aantal sterren (5) en een minimum berichtlengte (10)
+2. Declareer een variabele `geselecteerdeSter` voor het nummer van de geselecteerde ster (0 = niet geselecteerd, 5 = laatste geselecteerd)
+3. Declareer constanten voor alle nodige DOM-elementen: alle sterren, de verzendknop, het tekstvak, de paragraaf met de foutmelding, en de div met de uitvoer.
+4. Valideer het commentaarveld bij elke toetsaanslag: verwijder cijfers met `.replace(/[0-9]/g, '')`.
+5. Koppel aan alle sterren een klik event: 
+   - bepaal de waarde van de geselecteerde ster (1 tot 5), en sla die op in de variabele `geselecteerdeSter`
+   - highlight de sterren: voeg de class `actief` toe aan elke ster tot en met de waarde, en verwijder het bij de rest
+6. Bij klik op *Versturen*:
+   - wis de melding onder de textarea
+   - pas eenvoudige validatie toe:
+      - als er geen ster geselecteerd is: toon `'Kies een beoordeling.'` in de melding
+      - als het commentaar minder dan 10 tekens bevat: toon `'Schrijf minstens 10 tekens.'` in de melding
+   - als alles geldig is: toon de samenvatting in de uitvoer `div`
+      - maak bij voorkeur gebruik van een functie `maakSamenvattingHtml(waarde, commentaar)`
+      - als het tekenen van de sterren te moeilijk is, vervang het dan door een tekst, b.v. `4 sterren`
+
+## Screenshot
+
+<img src="img/screenshot.png" alt="" width="400">
