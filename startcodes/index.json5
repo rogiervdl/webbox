@@ -326,7 +326,7 @@
                label: "Herhaling",
                exercises: [
                   {
-                     id: "01-herhaling",
+                     id: "herhaling-1",
                      label: "Herhaling 1: DOM HTML",
                      startfiles: [ "html", "js", "css", "md" ],
                      collapsed: [ "css" ]
