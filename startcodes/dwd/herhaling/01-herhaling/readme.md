@@ -1,5 +1,7 @@
 ## Opdracht
 
+Dit is een oefening op events, validatie, DOM HTML manipulatie, target/this... zie [https://rogiervdl.github.io/JS-course/02_domhtml.html](https://rogiervdl.github.io/JS-course/02_domhtml.html).
+
 We bouwen een **productbeoordelaar**: je kan een aantal sterren selecteren en een bericht ingeven; bij verzenden verschijnt de beoordeling onderaan.
 
 1. Declareeer constanten voor het aantal sterren (5) en een minimum berichtlengte (10)
