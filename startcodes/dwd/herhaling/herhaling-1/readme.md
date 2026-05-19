@@ -15,7 +15,6 @@ We bouwen een **productbeoordelaar**: je kan een aantal sterren selecteren en ee
 5. Bij klik op *Versturen*:
    - wis de melding onder de textarea
    - pas eenvoudige validatie toe:
-      - als er geen ster geselecteerd is: toon `'Kies een beoordeling.'` in de melding
       - als het commentaar minder dan 10 tekens bevat: toon `'Schrijf minstens 10 tekens.'` in de melding
    - als alles geldig is: toon de samenvatting in de uitvoer `div`
       - maak bij voorkeur gebruik van een functie `maakSamenvattingHtml(waarde, commentaar)`

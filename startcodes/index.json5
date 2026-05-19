@@ -331,6 +331,18 @@
                      startfiles: [ "html", "js", "css", "md" ],
                      collapsed: [ "css" ]
                   },
+                  {
+                     id: "herhaling-2",
+                     label: "Herhaling 2: DOM CSS",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "herhaling-3",
+                     label: "Herhaling 3: API's",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
                ]
             }
          ],

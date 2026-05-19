@@ -60,7 +60,8 @@
    transition: background 0.15s, opacity 0.15s;
    white-space: nowrap;
 
-   &:active {
+   &:active,
+   &.is-pressed {
       opacity: 0.8;
    }
 

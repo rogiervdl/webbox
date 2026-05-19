@@ -82,6 +82,30 @@ window.addEventListener('error',function(e){_s('error',[e.message])});
       liveDebounceTimer = setTimeout(run, 500);
    }
 
+   function removeButtonPress() {
+      btnRun.classList.remove('is-pressed');
+   }
+
+   function runFromEditor() {
+      btnRun.classList.add('is-pressed');
+      run();
+      setTimeout(removeButtonPress, 150);
+   }
+
+   function handleDocumentKeydown(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+         e.preventDefault();
+         btnRun.classList.add('is-pressed');
+      }
+   }
+
+   function handleDocumentKeyup(e) {
+      if (!btnRun.classList.contains('is-pressed')) return;
+      if (e.key !== 's' && e.key !== 'Control' && e.key !== 'Meta') return;
+      btnRun.classList.remove('is-pressed');
+      run();
+   }
+
    /**
     * Initialiseert de preview-module met de Monaco-editors.
     *
@@ -92,8 +116,11 @@ window.addEventListener('error',function(e){_s('error',[e.message])});
 
       // event bindings
       btnRun.addEventListener('click', run);
+      document.addEventListener('keydown', handleDocumentKeydown);
+      document.addEventListener('keyup', handleDocumentKeyup);
       Object.values(editors).forEach(function (editor) {
          editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, run);
+         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, runFromEditor);
          editor.onDidChangeModelContent(onEditorChange);
       });
    }
