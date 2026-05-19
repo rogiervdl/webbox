@@ -7,9 +7,8 @@ const API_KEY = 'b3f7a2d9e4c8b1f5a6d3e9c2b7f4a1d8';
 
 // DOM
 const btnZoek = document.querySelector('#btn-zoek');
-const divUitvoer = document.querySelector('#uitvoer');
 const inpZoek = document.querySelector('#inp-zoek');
-const parMelding = document.querySelector('#melding');
+const divUitvoer = document.querySelector('#uitvoer');
 
 // FUNCTIES
 // ========
@@ -32,13 +31,12 @@ async function fetchEersteBoek(zoekterm) {
 // event handlers
 function handleBtnZoekClick() {
    // wis vorige resultaten
-   parMelding.textContent = '';
    divUitvoer.innerHTML = '';
 
    // haal boeken op en toon eerste resultaat of melding
    const boeken = await fetchEersteBoek(inpZoek.value);
    if (boek == null) {
-      parMelding.textContent = 'Boek niet gevonden.';
+      divUitvoer.textContent = 'Boek niet gevonden.';
    } else {
       divUitvoer.innerHTML = `<p><strong>${boek.titel}</strong><br>${boek.auteur}</p>`;
    }
