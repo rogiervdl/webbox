@@ -19,6 +19,10 @@ We bouwen een **productbeoordelaar**: je kan een aantal sterren selecteren en ee
       - maak bij voorkeur gebruik van een functie `maakSamenvattingHtml(waarde, commentaar)`
       - als het tekenen van de sterren te moeilijk is, vervang het dan door een tekst, b.v. `4 sterren`
 
+## Tips
+
+Probeer zoveel mogelijk uit te voeren, ook als bepaalde onderdelen niet lukken. Zorg dat je declaraties correct zijn. Koppel alvast de functies aan events, maar laat de body nog leeg. Zet stukken code die niet werken in commentaar. Zorg ervoor dat je code de juiste opbouw heeft en voorzie het van commentaar. 
+
 ## Screenshot
 
 <img src="img/screenshot.png" alt="" width="400">
