@@ -5,11 +5,12 @@ We bouwen een **productbeoordelaar**: je kan een aantal sterren selecteren en ee
 1. Declareeer constanten voor het aantal sterren (5) en een minimum berichtlengte (10)
 2. Declareer een variabele `geselecteerdeSter` voor het nummer van de geselecteerde ster (0 = niet geselecteerd, 5 = laatste geselecteerd)
 3. Declareer constanten voor alle nodige DOM-elementen: alle sterren, de verzendknop, het tekstvak, de paragraaf met de foutmelding, en de div met de uitvoer.
-4. Valideer het commentaarveld bij elke toetsaanslag: verwijder cijfers met `.replace(/[0-9]/g, '')`.
-5. Koppel aan alle sterren een klik event: 
-   - bepaal de waarde van de geselecteerde ster (1 tot 5), en sla die op in de variabele `geselecteerdeSter`
+4. Koppel aan alle sterren een klik event: 
+   - bewaar de waarde van de geselecteerde ster (1 tot 5)
+      - de waarde kan je uit de id halen met `parseInt(id.split('-')[1]);`
+      - sla die op in de variabele `geselecteerdeSter`
    - highlight de sterren: voeg de class `actief` toe aan elke ster tot en met de waarde, en verwijder het bij de rest
-6. Bij klik op *Versturen*:
+5. Bij klik op *Versturen*:
    - wis de melding onder de textarea
    - pas eenvoudige validatie toe:
       - als er geen ster geselecteerd is: toon `'Kies een beoordeling.'` in de melding

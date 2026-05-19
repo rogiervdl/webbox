@@ -25,18 +25,6 @@ const txtCommentaar = document.querySelector('textarea');
 // ========
 
 /**
- * Highlight sterren t.e.m. de gegeven waarde.
- *
- * @param {number} waarde - de geselecteerde sterwaarde (1–5)
- */
-function highlightSterren(waarde) {
-   // voeg class 'actief' toe aan sterren t.e.m. waarde, verwijder bij de rest
-   sterren.forEach(ster => {
-      ster.classList.toggle('actief', ster.dataset.waarde <= waarde);
-   });
-}
-
-/**
  * Bouwt de HTML-samenvatting op voor de beoordeling.
  *
  * @param {number} waarde - de sterwaarde (1–5)
@@ -55,18 +43,17 @@ function maakSamenvattingHtml(waarde, commentaar) {
 
 // event handlers
 
-function handleTxtCommentaarInput() {
-   // verwijder eventuele cijfers uit het commentaarveld
-   txtCommentaar.value = txtCommentaar.value.replace(/[0-9]/g, '');
-}
-
 function handleSterClick(e) {
    // lees de waarde van de geklikte ster en sla op
-   geselecteerdeSter = Number(e.target.dataset.waarde);
+   geselecteerdeSter = parseInt(e.target.id.split('-')[1]);
 
    // wis de eventuele foutmelding en highlight de sterren
-   parMeldingSter.textContent = '';
-   highlightSterren(geselecteerdeSter);
+   parMelding.textContent = '';
+
+   // voeg class 'actief' toe aan sterren t.e.m. waarde, verwijder bij de rest
+   sterren.forEach(ster => {
+      ster.classList.toggle('actief', ster.id.split('-')[1] <= geselecteerdeSter);
+   });
 }
 
 function handleBtnVerstuurClick() {
@@ -96,10 +83,8 @@ function handleBtnVerstuurClick() {
 // EVENTS
 // ======
 
-// koppel click-event aan elke ster
+// koppel events
 sterren.forEach(ster => {
    ster.addEventListener('click', handleSterClick);
 });
-
 btnVerstuur.addEventListener('click', handleBtnVerstuurClick);
-txtCommentaar.addEventListener('input', handleTxtCommentaarInput);
