@@ -22,7 +22,7 @@ return typeof x==='object'?JSON.stringify(x,null,2):String(x)}catch(e){return St
 })},'*')}catch(e){}};
 ['log','warn','error','info'].forEach(function(m){
 var o=console[m];console[m]=function(){o.apply(console,arguments);_s(m,arguments)};});
-window.addEventListener('error',function(e){_s('error',[e.message])});
+window.addEventListener('error',function(e){var loc=e.filename?' ('+e.lineno+':'+e.colno+')':'';_s('error',[e.message+loc])});
 })()<\/script>`;
 
    /**
