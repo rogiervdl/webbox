@@ -28,8 +28,10 @@ body {
 }
 
 #balk {
+   background-color: rgb(184, 20, 0);
    height: 100%;
    transition: background-color 0.4s, width 0.4s;
+   width: 10%;
 }
 
 /* bedrag */
@@ -74,12 +76,9 @@ body {
 }
 
 .optie__knop:disabled {
+   background-color: #7f8c8d;
    cursor: default;
    opacity: 0.5;
-}
-
-.optie__knop.gebruikt {
-   background-color: #7f8c8d;
 }
 
 .optie__inhoud {
@@ -104,10 +103,10 @@ body {
    min-height: 1.5rem;
 }
 
-#melding.gewonnen {
+#melding.groen {
    color: #27ae60;
 }
 
-#melding.verloren {
+#melding.rood {
    color: #c0392b;
 }

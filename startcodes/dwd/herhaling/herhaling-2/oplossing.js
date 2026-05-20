@@ -1,9 +1,3 @@
-/*
- * Herhaling 2: factorspel — modeloplossing
- *
- * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
- */
-
 // DECLARATIES
 // ===========
 
@@ -23,59 +17,22 @@ const spnBedrag = document.querySelector('#bedrag');
 // FUNCTIES
 // ========
 
-/**
- * Berekent de HSL-kleur op basis van het bedrag (rood → geel → groen).
- *
- * @param {number} waarde - het huidig bedrag (0–1000)
- * @returns {string} CSS HSL-kleurstring
- */
-function berekenKleur(waarde) {
-   // hue loopt van 0 (rood) naar 120 (groen) naargelang de waarde
-   const hue = Math.round((Math.min(waarde, DOELBEDRAG) / DOELBEDRAG) * 120);
-   return `hsl(${hue}, 70%, 40%)`;
+// Berekent de RGB-kleur op basis van het bedrag (0 = rood → 1000 = groen).
+function berekenRgbKleur(waarde) {
+   const verhouding = Math.min(waarde, DOELBEDRAG) / DOELBEDRAG;
+   const r = Math.round(255 * (1 - verhouding) * 0.8);
+   const g = Math.round(255 * verhouding * 0.8);
+   return `rgb(${r}, ${g}, 0)`;
 }
 
-/**
- * Werkt de breedte en kleur van de voortgangsbalk bij.
- *
- * @param {number} waarde - het huidig bedrag
- */
-function werkBalkBij(waarde) {
-   // breedte: percentage van het doelbedrag, max 100%
-   const breedte = Math.round((Math.min(waarde, DOELBEDRAG) / DOELBEDRAG) * 100);
-   divBalk.style.width = `${breedte}%`;
-   divBalk.style.backgroundColor = berekenKleur(waarde);
-}
-
-/**
- * Beëindigt het spel met een bericht en schakelt alle knoppen uit.
- *
- * @param {string} bericht - het te tonen eindresultaat
- * @param {string} klasse - CSS-klasse 'gewonnen' of 'verloren'
- */
-function beeindigSpel(bericht, klasse) {
-   // toon melding met bijbehorende klasse
-   parMelding.textContent = bericht;
-   parMelding.className = klasse;
-
-   // schakel alle resterende knoppen uit
-   knoppen.forEach(knop => {
-      knop.disabled = true;
-   });
-}
-
-/**
- * Activeert een optieknop: opent het paneel, past het bedrag aan en
- * controleert of het spel gewonnen of verloren is.
- *
- * @param {HTMLButtonElement} knop - de te activeren knop
- */
-function activeerKnop(knop) {
-   // negeer al gebruikte knoppen
-   if (knop.disabled) return;
+// knop event handler
+function handleKnopClick(e) {
+   // aangeklikte knop
+   const knop = e.target;
 
    // open het bijbehorende paneel
-   const paneel = document.querySelector(`#${knop.dataset.target}`);
+   const id = knop.dataset.target;
+   const paneel = document.querySelector(`#${id}`);
    paneel.classList.add('open');
 
    // markeer de knop als gebruikt
@@ -87,27 +44,20 @@ function activeerKnop(knop) {
 
    // werk de weergave bij
    spnBedrag.textContent = `€ ${bedrag}`;
-   werkBalkBij(bedrag);
+   const breedte = Math.round((Math.min(bedrag, DOELBEDRAG) / DOELBEDRAG) * 100);
+   divBalk.style.width = `${breedte}%`;
+   divBalk.style.backgroundColor = berekenRgbKleur(bedrag);
 
    // controleer win- of verliesconditie
-   if (bedrag >= DOELBEDRAG) {
-      beeindigSpel('Gewonnen!', 'gewonnen');
-   } else if (bedrag === 0) {
-      beeindigSpel('Verloren!', 'verloren');
-   }
-}
+   if (bedrag >= DOELBEDRAG || bedrag === 0) {
+      // toon melding
+      parMelding.textContent = bedrag === 0 ? 'Verloren!' : 'Gewonnen!';
+      parMelding.className = bedrag === 0 ? 'rood' : 'groen';
 
-// event handlers
-
-function handleKnopClick(e) {
-   activeerKnop(e.currentTarget);
-}
-
-function handleDocumentKeydown(e) {
-   // activeer de knop op index 0–4 bij cijfertoetsen 1–5
-   const index = parseInt(e.key) - 1;
-   if (index >= 0 && index < knoppen.length) {
-      activeerKnop(knoppen[index]);
+      // schakel alle knoppen uit
+      knoppen.forEach(knop => {
+         knop.disabled = true;
+      });
    }
 }
 
@@ -118,8 +68,3 @@ function handleDocumentKeydown(e) {
 knoppen.forEach(knop => {
    knop.addEventListener('click', handleKnopClick);
 });
-
-document.addEventListener('keydown', handleDocumentKeydown);
-
-// initialiseer de voortgangsbalk
-werkBalkBij(bedrag);

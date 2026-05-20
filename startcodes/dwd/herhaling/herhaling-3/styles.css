@@ -16,8 +16,6 @@ body {
    padding: 8px;
 }
 
-/* klassen */
-
 .zoek-rij {
    display: flex;
    gap: 0.5rem;
@@ -25,26 +23,9 @@ body {
 }
 
 .zoek-rij input {
+   border-radius: 3px;
    flex: 1;
-}
-
-/* ids */
-
-#auteurs {
-   columns: 2;
-   margin-bottom: 1.5rem;
-   max-width: 420px;
-}
-
-#auteurs ul {
-   margin: 0;
-   padding-left: 1.2rem;
-}
-
-#melding {
-   color: #c00;
-   font-size: 0.85em;
-   min-height: 1.5em;
+   padding: 5px;
 }
 
 #uitvoer {

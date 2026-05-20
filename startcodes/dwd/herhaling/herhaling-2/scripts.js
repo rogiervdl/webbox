@@ -1,22 +1,8 @@
-/*
- * Herhaling 2: factorspel — modeloplossing
- */
-
-// DECLARATIES
-// ===========
-
-
-// FUNCTIES
-// ========
-
-// Berekent de HSL-kleur op basis van het bedrag (0 = rood → 1000 = groen).
-function berekenKleur(waarde) {
-   const hue = Math.round((Math.min(waarde, DOELBEDRAG) / DOELBEDRAG) * 120);
-   return `hsl(${hue}, 70%, 40%)`;
+// Berekent de RGB-kleur op basis van het bedrag (0 = rood → 1000 = groen).
+function berekenRgbKleur(waarde) {
+   const verhouding = Math.min(waarde, DOELBEDRAG) / DOELBEDRAG;
+   const r = Math.round(255 * (1 - verhouding) * 0.8);
+   const g = Math.round(255 * verhouding * 0.8);
+   return `rgb(${r}, ${g}, 0)`;
 }
-
-// event handlers
-
-// EVENTS
-// ======
 
