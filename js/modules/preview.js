@@ -22,7 +22,7 @@ return typeof x==='object'?JSON.stringify(x,null,2):String(x)}catch(e){return St
 })},'*')}catch(e){}};
 ['log','warn','error','info'].forEach(function(m){
 var o=console[m];console[m]=function(){o.apply(console,arguments);_s(m,arguments)};});
-window.addEventListener('error',function(e){var loc=e.filename?' ('+e.lineno+':'+e.colno+')':'';_s('error',[e.message+loc])});
+window.addEventListener('error',function(e){var off=window.__webboxJsOffset||0;var loc=e.lineno?' ('+(e.lineno-off)+':'+e.colno+')':'';_s('error',[e.message+loc])});
 })()<\/script>`;
 
    /**
@@ -34,29 +34,38 @@ window.addEventListener('error',function(e){var loc=e.filename?' ('+e.lineno+':'
     * @returns {string} Volledige HTML klaar voor srcdoc
     */
    function injectAssets(html, css, js) {
-      const styleTag  = css.trim() ? `<style>\n${css}\n</style>`   : '';
-      const scriptTag = js.trim()  ? `<script>\n${js}\n<\/script>` : '';
-      const baseTag   = baseUrl    ? `<base href="${baseUrl}">`     : '';
+      const styleTag = css.trim() ? `<style>\n${css}\n</style>` : '';
+      const baseTag  = baseUrl    ? `<base href="${baseUrl}">`  : '';
 
       let result = html;
 
+      // inject CONSOLE_BRIDGE and optional base tag after <head>
       if (/(<head[^>]*>)/i.test(result)) {
          result = result.replace(/(<head[^>]*>)/i, `$1\n${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}`);
       } else {
          result = `${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}\n${result}`;
       }
 
+      // inject CSS and base style before </head>
       if (/(<\/head>)/i.test(result)) {
          result = result.replace(/(<\/head>)/i, `${styleTag ? styleTag + '\n' : ''}${BASE_STYLE}\n$1`);
       } else {
          result = `${styleTag ? styleTag + '\n' : ''}${BASE_STYLE}\n${result}`;
       }
 
-      if (scriptTag) {
-         if (/(<\/body>)/i.test(result)) {
-            result = result.replace(/(<\/body>)/i, `${scriptTag}\n$1`);
+      // inject JS with a line-offset variable so error line numbers match the editor
+      if (js.trim()) {
+         const bodyCloseIndex = result.search(/<\/body>/i);
+         const jsLineOffset = bodyCloseIndex !== -1
+            ? result.substring(0, bodyCloseIndex).split('\n').length + 1
+            : result.split('\n').length + 2;
+         const offsetTag = `<script>window.__webboxJsOffset=${jsLineOffset};<\/script>`;
+         const scriptTag = `<script>\n${js}\n<\/script>`;
+
+         if (bodyCloseIndex !== -1) {
+            result = result.replace(/(<\/body>)/i, `${offsetTag}\n${scriptTag}\n$1`);
          } else {
-            result = `${result}\n${scriptTag}`;
+            result = `${result}\n${offsetTag}\n${scriptTag}`;
          }
       }
 
