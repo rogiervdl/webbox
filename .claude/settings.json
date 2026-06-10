@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/rogie/.claude/skills/js-base/**)",
+      "Edit(~/.claude/skills/js-base/**)",
+      "Read(//c/Users/rogie/.claude/**)",
+      "Read(//c/Users/rogie/AppData/Roaming/**)",
+      "Edit(~/.claude/skills/dwd-course/**)"
+    ]
+  }
+}
