@@ -1,0 +1,48 @@
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: "Open Sans", system-ui, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 8px;
+}
+
+.ex3-menu {
+   display: flex;
+   flex-direction: row;
+   gap: 0.5rem;
+   list-style: none;
+   padding: 0;
+}
+
+.ex3-menu a {
+   background-color: #e8edf4;
+   border: 1px solid #b8c5d6;
+   border-radius: 8px;
+   color: #1e293b;
+   display: inline-block;
+   padding: 0.45rem 1rem;
+   text-decoration: none;
+}
+
+.ex3-menu a:hover {
+   background-color: #dce6f2;
+}
+
+.ex3-menu li.selected a {
+   background-color: #bfdbfe;
+   border-color: #2563eb;
+   box-shadow: 0 1px 3px rgba(37 99 235 / 35%);
+   color: #1e3a8a;
+   font-weight: 600;
+}
+
+.message {
+   font-size: smaller;
+   padding: 5px 10px;
+}
+
+.message span {
+   font-style: italic;
+}

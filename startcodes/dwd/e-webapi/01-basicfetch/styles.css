@@ -1,0 +1,64 @@
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: "Open Sans", system-ui, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 8px;
+}
+
+.button {
+   background-color: #6c757d;
+   border-radius: 8px;
+   color: white;
+   cursor: pointer;
+   font-size: 14px;
+   padding: 8px 14px;
+   text-transform: uppercase;
+}
+
+.message {
+   font-size: smaller;
+   font-style: italic;
+   margin-left: 1em;
+}
+
+.sidekick {
+   border-left: 0.2em solid #039be5;
+   font-family: 'Roboto', serif;
+   font-size: 24px;
+   font-weight: 100;
+   line-height: 1.5em;
+   padding-left: 1em;
+   position: relative;
+}
+
+.sidekick cite {
+   font-size: 50%;
+   text-align: center;
+   top: 50%;
+}
+
+.sidekick cite::before {
+   content: ' \2015 ';
+}
+
+.sidekick span {
+   color: #039be5;
+}
+
+.sidekick span::before,
+.sidekick span::after {
+   color: #039be5;
+   font-family: Calibri;
+   font-size: 34px;
+}
+
+.sidekick span::before {
+   content: '\201c';
+}
+
+.sidekick span::after {
+   content: '\201e';
+}

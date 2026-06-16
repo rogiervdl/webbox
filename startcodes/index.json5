@@ -1,3 +1,380 @@
 {
-   subjects: [],
+   subjects: [
+      {
+         id: "dwd",
+         label: "DWD",
+         modules: [
+            {
+               id: "a-syntax", 
+               label: "A.Syntax", 
+               exercises: [
+                  { 
+                     id: "01-consolemeldingen", 
+                     label: "01. meldingen", 
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ] 
+                  },
+                  { 
+                     id: "02-consoleopmaak", 
+                     label: "02. console opmaak", 
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ] 
+                  },
+                  {
+                     id: "03-variabelen",
+                     label: "03. variabelen",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "04-interpolatie",
+                     label: "04. string interpolatie",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "05-multiline",
+                     label: "05. multiline strings",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "06-speciaal",
+                     label: "06. speciale tekens",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "07-arrays",
+                     label: "07. arrays",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "08-objecten",
+                     label: "08. objecten",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "09-datatypes",
+                     label: "09. datatypes",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "10-conversie",
+                     label: "10. type conversie",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "11-stringmethodes",
+                     label: "11. string methodes",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "12-arraymethodes",
+                     label: "12. array methodes",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "13-selecties",
+                     label: "13. selecties",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "14-iteraties",
+                     label: "14. iteraties",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "15-for",
+                     label: "15. for loops",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "16-functies",
+                     label: "16. functies",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "17-math",
+                     label: "17. Math object",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "18-spread",
+                     label: "18. spread operator",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ]
+                  },
+                  {
+                     id: "19-herhaling",
+                     label: "19. herhaling",
+                     startfiles: [ "html", "js", "md" ],
+                     collapsed: [ "html", "css" ],
+                     hidden: true
+                  }
+               ],
+            },
+            {
+               id: "b-domhtml", 
+               label: "B.DOM HTML", 
+               exercises: [
+                  {
+                     id: "01-querySelector",
+                     label: "01. querySelector",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "02-querySelectorall",
+                     label: "02. querySelectorAll",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "03-addEventListener",
+                     label: "03. addEventListener",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "04-innerHTML",
+                     label: "04. innerHTML en innerText",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "05-HTMLattributen",
+                     label: "05. HTML-attributen",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "06-validatie",
+                     label: "06. validatie tekstinvoer",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "07-etarget",
+                     label: "07. e.target",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "08-preventDefault",
+                     label: "08. e.preventDefault",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "09-eventbubbling",
+                     label: "09. event bubbling",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "10-formvalidatie",
+                     label: "10. formvalidatie",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "11-herhaling",
+                     label: "11. herhaling",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ],
+                     hidden: true
+                  },
+               ]
+            },
+            {
+               id: "c-domcss",
+               label: "C.DOM CSS",
+               exercises: [
+                  {
+                     id: "01-styleproperty",
+                     label: "01. style property",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "02-classlist",
+                     label: "02. classList",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "03-etarget-this",
+                     label: "03. e.target en this",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "04-dataset",
+                     label: "04. dataset",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "05-rekeningnummer",
+                     label: "05. rekeningnummer validator",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "06-herhaling",
+                     label: "06. herhaling",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ],
+                     hidden: true
+                  },
+               ]
+            },
+            {
+               id: "d-games",
+               label: "D.Games",
+               exercises: [
+                  {
+                     id: "01-clipboard",
+                     label: "01. clipboard",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "02-localstorage",
+                     label: "02. localStorage",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "03-localstorage-json",
+                     label: "03. localStorage met JSON",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "04-webcam",
+                     label: "04. webcam en canvas",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "05-webspeech",
+                     label: "05. web speech",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "06-requestanimationframe",
+                     label: "06. requestAnimationFrame",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "07-herhaling",
+                     label: "07. herhaling",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ],
+                     hidden: true
+                  },
+               ]
+            },
+            {
+               id: "e-webapi",
+               label: "E.Web API's",
+               exercises: [
+                  {
+                     id: "01-basicfetch",
+                     label: "01. basic fetch",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "02-urlsearchparams",
+                     label: "02. URLSearchParams en API key",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "03-bearer-token",
+                     label: "03. Bearer token",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "04-herhaling",
+                     label: "04. herhaling",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ],
+                     hidden: true
+                  },
+               ]
+            },
+            {
+               id: "herhaling",
+               label: "Herhaling",
+               exercises: [
+                  {
+                     id: "herhaling-1",
+                     label: "Herhaling 1: DOM HTML",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "herhaling-2",
+                     label: "Herhaling 2: DOM CSS",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "herhaling-3",
+                     label: "Herhaling 3: API's",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+               ]
+            }
+         ],
+      },
+      {
+         id: "wdf",
+         label: "WDF",
+         modules: [
+            {
+               id: "a-html", 
+               label: "A.HTML", 
+               exercises: []
+            },
+            {
+               id: "b-cssdesign", 
+               label: "B.CSS Design", 
+               exercises: [
+               ]
+            },
+            {
+               id: "c-csslayout", 
+               label: "C.CSS layout", 
+               exercises: [
+               ]
+            },
+            {
+               id: "d-responsive", 
+               label: "D.Responsive", 
+               exercises: [
+               ]
+            }
+         ]
+      },
+   ],
 }
