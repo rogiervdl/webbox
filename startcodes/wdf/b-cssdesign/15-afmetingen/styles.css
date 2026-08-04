@@ -1,0 +1,33 @@
+/* basis */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fafafa;
+	color: #222;
+	font-family: system-ui, sans-serif;
+	margin: 0;
+	padding: 12px;
+}
+
+.demo {
+	background-color: #f9fafb;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	padding: 12px;
+}
+
+
+/* afmetingen: height/width/min/max */
+
+#ex15 .demo {
+	.panel {
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+		padding: 12px;
+		/* ...*/
+	}
+}

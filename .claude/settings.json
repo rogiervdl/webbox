@@ -5,7 +5,17 @@
       "Edit(~/.claude/skills/js-base/**)",
       "Read(//c/Users/rogie/.claude/**)",
       "Read(//c/Users/rogie/AppData/Roaming/**)",
-      "Edit(~/.claude/skills/dwd-course/**)"
+      "Edit(~/.claude/skills/dwd-course/**)",
+      "Bash(echo \"=== DesignOefenblad ===\" && ls -R \"C:/Users/rogie/Desktop/Odisee/Odisee-WDF/oefeningen/B.css design/DesignOefenblad\" | head -100)",
+      "Read(//c/Users/rogie/Desktop/Odisee/Odisee-WDF/oefeningen/B.css design/DesignOefenblad/**)",
+      "Bash(echo \"=== DomHtmlOefenblad \\(source ref\\) ===\" && ls -R \"C:/Users/rogie/Desktop/Odisee/Odisee-DWD/oefeningen/2.DomHtml/DomHtmlOefenblad\" | head -60 *)",
+      "Read(//c/Users/rogie/Desktop/Odisee/Odisee-DWD/oefeningen/2.DomHtml/DomHtmlOefenblad/**)",
+      "Bash(cp 'C:/Users/rogie/Desktop/Odisee/Odisee-WDF/oefeningen/B.css design/DesignOefenblad/img/skyline.jpg' c:/Users/rogie/Desktop/myapps/webbox/startcodes/wdf/b-cssdesign/07-achtergrondbeeld/img/)",
+      "Bash(cp 'C:/Users/rogie/Desktop/Odisee/Odisee-WDF/oefeningen/B.css design/DesignOefenblad/img/skyline.jpg' c:/Users/rogie/Desktop/myapps/webbox/startcodes/wdf/b-cssdesign/08-achtergrondpositie/img/)",
+      "Bash(cp 'C:/Users/rogie/Desktop/Odisee/Odisee-WDF/oefeningen/B.css design/DesignOefenblad/img/colorstrip.webp' c:/Users/rogie/Desktop/myapps/webbox/startcodes/wdf/b-cssdesign/09-achtergrondherhaling/img/)",
+      "Bash(cp 'C:/Users/rogie/Desktop/Odisee/Odisee-WDF/oefeningen/B.css design/DesignOefenblad/img/city.jpg' c:/Users/rogie/Desktop/myapps/webbox/startcodes/wdf/b-cssdesign/12-marges/img/)",
+      "Bash(node -e \"const fs=require\\('fs'\\);global.window={};require\\('./vendor/json5.min.js'\\);const JSON5=window.JSON5||global.JSON5||module.exports;const t=fs.readFileSync\\('startcodes/index.json5','utf8'\\);const o=\\(window.JSON5||JSON5\\).parse\\(t\\);const m=o.subjects.find\\(s=>s.id==='wdf'\\).modules.find\\(x=>x.id==='b-cssdesign'\\);console.log\\('OK — b-cssdesign oefeningen:',m.exercises.length\\);console.log\\(m.exercises.map\\(e=>e.id\\).join\\('\\\\n'\\)\\);\")",
+      "Bash(node -e \"const fs=require\\('fs'\\);const J=require\\('./vendor/json5.min.js'\\);const P=\\(J&&J.parse\\)?J:\\(J.default&&J.default.parse?J.default:null\\);const t=fs.readFileSync\\('startcodes/index.json5','utf8'\\);const o=P.parse\\(t\\);const m=o.subjects.find\\(s=>s.id==='wdf'\\).modules.find\\(x=>x.id==='b-cssdesign'\\);console.log\\('OK — b-cssdesign oefeningen:',m.exercises.length,'| ids:',m.exercises.map\\(e=>e.id.slice\\(0,2\\)\\).join\\(','\\)\\);\")"
     ]
   }
 }

@@ -357,9 +357,105 @@
                exercises: []
             },
             {
-               id: "b-cssdesign", 
-               label: "B.CSS Design", 
+               id: "b-cssdesign",
+               label: "B.CSS Design",
                exercises: [
+                  {
+                     id: "01-lettertype",
+                     label: "01. lettertype",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "02-tekststijl",
+                     label: "02. tekststijl",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "03-kleuren",
+                     label: "03. kleuren",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "04-uitlijning",
+                     label: "04. uitlijning",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "05-links",
+                     label: "05. links",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "06-lijsten",
+                     label: "06. lijsten",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "07-achtergrondbeeld",
+                     label: "07. achtergrondbeeld",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "08-achtergrondpositie",
+                     label: "08. achtergrondpositie",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "09-achtergrondherhaling",
+                     label: "09. achtergrondherhaling",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "10-interactiestaten",
+                     label: "10. interactiestaten",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "11-transitie",
+                     label: "11. transitie",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "12-marges",
+                     label: "12. marges en padding",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "13-rand",
+                     label: "13. rand",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "14-afgerondehoeken",
+                     label: "14. afgeronde hoeken",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "15-afmetingen",
+                     label: "15. afmetingen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "16-schaduw",
+                     label: "16. schaduw",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  }
                ]
             },
             {
