@@ -1,0 +1,40 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* drie kolommen */
+
+.stats {
+   height: 200px;
+   /* ...*/
+}
+
+.block {
+   background-color: #fde68a;
+   border-radius: 8px;
+   flex: 1;
+   padding: 14px;
+   text-align: center;
+}
+
+.block.wide {
+   /* ...*/
+}

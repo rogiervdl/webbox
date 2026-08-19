@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML structureren – oefenblad</title>
+	<link rel="stylesheet" href="css/start.css">
+</head>
+
+<body>
+
+	<header id="top" class="page-header" aria-label="Paginakop">
+		<h1>HTML structureren – oefenblad</h1>
+		<p>
+			Bij dit oefenblad werk je in <code>oefening.html</code>. De inhoud staat er al;
+			jij plaatst er enkel de <strong>structuurelementen</strong> rond. Elk element krijgt
+			via CSS een eigen achtergrondkleur, zodat je meteen ziet of je goed structureert.
+		</p>
+	</header>
+
+	<main>
+
+		<!-- THEORIE -->
+		<section class="exercise" id="ex1">
+			<h2>De structuurelementen</h2>
+			<p class="goal">Doel: een pagina semantisch onderverdelen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Met structuurelementen deel je een pagina op in logische delen. De browser en
+					hulpsoftware (zoals schermlezers) begrijpen zo hoe de pagina in elkaar zit.
+				</p>
+				<dl class="dltable">
+					<dt><code>&lt;header&gt;</code></dt>
+					<dd>de paginakop (logo, titel, hoofdmenu) &ndash; één keer, bovenaan de <code>&lt;body&gt;</code></dd>
+					<dt><code>&lt;nav&gt;</code></dt>
+					<dd>het hoofdmenu met de navigatielinks</dd>
+					<dt><code>&lt;main&gt;</code></dt>
+					<dd>de eigenlijke pagina-inhoud &ndash; precies één per pagina</dd>
+					<dt><code>&lt;section&gt;</code></dt>
+					<dd>een afgebakend onderdeel binnen de inhoud, meestal met een eigen titel</dd>
+					<dt><code>&lt;aside&gt;</code></dt>
+					<dd>zijinhoud die niet tot de hoofdlijn hoort (nieuws, tips…), binnen de <code>&lt;main&gt;</code></dd>
+					<dt><code>&lt;footer&gt;</code></dt>
+					<dd>de paginavoet (contact, copyright) &ndash; één keer, onderaan de <code>&lt;body&gt;</code></dd>
+					<dt><code>&lt;div&gt;</code></dt>
+					<dd>hulpelement zonder betekenis, om iets te groeperen (bv. voor layout)</dd>
+					<dt><code>&lt;span&gt;</code></dt>
+					<dd>hulpelement zonder betekenis om een stukje <em>tekst</em> af te bakenen</dd>
+				</dl>
+				<p>
+					<code>&lt;article&gt;</code> gebruik je in dit vak <strong>niet</strong>.
+				</p>
+			</div>
+		</section>
+
+		<!-- OPDRACHT -->
+		<section class="exercise" id="ex2">
+			<h2>Opdracht</h2>
+			<p class="goal">Doel: <code>oefening.html</code> opbouwen tot de onderstaande structuur.</p>
+
+			<div class="info box">
+				<h3>Te bereiken structuur</h3>
+				<pre class="code-block"><code>┌ header ────────────────────┐
+│  Studio Lumen              │
+│  ┌ nav ──────────────────┐ │
+│  │  Home  Werk  Contact  │ │
+│  └───────────────────────┘ │
+└────────────────────────────┘
+┌ main ──────────────────────┐
+│  ┌ section ──────────────┐ │
+│  │  Welkom               │ │
+│  └───────────────────────┘ │
+│  ┌ section ──────────────┐ │
+│  │  Onze diensten        │ │
+│  │  ┌ div ┐  ┌ div ┐     │ │
+│  │  │Brand│  │ Web │     │ │
+│  │  └─────┘  └─────┘     │ │
+│  └───────────────────────┘ │
+│  ┌ aside ────────────────┐ │
+│  │  Nieuws               │ │
+│  └───────────────────────┘ │
+└────────────────────────────┘
+┌ footer ────────────────────┐
+│  contact · © 2026          │
+└────────────────────────────┘</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Stappen</h3>
+				<ol>
+					<li>Zet de titel <em>Studio Lumen</em> en het menu samen in een <code>&lt;header&gt;</code>.</li>
+					<li>Zet het menu (de <code>&lt;ul&gt;</code> met links) in een <code>&lt;nav&gt;</code>.</li>
+					<li>Zet alle inhoud tussen de header en de contactgegevens in één <code>&lt;main&gt;</code>.</li>
+					<li>Zet <em>Welkom</em> en <em>Onze diensten</em> elk in een eigen <code>&lt;section&gt;</code>.</li>
+					<li>Groepeer de twee diensten (Branding en Webdesign) elk in een <code>&lt;div&gt;</code>.</li>
+					<li>Zet <em>Nieuws</em> in een <code>&lt;aside&gt;</code>, binnen de <code>&lt;main&gt;</code>.</li>
+					<li>Zet de contactregel en de copyrightregel samen in een <code>&lt;footer&gt;</code>.</li>
+					<li>Zet in de welkomsttekst de naam <em>Studio Lumen</em> in een <code>&lt;span&gt;</code>.</li>
+					<li>Gebruik nergens <code>&lt;article&gt;</code>.</li>
+				</ol>
+				<p>
+					Klopt je structuur? Dan kleuren alle delen mooi in en staat het juiste labeltje
+					bij elk element.
+				</p>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="page-footer" aria-label="Pagina-voetnoot">
+		<p>HTML oefenblad – structureren. Werk in <code>oefening.html</code>. <a href="#top">Naar boven</a></p>
+	</footer>
+
+</body>
+
+</html>

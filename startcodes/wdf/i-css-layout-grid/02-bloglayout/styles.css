@@ -1,0 +1,43 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* bloglayout */
+
+.blog-layout {
+   /* ...*/
+}
+
+.blog-layout h3 {
+   margin-top: 0;
+}
+
+.blog-layout .sidebar {
+   background-color: #fecaca;
+   border-radius: 8px;
+   padding: 12px;
+}
+
+.blog-layout .content {
+   background-color: #bbf7d0;
+   border-radius: 8px;
+   padding: 12px;
+}

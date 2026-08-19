@@ -1,0 +1,51 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* responsive kolommen */
+
+.two-col-layout .col {
+   background-color: #fff;
+   border-radius: 4px;
+   padding: 10px;
+}
+
+.two-col-layout {
+   background-color: #f3f4f6;
+   border-radius: 6px;
+   padding: 10px;
+
+   /* TODO: te verplaatsen code */
+   display: flex;
+   gap: 20px;
+}
+
+/* TODO: te verplaatsen code */
+.two-col-layout .left {
+   flex: 0 0 240px;
+}
+
+/* TODO: te verplaatsen code */
+.two-col-layout .right {
+   flex: 1 1 0;
+}
+
+/* TODO: vanaf 700px twee kolommen met flexbox */

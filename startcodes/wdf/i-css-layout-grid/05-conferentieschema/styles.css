@@ -1,0 +1,61 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* conferentieschema */
+
+.conference {
+   /* ...*/
+}
+
+.conference :first-child {
+   margin-top: 0;
+}
+
+.conference .hours {
+   background-color: #ddd;
+   border-radius: 6px;
+   font-weight: bold;
+   padding: 12px;
+   text-align: center;
+}
+
+.conference .day {
+   background-color: #fde68a;
+   border-radius: 6px;
+   font-weight: bold;
+   padding: 12px;
+   text-align: center;
+}
+
+.conference .session {
+   background-color: #d1e7ff;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+.conference .break {
+   background-color: #e7ffe0;
+   border-radius: 6px;
+   font-weight: bold;
+   padding: 12px;
+   text-align: center;
+}

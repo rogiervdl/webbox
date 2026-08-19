@@ -1,0 +1,59 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* boekenmuur */
+
+.book-wall {
+   max-width: 900px;
+   /* ...*/
+}
+
+.book-wall .book {
+   background: white;
+   border-radius: 8px;
+   padding: 10px;
+}
+
+.book-wall .book img {
+   border-radius: 6px;
+   display: block;
+   height: auto;
+   max-width: 300px;
+   width: 100%;
+}
+
+.book-wall .book .title {
+   font-size: 1rem;
+   margin: 8px 0 0 0;
+}
+
+.book-wall .book .author,
+.book-wall .book .year {
+   color: #555;
+   font-size: 0.9rem;
+   margin: 4px 0;
+}
+
+.book-wall .book .desc {
+   font-size: 0.9rem;
+   margin-top: 6px;
+}

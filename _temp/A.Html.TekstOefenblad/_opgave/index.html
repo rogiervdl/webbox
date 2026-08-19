@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML tekst, links, tabellen &amp; media – oefenblad</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="css/start.css">
+	<link rel="stylesheet" href="css/oefenblad.css">
+</head>
+
+<body>
+
+	<header id="top" class="page-header" aria-label="Paginakop">
+		<h1>HTML tekst, links, tabellen &amp; media – oefenblad</h1>
+		<p>
+			Schrijf je HTML telkens in de gele schrijfzone onder de opdracht.
+			Open de pagina met <strong>Live Server</strong> om je resultaat te zien,
+			en controleer je code met de <strong>html-validate</strong> extensie.
+		</p>
+	</header>
+
+	<main>
+
+		<!-- =========================================
+			  MODULE B — TEKST
+		========================================= -->
+
+		<!-- PARAGRAFEN -->
+		<section class="exercise" id="ex1">
+			<h2>Paragrafen</h2>
+			<p class="goal">Doel: lopende tekst opdelen in paragrafen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een stuk lopende tekst zet je in een paragraaf met <code>&lt;p&gt;</code>.
+					Gebruik voor elke alinea een nieuwe <code>&lt;p&gt;</code> &ndash;
+					nooit <code>&lt;br&gt;</code> om ruimte te maken tussen alinea's.
+				</p>
+				<pre class="code-block"><code>&lt;p&gt;Dit is de eerste alinea.&lt;/p&gt;
+&lt;p&gt;Dit is de tweede alinea.&lt;/p&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Schrijf twee paragrafen waarin je jezelf kort voorstelt.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- KOPPEN -->
+		<section class="exercise" id="ex2">
+			<h2>Koppen</h2>
+			<p class="goal">Doel: een tekst hiërarchisch onderverdelen met kopniveaus.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					HTML heeft zes kopniveaus, van <code>&lt;h1&gt;</code> (belangrijkst) tot
+					<code>&lt;h6&gt;</code>. Er is <strong>hoogstens één</strong> <code>&lt;h1&gt;</code>
+					per pagina en je mag <strong>geen niveaus overslaan</strong> (na een
+					<code>&lt;h2&gt;</code> komt een <code>&lt;h3&gt;</code>, niet meteen een <code>&lt;h4&gt;</code>).
+				</p>
+				<pre class="code-block"><code>&lt;h1&gt;Mijn kookblog&lt;/h1&gt;
+&lt;h2&gt;Voorgerechten&lt;/h2&gt;
+&lt;h3&gt;Soepen&lt;/h3&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak één <code>&lt;h1&gt;</code>-titel voor een blog naar keuze.</li>
+					<li>Maak daaronder twee <code>&lt;h2&gt;</code>-secties met elk een <code>&lt;h3&gt;</code>-ondertitel.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- LIJSTEN -->
+		<section class="exercise" id="ex3">
+			<h2>Lijsten</h2>
+			<p class="goal">Doel: opsommingen maken met geordende en ongeordende lijsten.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een <em>ongeordende</em> lijst (bolletjes) maak je met <code>&lt;ul&gt;</code>,
+					een <em>geordende</em> lijst (genummerd) met <code>&lt;ol&gt;</code>.
+					Elk item staat in een <code>&lt;li&gt;</code>.
+				</p>
+				<pre class="code-block"><code>&lt;ul&gt;
+   &lt;li&gt;appels&lt;/li&gt;
+   &lt;li&gt;peren&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+   &lt;li&gt;verwarm de oven voor&lt;/li&gt;
+   &lt;li&gt;meng de ingrediënten&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een ongeordende lijst met drie hobby's.</li>
+					<li>Maak een geordende lijst met drie stappen van een recept.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- DEFINITIELIJST -->
+		<section class="exercise" id="ex4">
+			<h2>Definitielijst</h2>
+			<p class="goal">Doel: begrippen koppelen aan hun beschrijving.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een definitielijst <code>&lt;dl&gt;</code> koppelt telkens een term
+					<code>&lt;dt&gt;</code> aan een beschrijving <code>&lt;dd&gt;</code>.
+				</p>
+				<pre class="code-block"><code>&lt;dl&gt;
+   &lt;dt&gt;HTML&lt;/dt&gt;
+   &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+   &lt;dt&gt;CSS&lt;/dt&gt;
+   &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een definitielijst met drie begrippen uit dit vak en hun beschrijving.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- NADRUK -->
+		<section class="exercise" id="ex5">
+			<h2>Nadruk: strong en em</h2>
+			<p class="goal">Doel: een enkel woord benadrukken binnen een zin.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Gebruik <code>&lt;strong&gt;</code> voor een woord dat je <em>luider</em> zou uitspreken
+					(belangrijk) en <code>&lt;em&gt;</code> voor een woord dat je <em>benadrukt</em>.
+					Doe dit op <strong>één of enkele woorden</strong>, nooit op een hele zin.
+					<code>&lt;b&gt;</code>, <code>&lt;i&gt;</code> en <code>&lt;u&gt;</code> gebruik je <strong>nooit</strong>.
+				</p>
+				<pre class="code-block"><code>&lt;p&gt;Vergeet &lt;strong&gt;niet&lt;/strong&gt; je kaart mee te brengen.&lt;/p&gt;
+&lt;p&gt;Ik wil &lt;em&gt;dit&lt;/em&gt; boek, niet dat ene.&lt;/p&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Schrijf een paragraaf waarin je één woord in <code>&lt;strong&gt;</code> zet en één woord in <code>&lt;em&gt;</code>.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- ANDERE INLINE TEKST -->
+		<section class="exercise" id="ex6">
+			<h2>Sub, sup, mark en small</h2>
+			<p class="goal">Doel: bijzondere tekstfragmenten correct markeren.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<ul>
+					<li><code>&lt;sub&gt;</code> &ndash; tekst lager plaatsen, b.v. H<sub>2</sub>O</li>
+					<li><code>&lt;sup&gt;</code> &ndash; tekst hoger plaatsen, b.v. m<sup>2</sup></li>
+					<li><code>&lt;mark&gt;</code> &ndash; tekst markeren (highlighten)</li>
+					<li><code>&lt;small&gt;</code> &ndash; kleine lettertjes zoals copyright (hoogstens één keer per pagina)</li>
+				</ul>
+				<pre class="code-block"><code>&lt;p&gt;Water is H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+&lt;p&gt;De kamer is 20 m&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Dit is &lt;mark&gt;belangrijk&lt;/mark&gt;.&lt;/p&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Schrijf een paragraaf met de formule H<sub>2</sub>O (gebruik <code>&lt;sub&gt;</code>).</li>
+					<li>Schrijf een paragraaf met een oppervlakte in m<sup>2</sup> (gebruik <code>&lt;sup&gt;</code>).</li>
+					<li>Markeer één woord met <code>&lt;mark&gt;</code>.</li>
+					<li>Zet onderaan een copyrightregel in <code>&lt;small&gt;</code>.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- ADRES EN CITAAT -->
+		<section class="exercise" id="ex7">
+			<h2>Adres en citaat</h2>
+			<p class="goal">Doel: contactgegevens en langere citaten semantisch coderen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Contactgegevens zet je in <code>&lt;address&gt;</code>. Een langer citaat zet je in
+					<code>&lt;blockquote&gt;</code>; de titel van een werk of de bron in <code>&lt;cite&gt;</code>.
+				</p>
+				<pre class="code-block"><code>&lt;address&gt;Kerkstraat 1, 9000 Gent&lt;/address&gt;
+
+&lt;blockquote&gt;
+   &lt;p&gt;Design is how it works.&lt;/p&gt;
+   &lt;footer&gt;&lt;cite&gt;Steve Jobs&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Zet een adres van keuze in een <code>&lt;address&gt;</code>.</li>
+					<li>Zet een citaat van keuze in een <code>&lt;blockquote&gt;</code> met de bron in <code>&lt;cite&gt;</code>.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- UITKLAPBARE INHOUD -->
+		<section class="exercise" id="ex8">
+			<h2>Uitklapbare inhoud</h2>
+			<p class="goal">Doel: inhoud tonen en verbergen zonder JavaScript.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Met <code>&lt;details&gt;</code> maak je een uitklapbaar blok. De zichtbare titel
+					zet je in <code>&lt;summary&gt;</code>; de rest verschijnt bij het openklappen.
+				</p>
+				<pre class="code-block"><code>&lt;details&gt;
+   &lt;summary&gt;Lees meer&lt;/summary&gt;
+   &lt;p&gt;Verborgen inhoud die verschijnt bij het openklappen.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een <code>&lt;details&gt;</code>-blok met een <code>&lt;summary&gt;</code> "Lees meer" en een paragraaf inhoud.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- SPECIALE KARAKTERS -->
+		<section class="exercise" id="ex9">
+			<h2>Speciale karakters</h2>
+			<p class="goal">Doel: bijzondere tekens, entities en emoji's correct weergeven.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					De tekens <code>&amp;lt;</code>, <code>&amp;gt;</code> en <code>&amp;amp;</code>
+					gebruik je voor <code>&lt;</code>, <code>&gt;</code> en <code>&amp;</code>, omdat de
+					browser die anders als HTML leest. Andere tekens (é, ©, €, →) en emoji's typ je
+					gewoon letterlijk dankzij UTF-8.
+				</p>
+				<pre class="code-block"><code>&lt;p&gt;5 &amp;lt; 10 &amp;amp; 10 &amp;gt; 5&lt;/p&gt;
+&lt;p&gt;© 2026 — café — 49,95 € — 😀&lt;/p&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Schrijf een paragraaf met de tekst <code>5 &lt; 10 &amp; 10 &gt; 5</code> (met de juiste entities).</li>
+					<li>Schrijf een paragraaf met een copyrightteken ©, een euroteken € en een emoji naar keuze.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- ICON FONTS -->
+		<section class="exercise" id="ex10">
+			<h2>Icon fonts</h2>
+			<p class="goal">Doel: iconen toevoegen met Font Awesome.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Font Awesome is bovenaan deze pagina al gekoppeld. Een icoon voeg je toe met een
+					<code>&lt;span&gt;</code> en de juiste classes &ndash; <strong>niet</strong> met
+					<code>&lt;i&gt;</code> zoals in de Font Awesome documentatie. De naam van het icoon
+					vind je op <a href="https://fontawesome.com/search">fontawesome.com/search</a> (gratis iconen).
+				</p>
+				<pre class="code-block"><code>&lt;span class="fa-solid fa-house"&gt;&lt;/span&gt;
+&lt;span class="fa-solid fa-heart"&gt;&lt;/span&gt;
+&lt;span class="fa-brands fa-github"&gt;&lt;/span&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Voeg drie iconen naar keuze toe met <code>&lt;span&gt;</code>-elementen.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- =========================================
+			  MODULE C — LINKS
+		========================================= -->
+
+		<!-- BASISLINKS -->
+		<section class="exercise" id="ex11">
+			<h2>Basislinks</h2>
+			<p class="goal">Doel: hyperlinks maken naar andere pagina's en websites.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een link maak je met <code>&lt;a&gt;</code> en het <code>href</code>-attribuut.
+					Naar een andere website link je met <code>https://</code>; naar een eigen pagina
+					met een <em>relatief</em> pad. Gebruik nooit <code>http://</code>, een pad dat met
+					<code>/</code> begint, of een <code>file:///</code>-pad.
+				</p>
+				<pre class="code-block"><code>&lt;a href="https://odisee.be"&gt;Odisee&lt;/a&gt;
+&lt;a href="index.html"&gt;Home&lt;/a&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een link naar een externe website (met <code>https://</code>).</li>
+					<li>Maak een link naar <code>index.html</code> met de tekst "Home".</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- LINK-ATTRIBUTEN -->
+		<section class="exercise" id="ex12">
+			<h2>Link-attributen en afbeeldingslinks</h2>
+			<p class="goal">Doel: links toegankelijk maken met title en aria-label.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Met <code>title</code> geef je extra uitleg die verschijnt als tooltip. Een link die
+					<strong>alleen een afbeelding</strong> bevat, heeft een <em>toegankelijke naam</em>
+					nodig: geef de afbeelding een beschrijvende <code>alt</code>, of gebruik
+					<code>aria-label</code> op de link.
+				</p>
+				<pre class="code-block"><code>&lt;a href="contact.html" title="Neem contact op"&gt;Contact&lt;/a&gt;
+
+&lt;a href="index.html" aria-label="Naar de homepage"&gt;
+   &lt;img src="img/logo.svg" alt=""&gt;
+&lt;/a&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een tekstlink met een <code>title</code>-attribuut.</li>
+					<li>Maak een afbeeldingslink rond <code>img/vaas.jpg</code> met een <code>aria-label</code>.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- E-MAIL EN TELEFOON -->
+		<section class="exercise" id="ex13">
+			<h2>E-mail- en telefoonlinks</h2>
+			<p class="goal">Doel: e-mailadressen en telefoonnummers klikbaar maken.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een e-mailadres link je met <code>mailto:</code>, een telefoonnummer met
+					<code>tel:</code>. Zo opent de mail- of telefoon-app bij het klikken.
+				</p>
+				<pre class="code-block"><code>&lt;a href="mailto:info@odisee.be"&gt;info@odisee.be&lt;/a&gt;
+&lt;a href="tel:+3292345678"&gt;09 234 56 78&lt;/a&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een klikbare e-maillink.</li>
+					<li>Maak een klikbare telefoonlink.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- ANKERLINKS -->
+		<section class="exercise" id="ex14">
+			<h2>Ankerlinks</h2>
+			<p class="goal">Doel: naar een plek binnen dezelfde pagina springen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een ankerlink springt naar een element met een bepaalde <code>id</code> op dezelfde
+					pagina. In de <code>href</code> zet je een <code>#</code> gevolgd door die id.
+					Bovenaan deze pagina staat b.v. een element met <code>id="top"</code>.
+				</p>
+				<pre class="code-block"><code>&lt;a href="#top"&gt;Naar boven&lt;/a&gt;
+
+&lt;h2 id="prijzen"&gt;Prijzen&lt;/h2&gt;
+&lt;a href="#prijzen"&gt;Naar de prijzen&lt;/a&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een link "Naar boven" die naar <code>#top</code> springt.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- =========================================
+			  MODULE D — TABELLEN
+		========================================= -->
+
+		<!-- BASISTABEL -->
+		<section class="exercise" id="ex15">
+			<h2>Basistabel</h2>
+			<p class="goal">Doel: tabulaire data tonen in rijen en kolommen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een tabel maak je met <code>&lt;table&gt;</code>. Elke rij is een
+					<code>&lt;tr&gt;</code> (table row), elke cel een <code>&lt;td&gt;</code> (table data).
+					Gebruik een tabel <strong>enkel</strong> voor tabulaire data, nooit voor layout.
+				</p>
+				<pre class="code-block"><code>&lt;table&gt;
+   &lt;tr&gt;
+      &lt;td&gt;Appel&lt;/td&gt;
+      &lt;td&gt;€ 0,50&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;Peer&lt;/td&gt;
+      &lt;td&gt;€ 0,60&lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een tabel met twee rijen en twee kolommen (b.v. product en prijs).</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- CAPTION EN KOPCELLEN -->
+		<section class="exercise" id="ex16">
+			<h2>Bijschrift en kopcellen</h2>
+			<p class="goal">Doel: een tabel toegankelijk maken met caption en th.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Met <code>&lt;caption&gt;</code> geef je de tabel een bijschrift. Kopcellen zet je in
+					<code>&lt;th&gt;</code> in plaats van <code>&lt;td&gt;</code>. Elke <code>&lt;th&gt;</code>
+					krijgt een <code>scope</code>: <code>scope="col"</code> voor een kolomkop,
+					<code>scope="row"</code> voor een rijkop.
+				</p>
+				<pre class="code-block"><code>&lt;table&gt;
+   &lt;caption&gt;Prijslijst&lt;/caption&gt;
+   &lt;tr&gt;
+      &lt;th scope="col"&gt;Product&lt;/th&gt;
+      &lt;th scope="col"&gt;Prijs&lt;/th&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+      &lt;td&gt;Appel&lt;/td&gt;
+      &lt;td&gt;€ 0,50&lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een tabel met een <code>&lt;caption&gt;</code> en een koprij met <code>&lt;th scope="col"&gt;</code>.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- TABELSECTIES -->
+		<section class="exercise" id="ex17">
+			<h2>Tabelsecties</h2>
+			<p class="goal">Doel: een tabel opdelen in kop, lichaam en voet.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een grotere tabel deel je op in <code>&lt;thead&gt;</code> (de koprij),
+					<code>&lt;tbody&gt;</code> (de gegevens) en <code>&lt;tfoot&gt;</code>
+					(b.v. een totaalrij).
+				</p>
+				<pre class="code-block"><code>&lt;table&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Product&lt;/th&gt;&lt;th scope="col"&gt;Prijs&lt;/th&gt;&lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Appel&lt;/td&gt;&lt;td&gt;€ 0,50&lt;/td&gt;&lt;/tr&gt;
+   &lt;/tbody&gt;
+   &lt;tfoot&gt;
+      &lt;tr&gt;&lt;td&gt;Totaal&lt;/td&gt;&lt;td&gt;€ 0,50&lt;/td&gt;&lt;/tr&gt;
+   &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een tabel met een <code>&lt;thead&gt;</code>, een <code>&lt;tbody&gt;</code> met minstens twee rijen, en een <code>&lt;tfoot&gt;</code> met een totaalrij.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- =========================================
+			  MODULE E — MEDIA
+		========================================= -->
+
+		<!-- AFBEELDINGEN -->
+		<section class="exercise" id="ex18">
+			<h2>Afbeeldingen</h2>
+			<p class="goal">Doel: een afbeelding toevoegen met een alt-tekst.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een afbeelding voeg je toe met <code>&lt;img&gt;</code>. De bron staat in
+					<code>src</code> en verwijst naar de <code>img/</code>-map. Elke afbeelding heeft
+					<strong>altijd</strong> een <code>alt</code>: een beschrijving voor wie de afbeelding
+					niet ziet. In de <code>img/</code>-map staan al <code>vaas.jpg</code>,
+					<code>huis.jpg</code> en <code>kust.jpg</code> klaar.
+				</p>
+				<pre class="code-block"><code>&lt;img src="img/kust.jpg" alt="Zicht op de kustlijn"&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Voeg <code>img/kust.jpg</code> toe met een beschrijvende <code>alt</code>-tekst.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- FIGUUR MET BIJSCHRIFT -->
+		<section class="exercise" id="ex19">
+			<h2>Figuur met bijschrift</h2>
+			<p class="goal">Doel: een afbeelding voorzien van een bijschrift.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Hoort er een bijschrift bij een afbeelding, zet dan beide samen in een
+					<code>&lt;figure&gt;</code>, en het bijschrift in <code>&lt;figcaption&gt;</code>.
+					Gebruik nooit een losse <code>&lt;p&gt;</code> als bijschrift.
+				</p>
+				<pre class="code-block"><code>&lt;figure&gt;
+   &lt;img src="img/huis.jpg" alt="Modern woonhuis"&gt;
+   &lt;figcaption&gt;Ons nieuwe kantoor in Gent&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een <code>&lt;figure&gt;</code> rond <code>img/huis.jpg</code> met een <code>&lt;figcaption&gt;</code>.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- EMBEDDING -->
+		<section class="exercise" id="ex20">
+			<h2>Embedding</h2>
+			<p class="goal">Doel: externe inhoud zoals een video insluiten.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Externe inhoud (een YouTube-video, een Google Map…) sluit je in met een
+					<code>&lt;iframe&gt;</code>. De juiste code kopieer je op YouTube via
+					<em>Delen &rarr; Insluiten</em> en op Google Maps via <em>Delen &rarr; Kaart insluiten</em>.
+				</p>
+				<pre class="code-block"><code>&lt;iframe
+   src="https://www.youtube.com/embed/aqz-KE-bpKQ"
+   title="YouTube video"
+   width="560" height="315"&gt;
+&lt;/iframe&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Sluit een YouTube-video naar keuze in met een <code>&lt;iframe&gt;</code> (gebruik de insluitcode van YouTube).</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="page-footer" aria-label="Pagina-voetnoot">
+		<p>HTML oefenblad – tekst, links, tabellen &amp; media. <a href="#top">Naar boven</a></p>
+	</footer>
+
+</body>
+
+</html>

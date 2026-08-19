@@ -241,6 +241,7 @@ const Exercises = (() => {
          p { margin-bottom: 10px; }
          ul, ol { margin-bottom: 10px; padding-left: 22px; }
          li { margin-bottom: 3px; }
+         a { color: #6cb6ff; }
          code { background: rgba(255 255 255 / 10%); border-radius: 3px; font-family: Consolas, monospace; font-size: 12px; padding: 1px 5px; }
          pre { background: rgba(255 255 255 / 6%); border-radius: 4px; margin-bottom: 10px; overflow-x: auto; padding: 12px; }
          pre code { background: none; padding: 0; }
@@ -309,6 +310,7 @@ const Exercises = (() => {
       p { margin-bottom: 12px; }
       ul, ol { margin-bottom: 12px; padding-left: 28px; }
       li { margin-bottom: 4px; }
+      a { color: #0b5ed7; }
       code { background: #f0f0f0; border-radius: 3px; font-family: Consolas, monospace; font-size: 13px; padding: 2px 5px; }
       pre { background: #f6f8fa; border-radius: 6px; font-size: 13px; overflow-x: auto; padding: 16px; }
       pre code { background: none; padding: 0; }
@@ -564,6 +566,9 @@ ${marked.parse(currentReadme)}
     */
    function init(editorInstances) {
       editors = editorInstances;
+
+      // toon kale URL's in de opgave als tekst; enkel [tekst](url) wordt een link
+      marked.setOptions({ gfm: false });
 
       // event bindings
       editors.html.onDidChangeModelContent(scheduleSave);

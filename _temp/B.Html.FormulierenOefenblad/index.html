@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML formulieren – oefenblad</title>
+	<link rel="stylesheet" href="css/start.css">
+	<link rel="stylesheet" href="css/oefenblad.css">
+</head>
+
+<body>
+
+	<header id="top" class="page-header" aria-label="Paginakop">
+		<h1>HTML formulieren – oefenblad</h1>
+		<p>
+			Schrijf je HTML telkens in de gele schrijfzone onder de opdracht.
+			Open de pagina met <strong>Live Server</strong> om je resultaat te zien,
+			en controleer je code met de <strong>html-validate</strong> extensie.
+		</p>
+	</header>
+
+	<main>
+
+		<!-- MINIMAAL FORMULIER -->
+		<section class="exercise" id="ex1">
+			<h2>Minimaal formulier</h2>
+			<p class="goal">Doel: de basisopbouw van een formulier kennen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een formulier staat altijd in een <code>&lt;form&gt;</code> en heeft minstens één
+					<code>&lt;button type="submit"&gt;</code>. Elk veld heeft een <code>&lt;label&gt;</code>,
+					en elk label-veld-paar zet je samen in een <code>&lt;div&gt;</code>.
+				</p>
+				<pre class="code-block"><code>&lt;form&gt;
+   &lt;div&gt;
+      &lt;label for="inp-naam"&gt;Naam&lt;/label&gt;
+      &lt;input id="inp-naam" type="text"&gt;
+   &lt;/div&gt;
+   &lt;button type="submit"&gt;Verstuur&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een formulier met één tekstveld met label (in een <code>&lt;div&gt;</code>) en een verstuur-knop.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- LABELS KOPPELEN -->
+		<section class="exercise" id="ex2">
+			<h2>Labels koppelen</h2>
+			<p class="goal">Doel: labels op de twee correcte manieren aan een veld koppelen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Elk veld heeft een <code>&lt;label&gt;</code>. Er zijn twee manieren om te koppelen:
+				</p>
+				<ul>
+					<li><strong>Gewone velden</strong> (text, email, select…): koppel met <code>for</code> op het label en dezelfde <code>id</code> op het veld.</li>
+					<li><strong>Checkboxes en radioknoppen</strong>: <em>nest</em> het veld in het label (geen <code>for</code>/<code>id</code> nodig).</li>
+				</ul>
+				<pre class="code-block"><code>&lt;label for="inp-email"&gt;E-mail&lt;/label&gt;
+&lt;input id="inp-email" type="email"&gt;
+
+&lt;label&gt;&lt;input type="checkbox"&gt; Ik ga akkoord&lt;/label&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een e-mailveld met een label via <code>for</code>/<code>id</code>.</li>
+					<li>Maak een checkbox met een genest label.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- TEKSTVELDEN -->
+		<section class="exercise" id="ex3">
+			<h2>Tekstvelden en het juiste type</h2>
+			<p class="goal">Doel: telkens het meest specifieke invoertype kiezen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Kies altijd het <strong>meest specifieke</strong> <code>type</code>. Gebruik
+					<code>type="text"</code> enkel als er geen specifieker type bestaat.
+				</p>
+				<ul>
+					<li><code>type="email"</code> &ndash; e-mailadres</li>
+					<li><code>type="tel"</code> &ndash; telefoonnummer</li>
+					<li><code>type="url"</code> &ndash; weblink</li>
+					<li><code>type="number"</code> &ndash; getal</li>
+				</ul>
+				<pre class="code-block"><code>&lt;label for="inp-email"&gt;E-mail&lt;/label&gt;
+&lt;input id="inp-email" type="email"&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier vier velden met label: een naam (text), een e-mail, een telefoonnummer en een leeftijd (number). Vergeet de verstuur-knop niet.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- WACHTWOORD -->
+		<section class="exercise" id="ex4">
+			<h2>Wachtwoord</h2>
+			<p class="goal">Doel: een veld waarvan de invoer verborgen wordt.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een wachtwoordveld maak je met <code>type="password"</code>. De ingetypte tekens
+					worden dan als bolletjes weergegeven.
+				</p>
+				<pre class="code-block"><code>&lt;label for="inp-ww"&gt;Wachtwoord&lt;/label&gt;
+&lt;input id="inp-ww" type="password"&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier een wachtwoordveld met label en een verstuur-knop.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- CHECKBOXES -->
+		<section class="exercise" id="ex5">
+			<h2>Checkboxes</h2>
+			<p class="goal">Doel: meerdere keuzes tegelijk laten aanvinken.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een checkbox (<code>type="checkbox"</code>) laat de gebruiker meerdere opties tegelijk
+					aanvinken. Nest telkens de checkbox in zijn <code>&lt;label&gt;</code>. Met
+					<code>checked</code> staat een optie standaard aangevinkt.
+				</p>
+				<pre class="code-block"><code>&lt;label&gt;&lt;input type="checkbox"&gt; HTML&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox" checked&gt; CSS&lt;/label&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier drie checkboxes voor interesses; zet er één standaard aangevinkt. Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- RADIOKNOPPEN -->
+		<section class="exercise" id="ex6">
+			<h2>Radioknoppen</h2>
+			<p class="goal">Doel: één keuze laten maken uit een groep opties.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Radioknoppen (<code>type="radio"</code>) laten precies één keuze toe. Geef alle knoppen
+					van dezelfde groep <strong>hetzelfde</strong> <code>name</code>-attribuut &ndash; anders
+					kan je ze los aanvinken. Nest elke radio in zijn <code>&lt;label&gt;</code>.
+				</p>
+				<pre class="code-block"><code>&lt;label&gt;&lt;input name="grootte" type="radio" value="s"&gt; Small&lt;/label&gt;
+&lt;label&gt;&lt;input name="grootte" type="radio" value="m"&gt; Medium&lt;/label&gt;
+&lt;label&gt;&lt;input name="grootte" type="radio" value="l"&gt; Large&lt;/label&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier drie radioknoppen (zelfde <code>name</code>) om één maat te kiezen. Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- DATE EN COLOR -->
+		<section class="exercise" id="ex7">
+			<h2>Datum- en kleurkiezer</h2>
+			<p class="goal">Doel: kant-en-klare kiezers gebruiken voor datum en kleur.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Voor een datum gebruik je <code>type="date"</code>, voor een kleur
+					<code>type="color"</code>. De browser toont dan automatisch een kalender of
+					kleurenkiezer.
+				</p>
+				<pre class="code-block"><code>&lt;label for="inp-datum"&gt;Geboortedatum&lt;/label&gt;
+&lt;input id="inp-datum" type="date"&gt;
+
+&lt;label for="inp-kleur"&gt;Lievelingskleur&lt;/label&gt;
+&lt;input id="inp-kleur" type="color"&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier een datumveld en een kleurveld, elk met label. Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- RANGE -->
+		<section class="exercise" id="ex8">
+			<h2>Slider</h2>
+			<p class="goal">Doel: een waarde kiezen met een schuifbalk.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een slider maak je met <code>type="range"</code>. Geef altijd een <code>min</code>,
+					een <code>max</code> en een start-<code>value</code> mee.
+				</p>
+				<pre class="code-block"><code>&lt;label for="sld-volume"&gt;Volume&lt;/label&gt;
+&lt;input id="sld-volume" type="range" min="0" max="100" value="50"&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier een slider met label, van 0 tot 100 en startwaarde 50. Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- TEXTAREA -->
+		<section class="exercise" id="ex9">
+			<h2>Meerregelig tekstveld</h2>
+			<p class="goal">Doel: een langer stuk tekst laten invoeren.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Voor langere tekst gebruik je <code>&lt;textarea&gt;</code> in plaats van
+					<code>&lt;input&gt;</code>. Met <code>rows</code> en <code>cols</code> stel je de
+					zichtbare hoogte en breedte in.
+				</p>
+				<pre class="code-block"><code>&lt;label for="txt-bericht"&gt;Bericht&lt;/label&gt;
+&lt;textarea id="txt-bericht" rows="4" cols="30"&gt;&lt;/textarea&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier een <code>&lt;textarea&gt;</code> met label voor een bericht. Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- SELECT -->
+		<section class="exercise" id="ex10">
+			<h2>Keuzelijst</h2>
+			<p class="goal">Doel: één optie kiezen uit een dropdown.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een dropdown maak je met <code>&lt;select&gt;</code> en één
+					<code>&lt;option&gt;</code> per keuze. Met <code>selected</code> staat een optie
+					standaard gekozen.
+				</p>
+				<pre class="code-block"><code>&lt;label for="sel-land"&gt;Land&lt;/label&gt;
+&lt;select id="sel-land"&gt;
+   &lt;option value=""&gt;Kies een land…&lt;/option&gt;
+   &lt;option value="be" selected&gt;België&lt;/option&gt;
+   &lt;option value="nl"&gt;Nederland&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier een keuzelijst met label en minstens drie opties. Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- FIELDSET EN LEGEND -->
+		<section class="exercise" id="ex11">
+			<h2>Fieldset en legend</h2>
+			<p class="goal">Doel: bij elkaar horende velden groeperen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Velden die bij elkaar horen groepeer je in een <code>&lt;fieldset&gt;</code>, met een
+					titel in <code>&lt;legend&gt;</code>.
+				</p>
+				<pre class="code-block"><code>&lt;fieldset&gt;
+   &lt;legend&gt;Adresgegevens&lt;/legend&gt;
+   &lt;div&gt;
+      &lt;label for="inp-straat"&gt;Straat&lt;/label&gt;
+      &lt;input id="inp-straat" type="text"&gt;
+   &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier een <code>&lt;fieldset&gt;</code> "Adresgegevens" met een legend en twee velden (straat en stad). Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- PLACEHOLDER EN REQUIRED -->
+		<section class="exercise" id="ex12">
+			<h2>Placeholder en required</h2>
+			<p class="goal">Doel: velden verduidelijken en verplicht maken met attributen.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Met <code>placeholder</code> toon je een grijze hint in het veld (geen vervanging voor
+					het label!). Met <code>required</code> moet het veld ingevuld zijn vóór het formulier
+					verstuurd kan worden.
+				</p>
+				<pre class="code-block"><code>&lt;label for="inp-email"&gt;E-mail&lt;/label&gt;
+&lt;input id="inp-email" type="email" placeholder="jan@voorbeeld.be" required&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak in een formulier een e-mailveld met label, een <code>placeholder</code> en <code>required</code>. Voeg een verstuur-knop toe.</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+		<!-- KNOP OF LINK -->
+		<section class="exercise" id="ex13">
+			<h2>Knop of link?</h2>
+			<p class="goal">Doel: het verschil kennen tussen een knop en een link.</p>
+
+			<div class="info box">
+				<h3>Theorie</h3>
+				<p>
+					Een <code>&lt;button&gt;</code> gebruik je <strong>enkel in een formulier</strong>, om
+					het te versturen (<code>type="submit"</code>) of te wissen (<code>type="reset"</code>).
+					Om ergens <strong>naartoe te gaan</strong> gebruik je een link <code>&lt;a&gt;</code>,
+					eventueel opgemaakt als knop met een class.
+				</p>
+				<pre class="code-block"><code>&lt;button type="submit"&gt;Verstuur&lt;/button&gt;
+
+&lt;a href="index.html" class="button"&gt;Terug naar home&lt;/a&gt;</code></pre>
+			</div>
+
+			<div class="assignment box">
+				<h3>Opdracht</h3>
+				<ol>
+					<li>Maak een formulier met een verstuur-knop.</li>
+					<li>Maak daarnaast een link naar <code>index.html</code> die eruitziet als een knop (<code>class="button"</code>).</li>
+				</ol>
+			</div>
+
+			<p class="writezone-label">✏️ Schrijf hier je HTML:</p>
+			<div class="writezone">
+				<!-- schrijf hier je HTML -->
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="page-footer" aria-label="Pagina-voetnoot">
+		<p>HTML oefenblad – formulieren. <a href="#top">Naar boven</a></p>
+	</footer>
+
+</body>
+
+</html>

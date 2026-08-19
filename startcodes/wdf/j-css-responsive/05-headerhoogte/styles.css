@@ -1,0 +1,42 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* header hoogte */
+
+.demo-header-box h3 {
+   margin-top: 0;
+}
+
+.demo-header-box p {
+   margin-bottom: 0;
+}
+
+.demo-header-box {
+   background-color: #1f2937;
+   color: #f9fafb;
+   padding: 20px;
+   /* TODO: minimum hoogte ipv vaste hoogte */
+   height: 180px;
+   border-radius: 6px;
+}
+
+/* TODO: 900px media query */

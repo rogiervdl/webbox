@@ -1,0 +1,43 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* tagline verbergen en tonen */
+
+.header-with-tagline {
+   background-color: #111827;
+   color: #f9fafb;
+   padding: 16px;
+   border-radius: 6px;
+}
+
+.header-with-tagline h3 {
+   margin: 0 0 4px 0;
+}
+
+.header_tagline {
+   font-size: 14px;
+   color: #d1d5db;
+
+   /* TODO: verbergen op kleine schermen */
+}
+
+/* TODO: tagline vanaf 600px tonen */

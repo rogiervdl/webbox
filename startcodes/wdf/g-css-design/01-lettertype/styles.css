@@ -1,0 +1,42 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* font-family en font-size */
+
+#ex1 .demo {
+   * {
+      font-size: 14px;
+      /* ...*/
+   }
+
+   h3 {
+      /* ...*/
+   }
+
+   p::first-letter {
+      /* ...*/
+   }
+
+   blockquote {
+      /* ...*/
+   }
+}

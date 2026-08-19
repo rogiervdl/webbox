@@ -1,0 +1,42 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* grid met variabel aantal kolommen */
+
+.cards {
+   display: grid;
+   gap: 12px;
+
+   /* TODO: standaard 1 kolom, geen 3 */
+   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+   background-color: #ecfeff;
+   border: 1px solid #bae6fd;
+   border-radius: 4px;
+   padding: 10px;
+}
+
+/* TODO: vanaf 600px → 2 kolommen */
+
+/* TODO: vanaf 900px → 3 kolommen */

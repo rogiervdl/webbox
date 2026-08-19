@@ -18,6 +18,7 @@
    --bg-preview:    #ffffff;
    --bg-toolbar:    #252526;
    --border:        #3e3e42;
+   --link:          #6cb6ff;
    --resizer-w:     5px;
    --text-muted:    #858585;
    --text-primary:  #cccccc;
@@ -31,6 +32,7 @@ html[data-theme="light"] {
    --bg-preview:   #ffffff;
    --bg-toolbar:   #e8e8e8;
    --border:       #d0d0d0;
+   --link:         #0b5ed7;
    --text-muted:   #666666;
    --text-primary: #1e1e1e;
 }

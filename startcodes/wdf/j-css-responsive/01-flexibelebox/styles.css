@@ -1,0 +1,40 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* flexibele box */
+
+.demo-wrapper {
+   background: transparent;
+   overflow-x: auto;
+}
+
+.wrapper-box {
+   background-color: #eef2ff;
+   border-radius: 6px;
+   padding: 12px;
+   width: 960px;
+   margin: 0 auto;
+}
+
+.wrapper-box {
+   /* TODO: maximum breedte instellen */
+}

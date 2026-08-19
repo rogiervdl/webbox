@@ -1,0 +1,48 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* buitenhoeken */
+
+.corner-grid {
+   max-width: 500px;
+   /* ...*/
+}
+
+.corner-grid .cell {
+   background-color: #dbeafe;
+   font-size: 0.75rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   /* ...*/
+}
+
+.corner-grid .cell:nth-child(2) {
+   /* ...*/
+}
+
+.corner-grid .cell:nth-child(3) {
+   /* ...*/
+}
+
+.corner-grid .cell:nth-child(4) {
+   /* ...*/
+}

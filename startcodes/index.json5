@@ -352,13 +352,119 @@
          label: "WDF",
          modules: [
             {
-               id: "a-html", 
-               label: "A.HTML", 
+               id: "a-html-tekst",
+               label: "A.HTML tekst",
                exercises: []
             },
             {
-               id: "b-cssdesign",
-               label: "B.CSS Design",
+               id: "b-html-links",
+               label: "B.HTML links",
+               exercises: [
+                  {
+                     id: "01-hyperlinks",
+                     label: "01. hyperlinks aanmaken",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "02-linktekst",
+                     label: "02. relevante linktekst",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "03-title-arialabel",
+                     label: "03. title en aria-label",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "04-medialinks",
+                     label: "04. media links",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "05-ankers",
+                     label: "05. ankers",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "06-menus",
+                     label: "06. menu's",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "07-allessamen",
+                     label: "07. alles samen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  }
+               ]
+            },
+            {
+               id: "c-html-tabellen",
+               label: "C.HTML tabellen",
+               exercises: [
+                  {
+                     id: "01-basistabel",
+                     label: "01. basistabel",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "02-kopcellen",
+                     label: "02. bijschrift en kopcellen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  },
+                  {
+                     id: "03-samenvoegen",
+                     label: "03. cellen samenvoegen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css", "js" ]
+                  }
+               ]
+            },
+            {
+               id: "d-html-media",
+               label: "D.HTML media",
+               exercises: [
+                  {
+                     id: "01-afbeeldingen",
+                     label: "01. afbeeldingen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "02-figure",
+                     label: "02. figuur met bijschrift",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "03-embedding",
+                     label: "03. embedding",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  }
+               ]
+            },
+            {
+               id: "e-html-formulieren",
+               label: "E.HTML formulieren",
+               exercises: []
+            },
+            {
+               id: "f-html-structuur",
+               label: "F.HTML structuur",
+               exercises: []
+            },
+            {
+               id: "g-css-design",
+               label: "G.CSS design",
                exercises: [
                   {
                      id: "01-lettertype",
@@ -459,16 +565,225 @@
                ]
             },
             {
-               id: "c-csslayout", 
-               label: "C.CSS layout", 
+               id: "h-css-layout-flexbox",
+               label: "H.CSS layout flexbox",
                exercises: [
+                  {
+                     id: "01-navigatiebalk",
+                     label: "01. navigatiebalk",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "02-fotogallerij",
+                     label: "02. fotogallerij",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "03-tagcloud",
+                     label: "03. tag cloud",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "04-productlijst",
+                     label: "04. productlijst",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "05-springen",
+                     label: "05. springen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "06-chatberichten",
+                     label: "06. chatberichten",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "07-driekolommen",
+                     label: "07. drie kolommen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "08-checkout",
+                     label: "08. checkout",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "09-profielkaart",
+                     label: "09. profielkaart",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "10-sidebarlayout",
+                     label: "10. layout met sidebar",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "11-keywords",
+                     label: "11. keywords",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "12-bestandenlijst",
+                     label: "12. bestandenlijst",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "13-viewer",
+                     label: "13. viewer met thumbnails",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "14-productinfo",
+                     label: "14. productinfo",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  }
                ]
             },
             {
-               id: "d-responsive", 
-               label: "D.Responsive", 
+               id: "i-css-layout-grid",
+               label: "I.CSS layout grid",
                exercises: [
+                  {
+                     id: "01-productoverzicht",
+                     label: "01. productoverzicht",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "02-bloglayout",
+                     label: "02. bloglayout",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "03-boekenmuur",
+                     label: "03. boekenmuur",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "04-formulier",
+                     label: "04. formulier in grid",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "05-conferentieschema",
+                     label: "05. conferentieschema",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "06-productfiche",
+                     label: "06. productfiche",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "07-pinterest",
+                     label: "07. pinterest-stijl grid",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "08-bredekaarten",
+                     label: "08. brede kaarten",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "09-springen",
+                     label: "09. springen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "10-buitenhoeken",
+                     label: "10. buitenhoeken",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  }
                ]
+            },
+            {
+               id: "j-css-responsive",
+               label: "J.CSS responsive",
+               exercises: [
+                  {
+                     id: "01-flexibelebox",
+                     label: "01. flexibele box",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "02-flexibeleafbeelding",
+                     label: "02. flexibele afbeelding",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "03-achtergrondkleur",
+                     label: "03. veranderende achtergrondkleur",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "04-tekstopmaak",
+                     label: "04. veranderende tekstopmaak",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "05-headerhoogte",
+                     label: "05. header hoogte",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "06-kolommen",
+                     label: "06. responsive kolommen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "07-menu",
+                     label: "07. responsive menu",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "08-grid",
+                     label: "08. grid met variabel aantal kolommen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "09-tagline",
+                     label: "09. tagline verbergen en tonen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  }
+               ]
+            },
+            {
+               id: "herhaling",
+               label: "Herhaling",
+               exercises: []
             }
          ]
       },

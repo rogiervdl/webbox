@@ -1,0 +1,57 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* productfiche */
+
+.media {
+   max-width: 700px;
+   /* ...*/
+}
+
+.media img {
+   display: block;
+   height: 150px;
+}
+
+.media .text {
+   padding: 8px 12px;
+}
+
+.button {
+   background-color: #6c757d;
+   border-radius: 8px;
+   color: white;
+   cursor: pointer;
+   font-size: 14px;
+   padding: 8px 14px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+.media .buy .button {
+   background-color: #111;
+   border-radius: 8px;
+   color: white;
+   display: inline-block;
+   padding: 8px 12px;
+   text-decoration: none;
+}

@@ -1,0 +1,43 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* viewer met thumbnails */
+
+.viewer {
+   width: 340px;
+   /* ...*/
+}
+
+.viewer .big {
+   background-color: #ddd;
+   display: block;
+   max-width: 400px;
+   width: 100%;
+}
+
+.thumb-row {
+   /* ...*/
+}
+
+.thumb-row img {
+   max-width: 80px;
+}

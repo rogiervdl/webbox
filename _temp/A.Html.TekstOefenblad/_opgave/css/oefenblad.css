@@ -1,0 +1,32 @@
+/**
+ * HTML oefenblad – extra styling voor de schrijfzones
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ *
+ * dit bestand NIET aanpassen!
+ *
+ */
+
+/* =========================================
+   Schrijfzone
+========================================= */
+
+/* zone waar de student zelf HTML schrijft */
+
+.writezone {
+	background-color: #fffdf2;
+	border: 2px dashed #c9b458;
+	border-radius: 6px;
+	margin-top: 12px;
+	min-height: 44px;
+	padding: 12px;
+}
+
+/* label boven de schrijfzone */
+
+.writezone-label {
+	color: #8a7a2a;
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin: 12px 0 0 0;
+}
