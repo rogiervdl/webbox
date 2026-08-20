@@ -1,0 +1,31 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+
+/* knoppenbalk */
+
+.knoppen a,
+.knoppen button {
+   background-color: #6c757d;
+   border: none;
+   border-radius: 8px;
+   color: white;
+   cursor: pointer;
+   display: inline-block;
+   font-family: inherit;
+   font-size: 14px;
+   padding: 8px 14px;
+   text-decoration: none;
+   text-transform: uppercase;
+}

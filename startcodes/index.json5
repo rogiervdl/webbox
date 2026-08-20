@@ -354,7 +354,50 @@
             {
                id: "a-html-tekst",
                label: "A.HTML tekst",
-               exercises: []
+               exercises: [
+                  {
+                     id: "01-paragrafen",
+                     label: "01. paragrafen en titels",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "02-lijsten",
+                     label: "02. lijsten",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "03-nadruk",
+                     label: "03. nadruk",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "04-subsup",
+                     label: "04. sub, sup en small",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "05-quote",
+                     label: "05. quote, bron en adres",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "06-details",
+                     label: "06. uitklapbare inhoud",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "07-karakters",
+                     label: "07. karakters, emoji's en icon fonts",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  }
+               ]
             },
             {
                id: "b-html-links",
@@ -455,12 +498,62 @@
             {
                id: "e-html-formulieren",
                label: "E.HTML formulieren",
-               exercises: []
+               exercises: [
+                  {
+                     id: "01-basisformulier",
+                     label: "01. basisformulier",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "02-inputtypes",
+                     label: "02. het juiste input type",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "03-selecties",
+                     label: "03. selecties",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "04-textarea",
+                     label: "04. meerregelige tekst",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "05-attributen",
+                     label: "05. attributen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "06-fieldset",
+                     label: "06. fieldset en legend",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "07-knopoflink",
+                     label: "07. knop of link?",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  }
+               ]
             },
             {
                id: "f-html-structuur",
                label: "F.HTML structuur",
-               exercises: []
+               exercises: [
+                  {
+                     id: "01-structuurelementen",
+                     label: "01. structuurelementen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  }
+               ]
             },
             {
                id: "g-css-design",
