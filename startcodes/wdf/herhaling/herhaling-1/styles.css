@@ -1,0 +1,173 @@
+/*
+ * Herhaling 1: boekenclub De Leeshoek - basisopmaak
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ *
+ * Deze stylesheet is gegeven en mag je NIET aanpassen.
+ * Ze werkt enkel als je de juiste elementen gebruikt.
+ */
+
+/* reset */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* elementen */
+
+body {
+   background-color: #faf8f5;
+   color: #2b2b2b;
+   font-family: Georgia, "Times New Roman", serif;
+   line-height: 1.6;
+   margin: 0 auto;
+   max-width: 720px;
+   padding: 20px;
+}
+
+h1 {
+   color: #6b3f2a;
+   font-size: 32px;
+}
+
+h2 {
+   border-bottom: 1px solid #e0d8cd;
+   color: #6b3f2a;
+   font-size: 22px;
+   margin-bottom: 10px;
+   padding-bottom: 4px;
+}
+
+p {
+   margin-bottom: 10px;
+}
+
+a {
+   color: #a4552e;
+}
+
+img {
+   max-width: 220px;
+}
+
+/* structuur */
+
+header {
+   border-bottom: 3px solid #6b3f2a;
+   margin-bottom: 20px;
+   padding-bottom: 10px;
+}
+
+nav ul {
+   display: flex;
+   gap: 20px;
+   list-style: none;
+   margin-top: 8px;
+}
+
+nav a {
+   font-family: system-ui, sans-serif;
+   font-size: 14px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+main section {
+   margin-bottom: 30px;
+}
+
+body > footer {
+   border-top: 3px solid #6b3f2a;
+   font-size: 14px;
+   padding-top: 10px;
+}
+
+/* tekst */
+
+blockquote {
+   border-left: 4px solid #d8c7b4;
+   color: #6b3f2a;
+   font-style: italic;
+   margin: 15px 0;
+   padding-left: 15px;
+}
+
+figcaption {
+   color: #7a6a5a;
+   font-size: 14px;
+   margin-top: 6px;
+}
+
+address {
+   font-style: normal;
+   margin-bottom: 6px;
+}
+
+/* tabel */
+
+table {
+   border-collapse: collapse;
+   width: 100%;
+}
+
+caption {
+   font-weight: bold;
+   margin-bottom: 8px;
+   text-align: left;
+}
+
+th,
+td {
+   border-bottom: 1px solid #e0d8cd;
+   padding: 8px 10px;
+   text-align: left;
+}
+
+thead th {
+   background-color: #f0e8de;
+}
+
+/* formulier */
+
+form {
+   background-color: white;
+   border: 1px solid #e0d8cd;
+   padding: 15px;
+}
+
+form div {
+   margin-bottom: 10px;
+}
+
+label {
+   display: block;
+   font-family: system-ui, sans-serif;
+   font-size: 14px;
+}
+
+label input[type="checkbox"] {
+   display: inline;
+   width: auto;
+}
+
+input,
+select {
+   border: 1px solid #ccc;
+   font-family: inherit;
+   font-size: 14px;
+   padding: 6px;
+   width: 100%;
+}
+
+button {
+   background-color: #6b3f2a;
+   border: 0;
+   color: white;
+   cursor: pointer;
+   font-family: system-ui, sans-serif;
+   font-size: 15px;
+   margin-top: 10px;
+   padding: 10px 20px;
+}

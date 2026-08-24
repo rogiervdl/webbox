@@ -876,7 +876,32 @@
             {
                id: "herhaling",
                label: "Herhaling",
-               exercises: []
+               exercises: [
+                  {
+                     id: "herhaling-1",
+                     label: "Herhaling 1: HTML",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "herhaling-2",
+                     label: "Herhaling 2: CSS design",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "herhaling-3",
+                     label: "Herhaling 3: CSS layout",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "herhaling-4",
+                     label: "Herhaling 4: CSS responsive",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  }
+               ]
             }
          ]
       },

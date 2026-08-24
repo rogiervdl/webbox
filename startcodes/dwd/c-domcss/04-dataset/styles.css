@@ -1,0 +1,47 @@
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: "Open Sans", system-ui, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 8px;
+}
+
+.ex4-info {
+   align-items: baseline;
+   display: grid;
+   gap: 0.25rem 2rem;
+   grid-template-columns: auto 1fr;
+}
+
+.ex4-info dt {
+   font-weight: bold;
+}
+
+.ex4-info dd {
+   margin: 0;
+}
+
+.ex4-pralines {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+   list-style: none;
+   padding: 0;
+}
+
+.ex4-pralines img {
+   display: block;
+   max-width: 100%;
+   transition: filter 0.2s;
+}
+
+.ex4-pralines li {
+   cursor: pointer;
+   width: 120px;
+}
+
+.ex4-pralines li.selected img {
+   filter: brightness(0.9);
+}

@@ -1,0 +1,45 @@
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: "Open Sans", system-ui, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 8px;
+}
+
+#ex1-txt {
+   background-color: #ddd;
+   border: 1px solid #444;
+   padding: 10px;
+}
+
+.ex1-controls {
+   align-items: center;
+   display: grid;
+   gap: 0.5rem 1rem;
+   grid-template-columns: auto 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.ex1-controls .ex1-row {
+   display: contents;
+}
+
+.ex1-controls .ex1-row > label:first-child {
+   min-width: 6em;
+}
+
+.italic {
+   font-style: italic;
+}
+
+.slider {
+   align-items: center;
+   display: flex;
+   gap: 0.5rem;
+}
+
+[type=color] {
+   padding: 2px;
+}
