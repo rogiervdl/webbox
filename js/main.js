@@ -25,6 +25,7 @@ function initMonaco () {
    Resizer.init(editors);
    ThemeSwitcher.init();
    Exercises.init(editors);
+   TagCompletion.init();
    Preview.run();
 }
 

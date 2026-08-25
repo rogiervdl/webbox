@@ -71,4 +71,5 @@ Config.editorOptions = {
    tabSize: 2,
    renderLineHighlight: 'line',
    smoothScrolling: true,
+   tabCompletion: 'on',
 };

@@ -1,0 +1,133 @@
+/*
+ * Herhaling DOM HTML: profielkaart
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ */
+
+/* elementen */
+
+body {
+   background-color: #f2f6f5;
+   font-family: Verdana, Arial, sans-serif;
+}
+
+h2 {
+   color: #2f5f55;
+   margin-bottom: 20px;
+   margin-top: 0;
+}
+
+label {
+   color: #36534d;
+   display: block;
+   margin-bottom: 4px;
+}
+
+input {
+   background-color: #f7faf9;
+   border: 0;
+   border-bottom: 2px solid #b8cbc6;
+   box-sizing: border-box;
+   margin-bottom: 14px;
+   padding: 10px;
+   width: 100%;
+}
+
+input:focus {
+   border-bottom-color: #6fa89a;
+   outline: none;
+}
+
+/* klassen */
+
+.types {
+   margin-bottom: 18px;
+   margin-top: 8px;
+}
+
+.profieltype {
+   background-color: #eef5f3;
+   border: 1px solid #b8cbc6;
+   color: #36534d;
+   cursor: pointer;
+   margin-right: 6px;
+   padding: 8px 12px;
+}
+
+.profieltype:hover {
+   background-color: #ddece8;
+}
+
+.profieltype.actief {
+   background-color: #6fa89a;
+   border-color: #6fa89a;
+   color: #fff;
+}
+
+.profielkaart {
+   background-color: #fafafa;
+   border: 1px solid #d7e2df;
+   margin-top: 18px;
+   padding: 18px;
+}
+
+.profielkaart h3 {
+   font-size: 22px;
+   margin-top: 0;
+}
+
+.profielkaart p {
+   margin: 7px 0;
+}
+
+.profielkaart.student {
+   background-color: #eef5fb;
+   border-top: 6px solid #5b8ec9;
+}
+
+.profielkaart.docent {
+   background-color: #f7f0fa;
+   border-top: 6px solid #b28ac8;
+}
+
+.profielkaart.bezoeker {
+   background-color: #eef8f0;
+   border-top: 6px solid #7dbb8a;
+}
+
+/* ids */
+
+#profiel-app {
+   background-color: #fff;
+   border-top: 6px solid #6fa89a;
+   box-sizing: border-box;
+   margin: 35px auto;
+   max-width: 500px;
+   padding: 24px;
+}
+
+#btn-toon {
+   background-color: #6fa89a;
+   border: 0;
+   color: #fff;
+   cursor: pointer;
+   display: block;
+   padding: 11px;
+   width: 100%;
+}
+
+#btn-toon:hover {
+   background-color: #5d9488;
+}
+
+#kaart .type {
+   color: #6b7f7a;
+   font-size: 16px;
+   font-weight: normal;
+}
+
+#melding {
+   color: #b44b4b;
+   font-weight: 700;
+   min-height: 22px;
+}

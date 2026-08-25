@@ -1,0 +1,106 @@
+/*
+ * Herhaling DOM CSS: weerkaart
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ */
+
+/* elementen */
+
+body {
+   background-color: #f4f6f8;
+   font-family: Verdana, Arial, sans-serif;
+}
+
+h2 {
+   color: #38566b;
+   margin-top: 0;
+}
+
+/* klassen */
+
+.weertypes {
+   margin-bottom: 20px;
+}
+
+.weerknop {
+   background-color: #eef4f8;
+   border: 1px solid #b7c7d4;
+   color: #38566b;
+   cursor: pointer;
+   margin-bottom: 8px;
+   margin-right: 6px;
+   padding: 9px 13px;
+}
+
+.weerknop:hover {
+   background-color: #ddeaf2;
+}
+
+.weerknop.current {
+   background-color: #6f9fbd;
+   border-color: #6f9fbd;
+   color: #fff;
+}
+
+.weerknop.visited {
+   font-weight: 700;
+}
+
+/* ids */
+
+#weer-app {
+   background-color: #fff;
+   border: 1px solid #d6dde4;
+   box-sizing: border-box;
+   margin: 40px auto;
+   max-width: 500px;
+   padding: 24px;
+}
+
+#weerkaart {
+   border-radius: 4px;
+   border-style: solid;
+   padding: 26px;
+   text-align: center;
+}
+
+#weerkaart.zonnig {
+   background-color: #fff6cc;
+   border-color: #e4bd32;
+   border-width: 10px;
+   color: #5c4800;
+}
+
+#weerkaart.regenachtig {
+   background-color: #e5f0f8;
+   border-color: #6f9fbd;
+   border-width: 3px;
+   color: #24495f;
+}
+
+#weerkaart.bewolkt {
+   background-color: #eee;
+   border-color: #aaa;
+   border-width: 1px;
+   color: #444;
+}
+
+#weerkaart.sneeuw {
+   background-color: #f4fbff;
+   border-color: #9fd3ee;
+   border-width: 4px;
+   color: #2c5f7a;
+}
+
+#weerkaart h3 {
+   margin: 8px 0;
+}
+
+#weerkaart p {
+   margin: 6px 0;
+}
+
+#icoon {
+   font-size: 60px;
+   margin-bottom: 10px;
+}

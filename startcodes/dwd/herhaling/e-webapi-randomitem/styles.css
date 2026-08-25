@@ -1,0 +1,77 @@
+/*
+ * Herhaling web API's: randomitem
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ */
+
+/* elementen */
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: "Open Sans", system-ui, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 8px;
+}
+
+h2 {
+   margin-top: 0;
+}
+
+/* klassen */
+
+.types {
+   margin-bottom: 1rem;
+}
+
+.type {
+   background-color: #e8f5e9;
+   border: 1px solid #aaa;
+   cursor: pointer;
+   margin-right: 6px;
+   padding: 0.4rem 0.8rem;
+}
+
+.type:hover {
+   background-color: #d6ead8;
+}
+
+.verborgen {
+   display: none;
+}
+
+.item-kaart {
+   background-color: #eef8ee;
+   border-left: 5px solid #6ca86c;
+   margin-top: 1rem;
+   padding: 1rem;
+}
+
+.item-kaart h3 {
+   margin-top: 0;
+}
+
+.item-kaart p {
+   margin: 0.4rem 0;
+}
+
+.item-kaart img {
+   float: right;
+   margin-left: 1rem;
+   width: 90px;
+}
+
+/* ids */
+
+#random-app {
+   margin: 0 auto;
+   max-width: 500px;
+}
+
+#melding {
+   color: #8a1f1f;
+   font-weight: 700;
+   min-height: 1.5rem;
+}

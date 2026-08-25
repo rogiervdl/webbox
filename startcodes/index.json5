@@ -326,20 +326,62 @@
                label: "Herhaling",
                exercises: [
                   {
-                     id: "herhaling-1",
-                     label: "Herhaling 1: DOM HTML",
+                     id: "b-domhtml-moodtracker",
+                     label: "B.DOM HTML: moodtracker",
                      startfiles: [ "html", "js", "css", "md" ],
                      collapsed: [ "css" ]
                   },
                   {
-                     id: "herhaling-2",
-                     label: "Herhaling 2: DOM CSS",
+                     id: "b-domhtml-productbeoordelaar",
+                     label: "B.DOM HTML: productbeoordelaar",
                      startfiles: [ "html", "js", "css", "md" ],
                      collapsed: [ "css" ]
                   },
                   {
-                     id: "herhaling-3",
-                     label: "Herhaling 3: API's",
+                     id: "b-domhtml-profielkaart",
+                     label: "B.DOM HTML: profielkaart",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "b-domhtml-takenlijst",
+                     label: "B.DOM HTML: takenlijst",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "c-domcss-bedragen",
+                     label: "C.DOM CSS: bedragenspel",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "c-domcss-watermeter",
+                     label: "C.DOM CSS: watermeter",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "c-domcss-weerkaart",
+                     label: "C.DOM CSS: weerkaart",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "e-webapi-boekzoeker",
+                     label: "E.Web API's: boekzoeker",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "e-webapi-gerechtzoeker",
+                     label: "E.Web API's: gerechtzoeker",
+                     startfiles: [ "html", "js", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "e-webapi-randomitem",
+                     label: "E.Web API's: randomitem",
                      startfiles: [ "html", "js", "css", "md" ],
                      collapsed: [ "css" ]
                   },
@@ -352,8 +394,8 @@
          label: "WDF",
          modules: [
             {
-               id: "a-html-tekst",
-               label: "A.HTML tekst",
+               id: "a-html-01-tekst",
+               label: "A01.HTML tekst",
                exercises: [
                   {
                      id: "01-paragrafen",
@@ -400,8 +442,8 @@
                ]
             },
             {
-               id: "b-html-links",
-               label: "B.HTML links",
+               id: "a-html-02-links",
+               label: "A02.HTML links",
                exercises: [
                   {
                      id: "01-hyperlinks",
@@ -448,8 +490,8 @@
                ]
             },
             {
-               id: "c-html-tabellen",
-               label: "C.HTML tabellen",
+               id: "a-html-03-tabellen",
+               label: "A03.HTML tabellen",
                exercises: [
                   {
                      id: "01-basistabel",
@@ -472,8 +514,8 @@
                ]
             },
             {
-               id: "d-html-media",
-               label: "D.HTML media",
+               id: "a-html-04-media",
+               label: "A04.HTML media",
                exercises: [
                   {
                      id: "01-afbeeldingen",
@@ -496,8 +538,8 @@
                ]
             },
             {
-               id: "e-html-formulieren",
-               label: "E.HTML formulieren",
+               id: "a-html-05-formulieren",
+               label: "A05.HTML formulieren",
                exercises: [
                   {
                      id: "01-basisformulier",
@@ -544,8 +586,8 @@
                ]
             },
             {
-               id: "f-html-structuur",
-               label: "F.HTML structuur",
+               id: "a-html-06-structuur",
+               label: "A06.HTML structuur",
                exercises: [
                   {
                      id: "01-structuurelementen",
@@ -556,8 +598,8 @@
                ]
             },
             {
-               id: "g-css-design",
-               label: "G.CSS design",
+               id: "b-cssdesign",
+               label: "B.CSS design",
                exercises: [
                   {
                      id: "01-lettertype",
@@ -658,8 +700,8 @@
                ]
             },
             {
-               id: "h-css-layout-flexbox",
-               label: "H.CSS layout flexbox",
+               id: "c-csslayout-flexbox",
+               label: "C01.CSS layout flexbox",
                exercises: [
                   {
                      id: "01-navigatiebalk",
@@ -748,8 +790,8 @@
                ]
             },
             {
-               id: "i-css-layout-grid",
-               label: "I.CSS layout grid",
+               id: "c-csslayout-grid",
+               label: "C02.CSS layout grid",
                exercises: [
                   {
                      id: "01-productoverzicht",
@@ -814,8 +856,8 @@
                ]
             },
             {
-               id: "j-css-responsive",
-               label: "J.CSS responsive",
+               id: "d-cssresponsive",
+               label: "D.CSS responsive",
                exercises: [
                   {
                      id: "01-flexibelebox",
@@ -878,29 +920,29 @@
                label: "Herhaling",
                exercises: [
                   {
-                     id: "herhaling-1",
-                     label: "Herhaling 1: HTML",
+                     id: "a-html-leeshoek",
+                     label: "A.HTML: leeshoek",
                      startfiles: [ "html", "css", "md" ],
                      collapsed: [ "css" ]
                   },
                   {
-                     id: "herhaling-2",
-                     label: "Herhaling 2: CSS design",
+                     id: "b-cssdesign-bergop",
+                     label: "B.CSS design: bergop",
                      startfiles: [ "html", "css", "md" ],
                      collapsed: [ "html" ]
                   },
                   {
-                     id: "herhaling-3",
-                     label: "Herhaling 3: CSS layout",
+                     id: "c-csslayout-werkplaats",
+                     label: "C.CSS layout: werkplaats",
                      startfiles: [ "html", "css", "md" ],
                      collapsed: [ "html" ]
                   },
                   {
-                     id: "herhaling-4",
-                     label: "Herhaling 4: CSS responsive",
+                     id: "d-cssresponsive-stilte",
+                     label: "D.CSS responsive: stilte",
                      startfiles: [ "html", "css", "md" ],
                      collapsed: [ "html" ]
-                  }
+                  },
                ]
             }
          ]
