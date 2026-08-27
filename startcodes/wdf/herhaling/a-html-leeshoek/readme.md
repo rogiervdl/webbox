@@ -4,7 +4,7 @@ Dit is een oefening op HTML: tekst, citaten, media, tabellen, formulieren en het
 
 ## Opgave
 
-Bouw de pagina van boekenclub *De Leeshoek* volledig op in HTML op basis van de screenshot. Alle teksten krijg je hieronder kant en klaar: jij kiest voor elk stuk het **juiste element** en zet de pagina correct in elkaar. De in `styles.css` staat opmaak — dat bestand pas je **niet** aan.
+Bouw de pagina van boekenclub *De Leeshoek* volledig op in HTML op basis van de screenshot. Alle teksten krijg je hieronder kant en klaar: jij kiest voor elk stuk het **juiste element** en zet de pagina correct in elkaar. De opmaak staat in `styles.css` — dat bestand pas je **niet** aan. De afbeelding van het boek heet "boek.jpg" en staat in een submap "img".
 
 ## Screenshot
 
