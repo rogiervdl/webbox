@@ -920,8 +920,26 @@
                label: "Herhaling",
                exercises: [
                   {
+                     id: "a-html-diafragma",
+                     label: "A.HTML: diafragma",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
                      id: "a-html-leeshoek",
                      label: "A.HTML: leeshoek",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "a-html-loper",
+                     label: "A.HTML: loper",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "a-html-pollepel",
+                     label: "A.HTML: pollepel",
                      startfiles: [ "html", "css", "md" ],
                      collapsed: [ "css" ]
                   },
