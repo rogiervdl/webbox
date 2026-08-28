@@ -1,5 +1,5 @@
 /*
- * Examen oefening: boekenclub De Leeshoek - basisopmaak
+ * Examen oefening: Caffè Luna - basisopmaak
  *
  * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
  *
@@ -7,9 +7,9 @@
  * Ze werkt enkel als je de juiste elementen gebruikt.
  */
 
-/* icon font: FontAwesome is al gekoppeld, je hoeft de iconen enkel te gebruiken */
+/* icon font: Google Icons is al gekoppeld, je hoeft de iconen enkel te gebruiken */
 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 
 /* reset */
 
@@ -22,9 +22,9 @@
 /* elementen */
 
 body {
-   background-color: #faf8f5;
-   color: #2b2b2b;
-   font-family: Georgia, "Times New Roman", serif;
+   background-color: #fbf7f2;
+   color: #2e241d;
+   font-family: "Palatino Linotype", Palatino, Georgia, serif;
    line-height: 1.6;
    margin: 0 auto;
    max-width: 720px;
@@ -32,14 +32,14 @@ body {
 }
 
 h1 {
-   color: #6b3f2a;
-   font-size: 32px;
+   color: #7a4a2b;
+   font-size: 34px;
 }
 
 h2 {
-   border-bottom: 1px solid #e0d8cd;
-   color: #6b3f2a;
-   font-size: 22px;
+   border-bottom: 2px solid #e7d9c9;
+   color: #7a4a2b;
+   font-size: 21px;
    margin-bottom: 10px;
    padding-bottom: 4px;
 }
@@ -49,23 +49,28 @@ p {
 }
 
 a {
-   color: #a4552e;
+   color: #9a5b2f;
 }
 
 img {
-   max-width: 220px;
+   max-width: 280px;
+}
+
+.material-symbols-outlined {
+   font-size: 18px;
+   vertical-align: -4px;
 }
 
 /* structuur */
 
 header {
-   border-bottom: 3px solid #6b3f2a;
-   margin-bottom: 20px;
-   padding-bottom: 10px;
+   border-bottom: 3px solid #7a4a2b;
+   margin-bottom: 24px;
+   padding-bottom: 12px;
 }
 
 header p {
-   color: #7a6a5a;
+   color: #8a7561;
    font-size: 15px;
    margin-bottom: 0;
 }
@@ -74,43 +79,66 @@ nav ul {
    display: flex;
    gap: 20px;
    list-style: none;
-   margin-top: 8px;
+   margin-top: 10px;
 }
 
 nav a {
    font-family: system-ui, sans-serif;
-   font-size: 14px;
+   font-size: 13px;
+   letter-spacing: 1px;
    text-decoration: none;
    text-transform: uppercase;
 }
 
 main section {
-   margin-bottom: 30px;
+   margin-bottom: 26px;
+}
+
+main aside {
+   background-color: #f3e9dd;
+   padding: 14px 18px;
+}
+
+main aside h2 {
+   border-bottom: 0;
+   font-size: 18px;
+   margin-bottom: 4px;
+   padding-bottom: 0;
+}
+
+main aside ul {
+   list-style: none;
+}
+
+main aside li {
+   border-bottom: 1px dotted #d8c5ae;
+   padding: 4px 0;
 }
 
 body > footer {
-   border-top: 3px solid #6b3f2a;
+   border-top: 3px solid #7a4a2b;
    font-size: 14px;
-   padding-top: 10px;
+   margin-top: 26px;
+   padding-top: 12px;
 }
 
 /* tekst */
 
 blockquote {
-   border-left: 4px solid #d8c7b4;
-   color: #6b3f2a;
+   border-left: 4px solid #d8c5ae;
+   color: #7a4a2b;
    font-style: italic;
    margin: 15px 0;
    padding-left: 15px;
 }
 
 iframe {
-   border: 1px solid #e0d8cd;
+   border: 1px solid #e7d9c9;
    max-width: 100%;
 }
 
 figcaption {
-   color: #7a6a5a;
+   color: #8a7561;
    font-size: 14px;
    margin-top: 6px;
 }
@@ -135,20 +163,21 @@ caption {
 
 th,
 td {
-   border-bottom: 1px solid #e0d8cd;
+   border-bottom: 1px solid #e7d9c9;
    padding: 8px 10px;
    text-align: left;
 }
 
 th {
-   background-color: #f0e8de;
+   background-color: #f3e9dd;
+   color: #7a4a2b;
 }
 
 /* formulier */
 
 form {
    background-color: white;
-   border: 1px solid #e0d8cd;
+   border: 1px solid #e7d9c9;
    padding: 15px;
 }
 
@@ -169,7 +198,7 @@ label input[type="checkbox"] {
 
 input,
 select {
-   border: 1px solid #ccc;
+   border: 1px solid #d8c5ae;
    font-family: inherit;
    font-size: 14px;
    padding: 6px;
@@ -177,7 +206,7 @@ select {
 }
 
 button {
-   background-color: #6b3f2a;
+   background-color: #7a4a2b;
    border: 0;
    color: white;
    cursor: pointer;

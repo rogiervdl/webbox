@@ -1,5 +1,5 @@
 /*
- * Examen oefening: Bergop - opmaak
+ * Examen oefening: De Tulp - opmaak
  *
  * @author ...
  *
@@ -18,9 +18,9 @@
 
 /* TODO 1: body */
 
-/* TODO 2: koppen h1, h2 en h3, en paragrafen */
+/* TODO 2: koppen h1 en h2, en paragrafen */
 
-/* hero */
+/* banner */
 
 /* TODO 3: de kop */
 
@@ -30,10 +30,10 @@
 
 .menu {
    display: flex;
-   gap: 15px;
+   gap: 22px;
    justify-content: center;
    list-style: none;
-   margin-top: 20px;
+   margin-top: 18px;
 }
 
 /* TODO 4: de menulinks */
@@ -44,7 +44,7 @@
 
 main {
    margin: 0 auto;
-   max-width: 720px;
+   max-width: 700px;
    padding: 30px 20px;
 }
 
@@ -52,9 +52,11 @@ main section {
    margin-bottom: 40px;
 }
 
-/* TODO 5: de tochtkaarten */
+/* TODO 5: de beginletter van de inleiding en de leadparagraaf na elke sectietitel */
 
-/* TODO 6: de prijs */
+/* soorten */
+
+/* TODO 6: de soortenlijst, met de termen en de omschrijvingen */
 
 /* knop */
 

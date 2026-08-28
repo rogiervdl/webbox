@@ -1,5 +1,5 @@
 /*
- * Examen oefening: kookatelier De Pollepel - basisopmaak
+ * Examen oefening: chocolatier De Zoete Verleiding - basisopmaak
  *
  * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
  *
@@ -22,9 +22,9 @@
 /* elementen */
 
 body {
-   background-color: #fffdf9;
-   color: #33291f;
-   font-family: "Trebuchet MS", Verdana, sans-serif;
+   background-color: #fffaf6;
+   color: #2b1b13;
+   font-family: Tahoma, Geneva, sans-serif;
    line-height: 1.6;
    margin: 0 auto;
    max-width: 720px;
@@ -32,15 +32,15 @@ body {
 }
 
 h1 {
-   color: #b5341f;
-   font-size: 36px;
+   color: #6b3a1f;
+   font-size: 32px;
 }
 
 h2 {
-   color: #b5341f;
+   color: #6b3a1f;
    font-size: 20px;
+   letter-spacing: 1px;
    margin-bottom: 10px;
-   text-transform: uppercase;
 }
 
 p {
@@ -48,11 +48,16 @@ p {
 }
 
 a {
-   color: #b5341f;
+   color: #a05a2c;
 }
 
 img {
-   max-width: 320px;
+   max-width: 100%;
+}
+
+mark {
+   background-color: #f7dfae;
+   padding: 2px 6px;
 }
 
 .material-symbols-outlined {
@@ -63,80 +68,76 @@ img {
 /* structuur */
 
 header {
-   border-bottom: 4px double #b5341f;
-   margin-bottom: 24px;
-   padding-bottom: 12px;
+   border-bottom: 1px solid #e6d3c2;
+   margin-bottom: 26px;
+   padding-bottom: 14px;
    text-align: center;
 }
 
 header p {
-   color: #7a5c3e;
-   margin-bottom: 0;
-}
-
-/* taalkeuze bovenaan de header (rechtstreeks in de header, niet in de nav) */
-
-header > ul {
-   display: flex;
-   font-size: 13px;
-   gap: 10px;
-   justify-content: flex-end;
-   letter-spacing: 1px;
-   list-style: none;
+   color: #8a6a55;
+   font-size: 14px;
 }
 
 nav ul {
    display: flex;
-   gap: 24px;
+   gap: 22px;
    justify-content: center;
    list-style: none;
-   margin-top: 10px;
+   margin-top: 8px;
 }
 
 nav a {
-   font-size: 14px;
+   font-size: 13px;
+   letter-spacing: 1px;
    text-decoration: none;
+   text-transform: uppercase;
 }
 
 main section {
-   margin-bottom: 28px;
+   margin-bottom: 26px;
 }
 
 body > footer {
-   background-color: #fdf3ec;
-   font-size: 14px;
-   padding: 14px 18px;
+   border-top: 1px solid #e6d3c2;
+   font-size: 13px;
+   margin-top: 26px;
+   padding-top: 14px;
+}
+
+/* links onderaan de voet */
+
+body > footer > ul {
+   display: flex;
+   gap: 16px;
+   list-style: none;
+   margin-bottom: 8px;
 }
 
 /* tekst */
 
 blockquote {
-   border-left: 4px solid #edc9a3;
-   color: #7a5c3e;
+   border-left: 4px solid #d9b892;
+   color: #6b3a1f;
    font-style: italic;
    margin: 15px 0;
    padding-left: 15px;
 }
 
-main ol {
-   margin-bottom: 15px;
-   padding-left: 22px;
-}
-
 iframe {
-   border: 1px solid #e4d5c5;
+   border: 1px solid #e6d3c2;
    max-width: 100%;
 }
 
 figcaption {
-   color: #7a6a5a;
-   font-size: 14px;
+   color: #8a6a55;
+   font-size: 13px;
    margin-top: 6px;
 }
 
 address {
    font-style: normal;
-   margin-bottom: 6px;
+   margin-bottom: 8px;
 }
 
 /* tabel */
@@ -147,7 +148,6 @@ table {
 }
 
 caption {
-   color: #7a5c3e;
    font-weight: bold;
    margin-bottom: 8px;
    text-align: left;
@@ -155,22 +155,21 @@ caption {
 
 th,
 td {
-   border-bottom: 1px dashed #e4d5c5;
+   border-bottom: 1px solid #e6d3c2;
    padding: 8px 10px;
    text-align: left;
 }
 
 th {
-   background-color: #fdf3ec;
-   color: #b5341f;
+   background-color: #6b3a1f;
+   color: white;
 }
 
 /* formulier */
 
 form {
-   background-color: #fdf3ec;
-   border-radius: 6px;
-   padding: 15px;
+   background-color: #f9efe6;
+   padding: 16px;
 }
 
 form p {
@@ -179,7 +178,7 @@ form p {
 
 label {
    display: block;
-   font-size: 14px;
+   font-size: 13px;
 }
 
 label input[type="checkbox"] {
@@ -188,8 +187,8 @@ label input[type="checkbox"] {
 }
 
 input,
-select {
-   border: 1px solid #e0cfbd;
+textarea {
+   border: 1px solid #dcc4ad;
    font-family: inherit;
    font-size: 14px;
    padding: 6px;
@@ -197,13 +196,12 @@ select {
 }
 
 button {
-   background-color: #b5341f;
+   background-color: #6b3a1f;
    border: 0;
-   border-radius: 4px;
    color: white;
    cursor: pointer;
    font-family: inherit;
-   font-size: 15px;
+   font-size: 14px;
    margin-top: 10px;
    padding: 10px 20px;
 }

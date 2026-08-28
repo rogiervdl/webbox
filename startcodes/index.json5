@@ -920,6 +920,24 @@
                label: "Herhaling",
                exercises: [
                   {
+                     id: "a-html-broodkorf",
+                     label: "A.HTML: broodkorf",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "a-html-caffeluna",
+                     label: "A.HTML: caffeluna",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
+                     id: "a-html-chocolatier",
+                     label: "A.HTML: chocolatier",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "css" ]
+                  },
+                  {
                      id: "a-html-diafragma",
                      label: "A.HTML: diafragma",
                      startfiles: [ "html", "css", "md" ],
@@ -946,6 +964,24 @@
                   {
                      id: "b-cssdesign-bergop",
                      label: "B.CSS design: bergop",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "b-cssdesign-katern",
+                     label: "B.CSS design: katern",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "b-cssdesign-leest",
+                     label: "B.CSS design: leest",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "b-cssdesign-tulp",
+                     label: "B.CSS design: tulp",
                      startfiles: [ "html", "css", "md" ],
                      collapsed: [ "html" ]
                   },
