@@ -30,6 +30,11 @@ const Exercises = (() => {
       js:   'pane-js',
    };
 
+   // oude module-ids die naar hun huidige naam doorverwijzen
+   const MODULE_ALIASSEN = {
+      herhaling: 'examens',
+   };
+
    // declaraties
    const selectSubject     = document.querySelector('#select-subject');
    const selectModule      = document.querySelector('#select-module');
@@ -346,9 +351,11 @@ ${marked.parse(currentReadme)}
       if (!hash) return null;
       const parts = hash.split('/');
       if (parts.length < 1 || parts.length > 3) return null;
+      const moduleId = parts[1] || null;
+
       return {
          subjectId: parts[0] || null,
-         moduleId: parts[1] || null,
+         moduleId: MODULE_ALIASSEN[moduleId] || moduleId,
          exerciseId: parts[2] || null,
       };
    }

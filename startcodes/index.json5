@@ -322,8 +322,8 @@
                ]
             },
             {
-               id: "herhaling",
-               label: "Herhaling",
+               id: "examens",
+               label: "Examens",
                exercises: [
                   {
                      id: "b-domhtml-moodtracker",
@@ -916,8 +916,8 @@
                ]
             },
             {
-               id: "herhaling",
-               label: "Herhaling",
+               id: "examens",
+               label: "Examens",
                exercises: [
                   {
                      id: "a-html-broodkorf",
@@ -986,8 +986,44 @@
                      collapsed: [ "html" ]
                   },
                   {
+                     id: "c-csslayout-draad",
+                     label: "C.CSS layout: draad",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "c-csslayout-grip",
+                     label: "C.CSS layout: grip",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "c-csslayout-trein",
+                     label: "C.CSS layout: trein",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
                      id: "c-csslayout-werkplaats",
                      label: "C.CSS layout: werkplaats",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "d-cssresponsive-heuvel",
+                     label: "D.CSS responsive: heuvel",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "d-cssresponsive-kaft",
+                     label: "D.CSS responsive: kaft",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "d-cssresponsive-lelie",
+                     label: "D.CSS responsive: lelie",
                      startfiles: [ "html", "css", "md" ],
                      collapsed: [ "html" ]
                   },
