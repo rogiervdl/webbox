@@ -1,0 +1,85 @@
+/*
+ * Examen oefening web API's: gerechtzoeker
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ */
+
+/* elementen */
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: "Open Sans", system-ui, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 8px;
+}
+
+h2 {
+   margin-top: 0;
+}
+
+/* klassen */
+
+.zoek-rij {
+   display: flex;
+   gap: 0.5rem;
+   margin-top: 0.5rem;
+}
+
+.zoek-rij input {
+   border: 1px solid #ccc;
+   border-radius: 3px;
+   flex: 1;
+   padding: 5px;
+}
+
+.zoek-rij button {
+   background-color: #fff3e0;
+   border: 1px solid #aaa;
+   cursor: pointer;
+   padding: 0.4rem 0.8rem;
+}
+
+.zoek-rij button:hover {
+   background-color: #ffe6c7;
+}
+
+.gerecht-kaart {
+   align-items: center;
+   background-color: #fff8f0;
+   border-left: 5px solid #e0913a;
+   display: flex;
+   gap: 0.75rem;
+   margin-top: 0.5rem;
+   padding: 0.5rem;
+}
+
+.gerecht-kaart img {
+   border-radius: 4px;
+   width: 70px;
+}
+
+.gerecht-kaart h3 {
+   font-size: 1rem;
+   margin: 0;
+}
+
+.gerecht-kaart p {
+   color: #7a5a2e;
+   margin: 0.2rem 0 0;
+}
+
+/* ids */
+
+#gerecht-app {
+   margin: 0 auto;
+   max-width: 500px;
+}
+
+#melding {
+   color: #8a1f1f;
+   font-weight: 700;
+   min-height: 1.5rem;
+}

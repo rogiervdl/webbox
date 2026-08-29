@@ -1,0 +1,89 @@
+/*
+ * Examen oefening DOM CSS: watermeter
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ */
+
+/* elementen */
+
+body {
+   background-color: #f5f5f5;
+   font-family: Arial, sans-serif;
+}
+
+h2 {
+   margin-top: 0;
+}
+
+/* klassen */
+
+.balk-achtergrond {
+   background-color: #e6e6e6;
+   border-radius: 4px;
+   height: 22px;
+   margin-bottom: 16px;
+   overflow: hidden;
+   width: 100%;
+}
+
+.actie {
+   background-color: #eef7fc;
+   border: 1px solid #9bbbd1;
+   color: #1f4f70;
+   cursor: pointer;
+   margin-right: 6px;
+   padding: 9px 14px;
+}
+
+.actie:hover {
+   background-color: #dceef8;
+}
+
+.actie.actief {
+   background-color: #4a90c2;
+   border-color: #4a90c2;
+   color: #fff;
+}
+
+/* ids */
+
+#plant-app {
+   background-color: #fff;
+   border: 2px solid #ddd;
+   box-sizing: border-box;
+   margin: 40px auto;
+   max-width: 500px;
+   padding: 24px;
+}
+
+#plant-app.droog {
+   background-color: #fff7ed;
+   border-color: #c98a3a;
+}
+
+#plant-app.goed {
+   background-color: #fff;
+   border-color: #4a90c2;
+}
+
+#plant-app.te-nat {
+   background-color: #eef8f1;
+   border-color: #2f7d4f;
+}
+
+#water-balk {
+   background-color: #4a90c2;
+   height: 100%;
+   width: 40%;
+}
+
+#water-tekst {
+   font-weight: 700;
+   margin-bottom: 6px;
+}
+
+#melding {
+   color: #444;
+   margin-top: 0;
+   min-height: 22px;
+}

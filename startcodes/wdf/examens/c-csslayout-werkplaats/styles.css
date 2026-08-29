@@ -1,0 +1,188 @@
+/*
+ * Examen oefening: De Werkplaats - layout
+ *
+ * @author ...
+ *
+ * De opmaak (kleuren, lettertypes, kaarten) is gegeven en pas je NIET aan.
+ * Vul enkel de TODO's aan: dat zijn de regels voor de layout.
+ */
+
+/* reset */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* elementen */
+
+body {
+   background-color: #f7f7f4;
+   color: #1f2430;
+   font-family: system-ui, "Segoe UI", sans-serif;
+   line-height: 1.6;
+}
+
+h1 {
+   font-size: 42px;
+}
+
+h2 {
+   font-size: 26px;
+   margin-bottom: 20px;
+}
+
+h3 {
+   font-size: 18px;
+   margin-bottom: 5px;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+/* wrapper */
+
+.wrapper {
+   /* TODO 1: maximaal 1000px breed, horizontaal gecentreerd, 20px ruimte links en rechts */
+}
+
+/* topbar */
+
+.topbar {
+   background-color: #1f2430;
+   color: white;
+   padding: 15px 0;
+
+   /* TODO 3: blijft bovenaan staan bij het scrollen, boven de rest van de pagina */
+}
+
+.topbar__inner {
+   /* TODO 2: logo links, menu rechts, verticaal gecentreerd */
+}
+
+.logo {
+   font-size: 20px;
+   font-weight: bold;
+   letter-spacing: 1px;
+}
+
+.menu {
+   /* TODO 4: menu-items naast elkaar, 25px ertussen, geen opsommingstekens */
+}
+
+.menu a {
+   color: #d6dae4;
+   font-size: 15px;
+   text-decoration: none;
+}
+
+.menu a:hover {
+   color: #f2a63b;
+}
+
+/* hero */
+
+.hero {
+   background-color: #2f7d78;
+   color: white;
+   text-align: center;
+
+   /* TODO 5: 340px hoog, inhoud onder elkaar en volledig gecentreerd, 15px tussenruimte */
+}
+
+.button {
+   background-color: #1f2430;
+   border-radius: 6px;
+   color: white;
+   display: inline-block;
+   padding: 12px 25px;
+   text-decoration: none;
+}
+
+/* ruimtes */
+
+main section {
+   padding: 40px 0;
+}
+
+.ruimtes {
+   /* TODO 6: raster van 3 even brede kolommen met 20px tussenruimte */
+}
+
+.ruimte {
+   background-color: white;
+   border: 1px solid #e2e2dc;
+   border-radius: 8px;
+   overflow: hidden;
+   padding-bottom: 15px;
+}
+
+.ruimte h3,
+.ruimte p {
+   padding: 0 15px;
+}
+
+.ruimte h3 {
+   padding-top: 12px;
+}
+
+.ruimte img {
+   height: 180px;
+   object-fit: cover;
+   width: 100%;
+}
+
+/* stappen */
+
+.stappen {
+   /* TODO 7: de stappen naast elkaar met 20px ertussen; */
+   /* elke stap krijgt een even groot deel van de beschikbare breedte */
+}
+
+.stap {
+   background-color: #e8f0ef;
+   border-left: 4px solid #2f7d78;
+   padding: 15px 20px;
+
+   /* TODO 7 (vervolg): even groot deel van de breedte */
+}
+
+/* info */
+
+.info img {
+   border-radius: 8px;
+   height: 240px;
+   object-fit: cover;
+
+   /* TODO 8: 320px breed, links naast de tekst, met 30px ruimte ertussen */
+   /* de tekst loopt er rechts van door */
+}
+
+.info__tekst p {
+   margin-bottom: 10px;
+}
+
+/* voet */
+
+.footer {
+   background-color: #1f2430;
+   color: #d6dae4;
+   padding: 25px 0;
+}
+
+.footer__inner {
+   /* TODO 9: copyright links, sociale links rechts, verticaal gecentreerd */
+}
+
+.social {
+   /* TODO 10: naast elkaar, 15px ertussen, geen opsommingstekens */
+}
+
+.social a {
+   color: #d6dae4;
+   font-size: 14px;
+   text-decoration: none;
+}

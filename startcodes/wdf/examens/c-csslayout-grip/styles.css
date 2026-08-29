@@ -1,0 +1,169 @@
+/*
+ * Examen oefening: Grip - layout
+ *
+ * @author ...
+ *
+ * De opmaak (kleuren, lettertypes, kaarten) is gegeven en pas je NIET aan.
+ * Vul enkel de TODO's aan: dat zijn de regels voor de layout.
+ */
+
+/* reset */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* elementen */
+
+body {
+   background-color: #f6f4f1;
+   color: #241d18;
+   font-family: system-ui, "Segoe UI", sans-serif;
+   line-height: 1.6;
+}
+
+h1 {
+   font-size: 44px;
+}
+
+h2 {
+   font-size: 26px;
+   margin-bottom: 20px;
+}
+
+h3 {
+   font-size: 18px;
+   margin-bottom: 5px;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+/* wrapper */
+
+.wrapper {
+   /* TODO 1: maximaal 960px breed, horizontaal gecentreerd, 20px ruimte links en rechts */
+}
+
+/* balk bovenaan */
+
+.topbar {
+   background-color: #241d18;
+   color: white;
+   padding: 14px 0;
+
+   /* TODO 2: blijft bovenaan staan bij het scrollen, boven de rest van de pagina */
+}
+
+.topbar__inner {
+   /* TODO 3: logo links, menu rechts, verticaal gecentreerd */
+}
+
+.logo {
+   font-size: 22px;
+   font-weight: bold;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+}
+
+.menu {
+   /* TODO 4: menu-items naast elkaar, 22px ertussen, geen opsommingstekens */
+}
+
+.menu a {
+   color: #e0d6c9;
+   font-size: 15px;
+   text-decoration: none;
+}
+
+.menu a:hover {
+   color: #d97634;
+}
+
+/* hero */
+
+.hero {
+   background-color: #7a3d1d;
+   color: white;
+   text-align: center;
+
+   /* TODO 5: 320px hoog, titel en ondertitel onder elkaar met 10px ertussen, */
+   /* horizontaal en verticaal in het midden */
+}
+
+/* inhoud */
+
+main section {
+   padding: 40px 0;
+}
+
+.over img {
+   border-radius: 8px;
+
+   /* TODO 6: 260px breed, links naast de tekst, met 25px ruimte ertussen */
+   /* de tekst loopt er rechts van door */
+}
+
+.over p {
+   margin-bottom: 12px;
+}
+
+/* galerij */
+
+.galerij {
+   /* TODO 7: raster van vier even brede kolommen met 12px tussenruimte */
+}
+
+.galerij img {
+   border-radius: 6px;
+   height: 200px;
+   object-fit: cover;
+   width: 100%;
+}
+
+/* tarieven */
+
+.tarieven {
+   /* TODO 8: de drie kaarten naast elkaar met 18px ertussen */
+}
+
+.tarief {
+   background-color: white;
+   border: 1px solid #e2ddd6;
+   border-radius: 8px;
+   padding: 20px;
+
+   /* TODO 8 (vervolg): even groot deel van de breedte */
+}
+
+.bedrag {
+   color: #d97634;
+   font-size: 28px;
+   font-weight: bold;
+}
+
+/* voet */
+
+.footer {
+   background-color: #241d18;
+   color: #e0d6c9;
+   padding: 22px 0;
+}
+
+.footer__inner {
+   /* TODO 9: copyright links, sociale links rechts, verticaal gecentreerd */
+}
+
+.social {
+   /* TODO 10: naast elkaar, 14px ertussen, geen opsommingstekens */
+}
+
+.social a {
+   color: #e0d6c9;
+   font-size: 14px;
+   text-decoration: none;
+}

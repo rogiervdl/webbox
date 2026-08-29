@@ -1,0 +1,67 @@
+/*
+ * Examen oefening: De Tulp - opmaak
+ *
+ * @author ...
+ *
+ * Schrijf je CSS onder de TODO's. De reset en de layoutregels zijn gegeven.
+ */
+
+/* reset */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* elementen */
+
+/* TODO 1: body */
+
+/* TODO 2: koppen h1 en h2, en paragrafen */
+
+/* banner */
+
+/* TODO 3: de kop */
+
+/* menu */
+
+/* gegeven: het menu naast elkaar zetten is layout - dat komt pas in module 4 */
+
+.menu {
+   display: flex;
+   gap: 22px;
+   justify-content: center;
+   list-style: none;
+   margin-top: 18px;
+}
+
+/* TODO 4: de menulinks */
+
+/* inhoud */
+
+/* gegeven: het centreren van de inhoud is layout - dat komt pas in module 4 */
+
+main {
+   margin: 0 auto;
+   max-width: 700px;
+   padding: 30px 20px;
+}
+
+main section {
+   margin-bottom: 40px;
+}
+
+/* TODO 5: de beginletter van de inleiding en de leadparagraaf na elke sectietitel */
+
+/* soorten */
+
+/* TODO 6: de soortenlijst, met de termen en de omschrijvingen */
+
+/* knop */
+
+/* TODO 7: de knop */
+
+/* voet */
+
+/* TODO 8: footer */

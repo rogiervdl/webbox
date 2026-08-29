@@ -1,0 +1,207 @@
+/*
+ * Examen oefening: chocolatier De Zoete Verleiding - basisopmaak
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ *
+ * Deze stylesheet is gegeven en mag je NIET aanpassen.
+ * Ze werkt enkel als je de juiste elementen gebruikt.
+ */
+
+/* icon font: Google Icons is al gekoppeld, je hoeft de iconen enkel te gebruiken */
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
+/* reset */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* elementen */
+
+body {
+   background-color: #fffaf6;
+   color: #2b1b13;
+   font-family: Tahoma, Geneva, sans-serif;
+   line-height: 1.6;
+   margin: 0 auto;
+   max-width: 720px;
+   padding: 20px;
+}
+
+h1 {
+   color: #6b3a1f;
+   font-size: 32px;
+}
+
+h2 {
+   color: #6b3a1f;
+   font-size: 20px;
+   letter-spacing: 1px;
+   margin-bottom: 10px;
+}
+
+p {
+   margin-bottom: 10px;
+}
+
+a {
+   color: #a05a2c;
+}
+
+img {
+   max-width: 100%;
+}
+
+mark {
+   background-color: #f7dfae;
+   padding: 2px 6px;
+}
+
+.material-symbols-outlined {
+   font-size: 18px;
+   vertical-align: -4px;
+}
+
+/* structuur */
+
+header {
+   border-bottom: 1px solid #e6d3c2;
+   margin-bottom: 26px;
+   padding-bottom: 14px;
+   text-align: center;
+}
+
+header p {
+   color: #8a6a55;
+   font-size: 14px;
+}
+
+nav ul {
+   display: flex;
+   gap: 22px;
+   justify-content: center;
+   list-style: none;
+   margin-top: 8px;
+}
+
+nav a {
+   font-size: 13px;
+   letter-spacing: 1px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+main section {
+   margin-bottom: 26px;
+}
+
+body > footer {
+   border-top: 1px solid #e6d3c2;
+   font-size: 13px;
+   margin-top: 26px;
+   padding-top: 14px;
+}
+
+/* links onderaan de voet */
+
+body > footer > ul {
+   display: flex;
+   gap: 16px;
+   list-style: none;
+   margin-bottom: 8px;
+}
+
+/* tekst */
+
+blockquote {
+   border-left: 4px solid #d9b892;
+   color: #6b3a1f;
+   font-style: italic;
+   margin: 15px 0;
+   padding-left: 15px;
+}
+
+iframe {
+   border: 1px solid #e6d3c2;
+   max-width: 100%;
+}
+
+figcaption {
+   color: #8a6a55;
+   font-size: 13px;
+   margin-top: 6px;
+}
+
+address {
+   font-style: normal;
+   margin-bottom: 8px;
+}
+
+/* tabel */
+
+table {
+   border-collapse: collapse;
+   width: 100%;
+}
+
+caption {
+   font-weight: bold;
+   margin-bottom: 8px;
+   text-align: left;
+}
+
+th,
+td {
+   border-bottom: 1px solid #e6d3c2;
+   padding: 8px 10px;
+   text-align: left;
+}
+
+th {
+   background-color: #6b3a1f;
+   color: white;
+}
+
+/* formulier */
+
+form {
+   background-color: #f9efe6;
+   padding: 16px;
+}
+
+form p {
+   margin-bottom: 12px;
+}
+
+label {
+   display: block;
+   font-size: 13px;
+}
+
+label input[type="checkbox"] {
+   display: inline;
+   width: auto;
+}
+
+input,
+textarea {
+   border: 1px solid #dcc4ad;
+   font-family: inherit;
+   font-size: 14px;
+   padding: 6px;
+   width: 100%;
+}
+
+button {
+   background-color: #6b3a1f;
+   border: 0;
+   color: white;
+   cursor: pointer;
+   font-family: inherit;
+   font-size: 14px;
+   margin-top: 10px;
+   padding: 10px 20px;
+}

@@ -71,7 +71,7 @@ Railway koppel je aan de nieuwe branch, dus elke push daarheen deployt de nieuwe
 **Twee aandachtspunten bij de overstap:**
 
 - **Bewaard werk gaat niet mee.** De editorinhoud staat nu in `localStorage` onder `webbox-code/…` ([exercises.js:384](../js/modules/exercises.js#L384)) en is gebonden aan de origin. Studenten die op het nieuwe domein beginnen, zien hun oude opslag niet. Tijdens de overgang is dat geen probleem (beide versies draaien), bij de cutover wel. Aangezien er dan toch een backend is, is dit het natuurlijke moment om bewaard werk serverside te zetten in plaats van in `localStorage` — dat lost het probleem op én levert meteen betere dashboardgegevens. Buiten de huidige scope, maar plan het in fase 2.
-- **Ongecommitte wijzigingen.** Bij het opstellen van dit plan stonden er nog wijzigingen open in `startcodes/index.json5` en een nieuwe map `startcodes/wdf/herhaling/`. Zet die eerst vast op `gh-pages` voor je vertakt, dan start de branch schoon.
+- **Ongecommitte wijzigingen.** Bij het opstellen van dit plan stonden er nog wijzigingen open in `startcodes/index.json5` en een nieuwe map `startcodes/wdf/examens/`. Zet die eerst vast op `gh-pages` voor je vertakt, dan start de branch schoon.
 
 ---
 

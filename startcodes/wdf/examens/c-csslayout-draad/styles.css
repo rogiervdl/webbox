@@ -1,0 +1,205 @@
+/*
+ * Examen oefening: De Draad - layout
+ *
+ * @author ...
+ *
+ * De opmaak (kleuren, lettertypes, kaarten) is gegeven en pas je NIET aan.
+ * Vul enkel de TODO's aan: dat zijn de regels voor de layout.
+ */
+
+/* reset */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* elementen */
+
+body {
+   background-color: #f4f6f8;
+   color: #1c2b36;
+   font-family: system-ui, "Segoe UI", sans-serif;
+   line-height: 1.6;
+   padding-bottom: 60px;
+}
+
+h1 {
+   font-size: 40px;
+}
+
+h2 {
+   font-size: 25px;
+   margin-bottom: 18px;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+/* wrapper */
+
+.wrapper {
+   /* TODO 1: maximaal 900px breed, horizontaal gecentreerd, 20px ruimte links en rechts */
+}
+
+/* balk bovenaan */
+
+.topbar {
+   background-color: #1c2b36;
+   color: white;
+   padding: 14px 0;
+}
+
+.topbar__inner {
+   /* TODO 2: logo links, menu rechts, verticaal gecentreerd */
+}
+
+.logo {
+   font-size: 21px;
+   font-weight: bold;
+}
+
+.menu {
+   /* TODO 3: menu-items naast elkaar, 20px ertussen, geen opsommingstekens */
+}
+
+.menu a {
+   color: #cddbe6;
+   font-size: 15px;
+   text-decoration: none;
+}
+
+.menu a:hover {
+   color: #59b3a9;
+}
+
+/* hero */
+
+.hero {
+   background-color: #59b3a9;
+   color: white;
+   padding: 60px 20px;
+   text-align: center;
+}
+
+.hero p {
+   font-size: 18px;
+   margin-top: 8px;
+}
+
+/* inhoud */
+
+main section {
+   padding: 35px 0;
+}
+
+.over img {
+   border-radius: 8px;
+
+   /* TODO 4: 240px breed, rechts naast de tekst, met 25px ruimte ertussen */
+   /* de tekst loopt er links van door */
+}
+
+.over p {
+   margin-bottom: 12px;
+}
+
+/* cijfers */
+
+.cijfers {
+   /* TODO 5: de drie blokken naast elkaar met 16px ertussen */
+}
+
+.cijfer {
+   background-color: white;
+   border-bottom: 4px solid #59b3a9;
+   border-radius: 8px;
+   padding: 18px 20px;
+   text-align: center;
+
+   /* TODO 5 (vervolg): even groot deel van de breedte */
+}
+
+.getal {
+   color: #1c2b36;
+   font-size: 30px;
+   font-weight: bold;
+}
+
+/* formulier */
+
+.aanmelden {
+   background-color: white;
+   border: 1px solid #dde4ea;
+   border-radius: 8px;
+   padding: 22px;
+
+   /* TODO 6: twee kolommen - links een vaste kolom van 180px voor de bijschriften, */
+   /* rechts een kolom die de rest opvult - 12px tussenruimte */
+}
+
+.aanmelden label {
+   font-size: 14px;
+   padding-top: 6px;
+}
+
+.aanmelden input,
+.aanmelden select,
+.aanmelden textarea {
+   border: 1px solid #cdd6de;
+   border-radius: 4px;
+   font-family: inherit;
+   font-size: 15px;
+   padding: 8px;
+   width: 100%;
+}
+
+.aanmelden button {
+   background-color: #1c2b36;
+   border: 0;
+   border-radius: 4px;
+   color: white;
+   cursor: pointer;
+   font-family: inherit;
+   font-size: 15px;
+   padding: 11px 24px;
+
+   /* TODO 7: de knop is niet breder dan zijn eigen inhoud en staat links in zijn cel */
+}
+
+/* noodbalk */
+
+.noodbalk {
+   background-color: #b5342a;
+   color: white;
+   padding: 14px 20px;
+   text-align: center;
+
+   /* TODO 8: blijft onderaan het scherm staan, over de volledige breedte, */
+   /* ook als je scrollt */
+}
+
+/* voet */
+
+.footer {
+   background-color: #1c2b36;
+   color: #cddbe6;
+   padding: 22px 0;
+}
+
+.footer__inner {
+   /* TODO 9: copyright links, links rechts, verticaal gecentreerd */
+}
+
+.social {
+   /* TODO 10: naast elkaar, 14px ertussen, geen opsommingstekens */
+}
+
+.social a {
+   color: #cddbe6;
+   font-size: 14px;
+   text-decoration: none;
+}
