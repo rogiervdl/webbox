@@ -1,0 +1,51 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* gegeven opmaak */
+
+#ex4 .demo {
+   .buttons {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: auto auto;
+      justify-items: start;
+      width: fit-content;
+   }
+
+   .button {
+      background-color: #6c757d;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 8px 14px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+}
+
+
+/* meerdere classes */
+
+#ex4 .demo {
+   /* ...*/
+}

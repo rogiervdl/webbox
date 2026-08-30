@@ -1,0 +1,37 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* gegeven opmaak */
+
+#ex15 .demo {
+   .more {
+      font-size: smaller;
+      text-decoration: none;
+   }
+}
+
+
+/* pseudo-elements ::before en ::after */
+
+#ex15 .demo {
+   /* ...*/
+}

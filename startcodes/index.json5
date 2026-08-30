@@ -563,8 +563,116 @@
                ]
             },
             {
+               id: "b-csssyntax",
+               label: "B01.CSS syntax",
+               exercises: [
+                  {
+                     id: "01-tagselector",
+                     label: "01. tag selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "02-titels",
+                     label: "02. titels",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "03-classselector",
+                     label: "03. class selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "04-meerdereclasses",
+                     label: "04. meerdere classes",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "05-idselector",
+                     label: "05. id-selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "06-specificity",
+                     label: "06. specificity",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "07-universeleselector",
+                     label: "07. universele selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "08-groeperen",
+                     label: "08. groeperen",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "09-descendantselector",
+                     label: "09. descendant selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "10-directchildselector",
+                     label: "10. direct child selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "11-nextsiblingselector",
+                     label: "11. next sibling selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "12-attributeselector",
+                     label: "12. attribute selector",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "13-interactiestaten",
+                     label: "13. :hover, :active, :focus",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "14-firstlastchild",
+                     label: "14. :first-child, :last-child",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "15-beforeafter",
+                     label: "15. ::before en ::after",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "16-tekstpseudoelements",
+                     label: "16. ::selection, ::first-letter, ::first-line",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  },
+                  {
+                     id: "17-combineren",
+                     label: "17. selectoren combineren",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "html" ]
+                  }
+               ]
+            },
+            {
                id: "b-cssdesign",
-               label: "B.CSS design",
+               label: "B02.CSS design",
                exercises: [
                   {
                      id: "01-lettertype",

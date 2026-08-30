@@ -1,0 +1,99 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+.demo {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+
+/* gegeven opmaak */
+
+#ex9 .demo {
+   max-width: 700px;
+
+   * {
+      margin: 0;
+      padding: 0;
+   }
+
+   h1 {
+      font-size: 18px;
+      font-weight: normal;
+   }
+
+   header {
+      align-items: center;
+      background-color: #a5a28e;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+   }
+
+   footer {
+      background-color: #a5a28e;
+      font-size: 10px;
+      padding: 10px;
+      text-align: center;
+   }
+
+   nav ul {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+   }
+
+   nav a {
+      text-decoration: none;
+   }
+
+   nav a.active {
+      text-decoration: underline;
+   }
+
+   .button {
+      background-color: #876e37;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 5px 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+
+   .product {
+      align-items: start;
+      background-color: #eee;
+      border-radius: 3px;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      padding: 5px 10px 5px 5px;
+      width: fit-content;
+
+      img {
+         width: 120px;
+      }
+   }
+}
+
+
+/* descendant selector */
+
+#ex9 .demo {
+   /* ...*/
+}
