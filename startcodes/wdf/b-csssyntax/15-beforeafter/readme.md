@@ -1,3 +1,16 @@
+## Theorie
+
+Een **pseudo element** is een stukje dat niet in de HTML staat, maar dat je met CSS toevoegt. Met `::before` en `::after` zet je inhoud vóór of na een element. Ze werken enkel in combinatie met de property `content`. Let op de dubbele dubbelpunt.
+
+```css
+li::before {
+   color: #007;
+   content: "→ ";
+}
+```
+
+Gebruik dit voor inhoud die tot het **design** hoort, zoals een pijltje, een bulletje of een icoon. Echte inhoud hoort in de HTML thuis.
+
 ## Opdracht
 
 Voeg met CSS inhoud toe aan het begin of het einde van elementen. Deze pseudo-elements werken enkel in combinatie met `content`.

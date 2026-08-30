@@ -1,3 +1,15 @@
+## Theorie
+
+De universele selector `*` selecteert **alle** elementen.
+
+```css
+* { /* selecteert alles */
+   margin: 0;
+}
+```
+
+Hij is handig om een basis te leggen, bijvoorbeeld om marges te resetten, maar gebruik hem spaarzaam: hij raakt echt élk element, en dat is zelden wat je wil.
+
 ## Opdracht
 
 Selecteer alle elementen met de universele selector. Gebruik hem spaarzaam.

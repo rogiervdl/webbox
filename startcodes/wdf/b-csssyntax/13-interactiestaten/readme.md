@@ -1,3 +1,19 @@
+## Theorie
+
+Een **pseudo class** selecteert een element op basis van zijn **toestand**. Je schrijft ze met een dubbelpunt achter de selector. De belangrijkste drie:
+
+- `:hover` &ndash; de muis staat boven het element
+- `:active` &ndash; er wordt op het element geklikt
+- `:focus` &ndash; het element is geselecteerd, bijvoorbeeld een tekstvak waarin je klikt
+
+```css
+button:hover {
+   opacity: 0.8;
+}
+```
+
+De gewone stijlregel blijft gelden; in de pseudo class zet je enkel wat er verandert.
+
 ## Opdracht
 
 Selecteer elementen op basis van hun toestand.

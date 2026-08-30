@@ -1,3 +1,27 @@
+## Theorie
+
+Met een **attribute selector** selecteer je elementen op basis van een attribuut, tussen rechte haken. Je kan enkel op het attribuut testen, of ook op zijn waarde.
+
+```css
+input[placeholder] { /* elke input mét een placeholder attribuut */
+   border: 1px solid #aaa;
+}
+
+input[type=email] { /* enkel de emailvelden */
+   background-color: #ff9;
+}
+
+[type=reset] { /* elk element met type="reset", ongeacht de tag */
+   opacity: 0.6;
+}
+
+a[href^="https:"] { /* elke link waarvan de href begint met "https:" */
+   color: #080;
+}
+```
+
+Het dakje `^` betekent "begint met". Bevat de waarde leestekens zoals een dubbelpunt of een schuine streep, zet ze dan tussen aanhalingstekens.
+
 ## Opdracht
 
 Selecteer elementen op basis van een attribuut, en optioneel op zijn waarde.

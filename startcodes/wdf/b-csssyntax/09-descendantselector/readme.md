@@ -1,3 +1,23 @@
+## Theorie
+
+Zet je twee selectoren met een **spatie** na elkaar, dan selecteer je enkel de elementen die ergens **binnen** het eerste element staan, hoe diep genest ook. Zo maak je dezelfde tag anders op naargelang waar hij staat.
+
+```css
+article span { /* elke span ergens in een article */
+   text-transform: uppercase;
+}
+
+.product p { /* elke paragraaf ergens in .product */
+   margin-top: 6px;
+}
+
+.product p a { /* elke link in een paragraaf in .product */
+   color: #a22;
+}
+```
+
+Het laatste stuk van de selector is telkens het element dat je opmaakt; wat ervoor staat beperkt waar het mag staan.
+
 ## Opdracht
 
 Selecteer elementen die ergens binnen een ander element staan.
