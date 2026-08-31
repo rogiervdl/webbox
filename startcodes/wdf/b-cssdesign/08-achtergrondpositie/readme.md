@@ -15,7 +15,7 @@ De belangrijkste waarden voor `background-size` zijn `cover` (schaal op tot het 
 
 De banner heeft al een achtergrondafbeelding; positioneer ze en stel de grootte in.
 
-1. Stel de achtergrondgrootte van de banner in op `cover`.
+1. Zorg dat de afbeelding de hele banner bedekt.
 2. Positioneer de achtergrond horizontaal en verticaal in het midden.
 
 ## Screenshot

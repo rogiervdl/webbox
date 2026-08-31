@@ -13,7 +13,7 @@ Gebruik dit voor inhoud die tot het **design** hoort, zoals een pijltje, een bul
 
 ## Opdracht
 
-Voeg met CSS inhoud toe aan het begin of het einde van elementen. Deze pseudo-elements werken enkel in combinatie met `content`.
+Voeg met CSS inhoud toe aan het begin of het einde van elementen. 
 
-1. Voeg vóór elke paragraaf het ⦿ karakter toe, en zet het in blauw met `color: #33b`.
-2. Voeg na elke lees meer link de 👉🏻 emoji toe, en geef ze een linkermarge met `margin-left: 5px`.
+1. Voeg vóór elke paragraaf het ⦿ karakter toe met de `content` property, en zet het in blauw met `color: #33b`.
+2. Voeg na elke lees meer link de 👉🏻 emoji toe met de `content` property, en geef ze een linkermarge met `margin-left: 5px`.
