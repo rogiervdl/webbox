@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/05_media.html#img-](https://rogiervdl.github.io/HTML-course/05_media.html#img-)
+
 Een afbeelding voeg je toe met `<img>`. In `src` staat het pad naar het bestand: **relatief** (`img/kust.jpg`) voor een afbeelding op je eigen site, **absoluut** (`https://...`) voor een afbeelding die elders staat (dit heet *hot linken*: doe dit niet zonder toestemming).
 
 Het `alt` attribuut is **verplicht**: het beschrijft de afbeelding voor wie ze niet ziet en voor zoekmachines. Geef een zinvolle beschrijving, nooit de bestandsnaam. Een **decoratieve** afbeelding voegt geen informatie toe en krijgt `alt=""`: een screenreader slaat ze dan over.

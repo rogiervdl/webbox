@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/04_tabellen.html#cellen-samenvoegen-met-colspan-en-rowspan](https://rogiervdl.github.io/HTML-course/04_tabellen.html#cellen-samenvoegen-met-colspan-en-rowspan)
+
 Met `colspan="3"` loopt een cel over drie kolommen, met `rowspan="2"` over twee rijen. Elke cel die je zo laat meelopen, **verwijder je in de rijen of kolommen ernaast**: anders staan er te veel cellen in de rij en klopt de tabel niet meer. Tel dus per rij hoeveel kolommen ze werkelijk inneemt, de samengevoegde cellen meegerekend.
 
 ```html

@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitleg vind je ook op [https://rogiervdl.github.io/HTML-course/02_tekst.html#ongenummerde-lijsten](https://rogiervdl.github.io/HTML-course/02_tekst.html#ongenummerde-lijsten)
+
 Een menu is een **opsomming van links**, en dus bouw je het altijd met `<ul>`, `<li>` en `<a>` – nooit als een reeks losse `<a>`-elementen naast elkaar. Een screenreader kondigt een lijst aan als "lijst met 4 items" en telt mee waar je zit; zonder lijst hoort de gebruiker enkel vier losse links zonder te weten dat ze bij elkaar horen.
 
 Dat geldt voor **elke** groep links die bij elkaar hoort: het **hoofdmenu** bovenaan met de pagina's van de site, maar evengoed het **eindmenu** onderaan met links als privacy en voorwaarden.

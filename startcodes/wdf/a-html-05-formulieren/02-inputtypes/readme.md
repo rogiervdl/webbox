@@ -1,5 +1,8 @@
 ## Theorie
 
+Een uitgebreid codevoorbeeld vind je op [https://rogiervdl.github.io/HTML-course/06_formulieren.html#totaalformulier](https://rogiervdl.github.io/HTML-course/06_formulieren.html#totaalformulier)
+<br>Een uitleg over het belang van het type vind je ook op [https://rogiervdl.github.io/HTML-course/06_formulieren.html#belang-juist-type-van-input](https://rogiervdl.github.io/HTML-course/06_formulieren.html#belang-juist-type-van-input)
+
 Het attribuut `type` bepaalt drie dingen tegelijk: hoe het veld eruitziet, welk toetsenbord op een gsm verschijnt, en welke controle de browser zelf uitvoert. Bij `type="email"` kijkt de browser na of er een apenstaartje in staat en krijgt de gebruiker op zijn gsm een toetsenbord met een `@`-toets; bij `type="date"` verschijnt een kalender. Het juiste type kiezen scheelt dus werk voor jou én voor je bezoeker.
 
 Er zijn er een twintigtal. De meest gebruikte zijn `text`, `email`, `tel`, `url`, `number`, `date`, `time`, `password`, `color`, `range` en `file`. Een volledig overzicht met alle types naast elkaar vind je in het [totaalformulier in de cursus](https://rogiervdl.github.io/HTML-course/06_formulieren.html#totaalformulier).

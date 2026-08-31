@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/04_tabellen.html#bijschrift-met-caption-en-koppen-met-th-scope](https://rogiervdl.github.io/HTML-course/04_tabellen.html#bijschrift-met-caption-en-koppen-met-th-scope)
+
 `<caption>` geeft de tabel een bijschrift en staat altijd als **eerste kind** van `<table>`. Een titelcel is geen `<td>` maar een `<th>` (*table header*); browsers tonen die vet en gecentreerd. Met `scope` zeg je erbij wat de kop beschrijft: `scope="col"` voor een kolomtitel, `scope="row"` voor een rijtitel. Screenreaders lezen bij elke cel de bijhorende koppen voor, zodat een blinde gebruiker weet waar hij zit.
 
 ```html

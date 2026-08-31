@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitgebreide uitleg vind je vanaf [https://rogiervdl.github.io/HTML-course/03_links.html#title-attribuut](https://rogiervdl.github.io/HTML-course/03_links.html#title-attribuut)
+
 `title="..."` **voegt extra info toe** en verschijnt als tooltip bij hover met de muis; op toestellen zonder muis of trackpad heeft het dus geen effect.
 
 `aria-label="..."` **vervangt de linktekst** voor screenreaders en is zelf nooit zichtbaar. Je hebt het nodig bij een link zonder tekst – een icoon of een afbeelding – want anders leest een screenreader gewoon de URL voor. Heeft de link al zichtbare tekst, gebruik dan geen `aria-label`.

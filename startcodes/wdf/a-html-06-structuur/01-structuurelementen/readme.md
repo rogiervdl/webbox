@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/07_structureren.html](https://rogiervdl.github.io/HTML-course/07_structureren.html)
+
 Met structuurelementen deel je een pagina op in logische delen. De browser en hulpsoftware (zoals schermlezers) begrijpen zo hoe de pagina in elkaar zit.
 
 - `<header>` – de paginakop (logo, titel, hoofdmenu) – één keer, bovenaan de `<body>`

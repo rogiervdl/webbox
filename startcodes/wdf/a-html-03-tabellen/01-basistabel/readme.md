@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/04_tabellen.html#basisversie-met-table-tr-en-td](https://rogiervdl.github.io/HTML-course/04_tabellen.html#basisversie-met-table-tr-en-td)
+
 Een tabel maak je met `<table>`. Daarbinnen is elke rij een `<tr>` (*table row*) en elke cel in die rij een `<td>` (*table data*). Het aantal cellen per rij bepaalt dus het aantal kolommen. Gebruik een tabel **enkel voor tabulaire data**: gegevens waarvan de betekenis afhangt van de rij én de kolom. Nooit voor layout!
 
 ```html
@@ -21,7 +23,7 @@ Resultaat:
 
 <img src="img/theorie.png" alt="" width="109">
 
-**Opgelet:** de `<table>`-attributen `border="1"` en `cellspacing="0"` staan hier enkel om de randen van de tabel zichtbaar te maken. Ze zijn **verouderd** en we vervangen ze later door CSS.
+**Opgelet:** de `<table>`-attributen `border="1"` en `cellspacing="0"` staan hier enkel om de randen van de tabel zichtbaar te maken. Ze zijn **verouderd** en later vervangen we ze door CSS.
 
 ## Opdracht
 

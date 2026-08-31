@@ -1,6 +1,8 @@
 ## Theorie
 
-Alle velden van een formulier staan samen in een `<form>`. Een tekstveld maak je met `<input type="text">`. Elk veld krijgt een `name`: onder die naam wordt de ingevulde waarde straks verstuurd.
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/06_formulieren.html#loginformulier](https://rogiervdl.github.io/HTML-course/06_formulieren.html#loginformulier)
+
+Alle velden van een formulier staan samen in een `<form>`. Een tekstveld maak je met `<input type="text">`. Elk veld krijgt in principe een `name`: onder die naam wordt de ingevulde waarde straks verstuurd. Omdat we in deze cursus nog geen formgegevens zullen versturen en verwerken, mag je ze voorlopig weglaten.
 
 Bij elk veld hoort een `<label>`, dat je met `for` koppelt aan de `id` van het veld. Dat is **geen opsmuk**: klikt de gebruiker op het label, dan springt de cursor in het veld, en een screenreader leest het label voor zodra het veld focus krijgt. Een veld zonder label is voor een blinde gebruiker een leeg vakje.
 

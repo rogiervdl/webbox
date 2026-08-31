@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitleg vind je ook op [https://rogiervdl.github.io/HTML-course/06_formulieren.html#button-of-gewone-link](https://rogiervdl.github.io/HTML-course/06_formulieren.html#button-of-gewone-link)
+
 - **Link** (`<a>`) – **navigatie**: je gaat naar een andere pagina, een ander deel van dezelfde pagina of een bestand. De gebruiker kan hem in een nieuw tabblad openen, en hij komt in de geschiedenis van de browser.
 - **Knop** (`<button>`) – een **handeling** op de pagina zelf: een formulier verzenden of leegmaken.
 
