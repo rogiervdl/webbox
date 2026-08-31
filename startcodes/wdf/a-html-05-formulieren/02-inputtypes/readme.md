@@ -19,6 +19,23 @@ Resultaat:
 
 Maak het inschrijvingsformulier hieronder naar voorbeeld van de screenshot. Kies bij elk veld het type dat bij het gevraagde gegeven past.
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="419">
+
+### Teksten
+
+Alle teksten van het formulier staan hieronder, zonder opmaak, zodat je ze kan kopiëren.
+
+```
+Inschrijven: workshop broodbakken
+
+Naam:
+E-mailadres:
+Telefoon:
+Voorkeurdatum:
+Aantal personen:
+Je website:
+
+Inschrijven
+```

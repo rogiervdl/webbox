@@ -22,19 +22,17 @@ body {
 
 /* box-shadow */
 
-#ex16 .demo {
-   .card > :first-child {
-      margin-top: 0;
-   }
+.card > :first-child {
+   margin-top: 0;
+}
 
-   .card > :last-child {
-      margin-bottom: 0;
-   }
+.card > :last-child {
+   margin-bottom: 0;
+}
 
-   .card {
-      background-color: #fff;
-      margin-bottom: 50px;
-      padding: 16px;
-      /* ...*/
-   }
+.card {
+   background-color: #fff;
+   margin-bottom: 50px;
+   padding: 16px;
+   /* ...*/
 }

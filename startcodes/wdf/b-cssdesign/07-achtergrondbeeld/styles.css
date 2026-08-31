@@ -22,13 +22,11 @@ body {
 
 /* background-image */
 
-#ex7 .demo {
-   .banner {
-      border-radius: 6px;
-      color: white;
-      height: 280px;
-      padding: 30px;
-      text-align: center;
-      /* ...*/
-   }
+.banner {
+   border-radius: 6px;
+   color: white;
+   height: 280px;
+   padding: 30px;
+   text-align: center;
+   /* ...*/
 }

@@ -41,6 +41,34 @@ Resultaat:
 
 Maak het bestelformulier hieronder naar voorbeeld van de screenshot. Kies per vraag het element dat erbij past.
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="310">
+
+### Teksten
+
+Alle teksten van het formulier staan hieronder, zonder opmaak, zodat je ze kan kopiëren. Onder elke vraag staan de keuzes die erbij horen.
+
+```
+Je bestelling
+
+Welke koffie?
+Espresso
+Cappuccino
+Latte macchiato
+Filterkoffie
+
+Welk formaat?
+Klein
+Medium
+Groot
+
+Iets erbij?
+Suiker
+Melk
+Koekje
+
+Hoe sterk mag ze zijn?
+
+Bestellen
+```

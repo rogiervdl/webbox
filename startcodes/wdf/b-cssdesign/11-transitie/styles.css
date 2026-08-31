@@ -22,16 +22,14 @@ body {
 
 /* transition */
 
-#ex11 .demo {
-   .btn {
-      border: 0;
-      border-radius: 8px;
-      cursor: pointer;
-      padding: 10px 14px;
-      /* ...*/
-   }
+.btn {
+   border: 0;
+   border-radius: 8px;
+   cursor: pointer;
+   padding: 10px 14px;
+   /* ...*/
+}
 
-   .btn:hover {
-      /* ...*/
-   }
+.btn:hover {
+   /* ...*/
 }

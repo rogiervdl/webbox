@@ -22,16 +22,12 @@ body {
 
 /* gegeven opmaak */
 
-#ex10 .demo {
-   p {
-      font-size: 14px;
-      margin: 8px 0;
-   }
+p {
+   font-size: 14px;
+   margin: 8px 0;
 }
 
 
 /* direct child selector */
 
-#ex10 .demo {
-   /* ...*/
-}
+/* ... */

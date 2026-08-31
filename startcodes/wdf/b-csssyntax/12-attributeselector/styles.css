@@ -22,34 +22,30 @@ body {
 
 /* gegeven opmaak */
 
-#ex12 .demo {
-   form {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: 100px 1fr;
-      max-width: 500px;
-   }
+form {
+   display: grid;
+   gap: 10px;
+   grid-template-columns: 100px 1fr;
+   max-width: 500px;
+}
 
-   input,
-   button {
-      padding: 3px 5px;
-   }
+input,
+button {
+   padding: 3px 5px;
+}
 
-   .buttons {
-      align-self: center;
-      display: grid;
-      gap: 15px;
-      grid-column: span 2;
-      grid-template-columns: auto auto;
-      justify-items: start;
-      justify-self: end;
-      width: fit-content;
-   }
+.buttons {
+   align-self: center;
+   display: grid;
+   gap: 15px;
+   grid-column: span 2;
+   grid-template-columns: auto auto;
+   justify-items: start;
+   justify-self: end;
+   width: fit-content;
 }
 
 
 /* attribute selector */
 
-#ex12 .demo {
-   /* ...*/
-}
+/* ... */

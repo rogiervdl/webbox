@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitgebreide uitleg vind je vanaf [https://rogiervdl.github.io/HTML-course/02_tekst.html#blockquote](https://rogiervdl.github.io/HTML-course/02_tekst.html#blockquote)
+
 - `<blockquote>` – een **bloktekst**: een blok tekst die eruit springt, zoals een citaat van iemand anders of een pullquote in een artikel
 - `<cite>` – een **bronvermelding**: bron waarnaar je refereert (boek, schilderij, rechtspraak, film, paper, song...), niet de naam van een persoon!
 - `<address>` – de belangrijkste **contactgegevens** op een webpagina, meestal onderaan de pagina
@@ -14,7 +16,7 @@ Let op: `<address>` betekent dus niet "adres" maar "contactgegevens". Er hoeft z
 <blockquote>
    <p>Design is how it works.</p>
 </blockquote>
-<p>Steve Jobs in <cite>The New York Times Magazine</cite></p><!-- de titel, niet de spreker -->
+<p>Steve Jobs in <cite>The New York Times Magazine</cite></p><!-- de bronvermelding, niet de spreker -->
 
 <address>
    Studio Lumen<br>
@@ -31,6 +33,10 @@ Resultaat:
 
 Hieronder staat een interview uit een tijdschrift, als kale tekst. Geef elk stuk het element dat erbij hoort, naar voorbeeld van de screenshot. Let op: niet alles wat schuin staat is hetzelfde element.
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="550">
+
+### Teksten
+
+De teksten staan al klaar in de HTML.

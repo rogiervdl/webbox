@@ -22,21 +22,19 @@ body {
 
 /* font-family en font-size */
 
-#ex1 .demo {
-   * {
-      font-size: 14px;
-      /* ...*/
-   }
+* {
+   font-size: 14px;
+   /* ...*/
+}
 
-   h3 {
-      /* ...*/
-   }
+h3 {
+   /* ...*/
+}
 
-   p::first-letter {
-      /* ...*/
-   }
+p::first-letter {
+   /* ...*/
+}
 
-   blockquote {
-      /* ...*/
-   }
+blockquote {
+   /* ...*/
 }

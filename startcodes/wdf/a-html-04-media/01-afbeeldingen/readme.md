@@ -24,6 +24,26 @@ Maak onderstaande pagina. Gebruik voor de titels `<h3>` en `<h4>`.
 4. link onderaan een youtube icoon `img/youtube.png` naar *https://www.youtube.com/c/NJAMhetKOOKKANAAL*
 5. geef elke afbeelding een alt-attribuut; vul enkel in waar nodig
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="367">
+
+### Teksten
+
+Alle teksten van de pagina staan hieronder, zonder opmaak, zodat je ze kan kopiëren. De laatste regel is de tooltip die bij het YouTube-icoon verschijnt.
+
+```
+Lekker Belgisch
+
+Hoofdgerecht
+
+Moules-frites, de bekendste klassieker van het land.
+
+Dessert
+
+Een Luikse wafel, niet te verwarren met de Brusselse.
+
+Meer Belgische recepten op YouTube:
+
+bezoek ons Youtube kanaal
+```

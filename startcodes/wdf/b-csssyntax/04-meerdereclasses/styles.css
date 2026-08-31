@@ -22,30 +22,26 @@ body {
 
 /* gegeven opmaak */
 
-#ex4 .demo {
-   .buttons {
-      display: grid;
-      gap: 15px;
-      grid-template-columns: auto auto;
-      justify-items: start;
-      width: fit-content;
-   }
+.buttons {
+   display: grid;
+   gap: 15px;
+   grid-template-columns: auto auto;
+   justify-items: start;
+   width: fit-content;
+}
 
-   .button {
-      background-color: #6c757d;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 8px 14px;
-      text-decoration: none;
-      text-transform: uppercase;
-   }
+.button {
+   background-color: #6c757d;
+   border-radius: 8px;
+   color: white;
+   cursor: pointer;
+   font-size: 14px;
+   padding: 8px 14px;
+   text-decoration: none;
+   text-transform: uppercase;
 }
 
 
 /* meerdere classes */
 
-#ex4 .demo {
-   /* ...*/
-}
+/* ... */

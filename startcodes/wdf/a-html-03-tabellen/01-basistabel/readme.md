@@ -25,6 +25,19 @@ Resultaat:
 
 ## Opdracht
 
-Maak een tabel naar voorbeeld van deze screenshot:
+Maak een tabel naar voorbeeld van de screenshot.
+
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="352">
+
+### Teksten
+
+Alle teksten van de tabel staan hieronder, zonder opmaak, zodat je ze kan kopiëren. Elke regel is één rij.
+
+```
+Vertrek   Spoor   Type
+07:12   3   IC
+07:27   8   S-trein
+07:42   3   IC
+```

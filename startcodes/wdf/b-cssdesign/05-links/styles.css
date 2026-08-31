@@ -22,12 +22,10 @@ body {
 
 /* links: text-decoration en text-underline-offset */
 
-#ex5 .demo {
-   a {
-      /* ...*/
-   }
+a {
+   /* ...*/
+}
 
-   a:hover {
-      /* ...*/
-   }
+a:hover {
+   /* ...*/
 }

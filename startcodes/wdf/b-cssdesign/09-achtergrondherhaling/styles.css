@@ -22,10 +22,8 @@ body {
 
 /* background-repeat */
 
-#ex9 .demo {
-   .bottomstrip {
-      border: 1px solid #ddd;
-      height: 120px;
-      /* ...*/
-   }
+.bottomstrip {
+   border: 1px solid #ddd;
+   height: 120px;
+   /* ...*/
 }

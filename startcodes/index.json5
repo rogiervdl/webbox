@@ -366,43 +366,43 @@
                      id: "01-paragrafen",
                      label: "01. paragrafen en titels",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "02-lijsten",
                      label: "02. lijsten",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "03-nadruk",
                      label: "03. nadruk",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "04-subsup",
                      label: "04. sub, sup en small",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "05-quote",
                      label: "05. quote, bron en adres",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "06-details",
                      label: "06. uitklapbare inhoud",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "07-karakters",
                      label: "07. karakters, emoji's en icon fonts",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   }
                ]
             },
@@ -486,19 +486,19 @@
                      id: "01-afbeeldingen",
                      label: "01. afbeeldingen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "02-figure",
                      label: "02. figuur met bijschrift",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "03-embedding",
                      label: "03. embedding",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   }
                ]
             },
@@ -510,43 +510,43 @@
                      id: "01-basisformulier",
                      label: "01. basisformulier",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "02-inputtypes",
                      label: "02. het juiste input type",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "03-selecties",
                      label: "03. selecties",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "04-textarea",
                      label: "04. meerregelige tekst",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "05-attributen",
                      label: "05. attributen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "06-fieldset",
                      label: "06. fieldset en legend",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "07-knopoflink",
                      label: "07. knop of link?",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   }
                ]
             },
@@ -558,7 +558,7 @@
                      id: "01-structuurelementen",
                      label: "01. structuurelementen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   }
                ]
             },
@@ -570,103 +570,103 @@
                      id: "01-tagselector",
                      label: "01. tag selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "02-titels",
                      label: "02. titels",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "03-classselector",
                      label: "03. class selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "04-meerdereclasses",
                      label: "04. meerdere classes",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "05-idselector",
                      label: "05. id-selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "06-specificity",
                      label: "06. specificity",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "07-universeleselector",
                      label: "07. universele selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "08-groeperen",
                      label: "08. groeperen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "09-descendantselector",
                      label: "09. descendant selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "10-directchildselector",
                      label: "10. direct child selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "11-nextsiblingselector",
                      label: "11. next sibling selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "12-attributeselector",
                      label: "12. attribute selector",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "13-interactiestaten",
                      label: "13. :hover, :active, :focus",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "14-firstlastchild",
                      label: "14. :first-child, :last-child",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "15-beforeafter",
                      label: "15. ::before en ::after",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "16-tekstpseudoelements",
                      label: "16. ::selection, ::first-letter, ::first-line",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "17-combineren",
                      label: "17. selectoren combineren",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   }
                ]
             },
@@ -678,97 +678,97 @@
                      id: "01-lettertype",
                      label: "01. lettertype",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "02-tekststijl",
                      label: "02. tekststijl",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "03-kleuren",
                      label: "03. kleuren",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "04-uitlijning",
                      label: "04. uitlijning",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "05-links",
                      label: "05. links",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "06-lijsten",
                      label: "06. lijsten",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "07-achtergrondbeeld",
                      label: "07. achtergrondbeeld",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "08-achtergrondpositie",
                      label: "08. achtergrondpositie",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "09-achtergrondherhaling",
                      label: "09. achtergrondherhaling",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "10-interactiestaten",
                      label: "10. interactiestaten",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "11-transitie",
                      label: "11. transitie",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "12-marges",
                      label: "12. marges en padding",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "13-rand",
                      label: "13. rand",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "14-afgerondehoeken",
                      label: "14. afgeronde hoeken",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "15-afmetingen",
                      label: "15. afmetingen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "16-schaduw",
                      label: "16. schaduw",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   }
                ]
             },
@@ -780,85 +780,85 @@
                      id: "01-navigatiebalk",
                      label: "01. navigatiebalk",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "02-fotogallerij",
                      label: "02. fotogallerij",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "03-tagcloud",
                      label: "03. tag cloud",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "04-productlijst",
                      label: "04. productlijst",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "05-springen",
                      label: "05. springen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "06-chatberichten",
                      label: "06. chatberichten",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "07-driekolommen",
                      label: "07. drie kolommen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "08-checkout",
                      label: "08. checkout",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "09-profielkaart",
                      label: "09. profielkaart",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "10-sidebarlayout",
                      label: "10. layout met sidebar",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "11-keywords",
                      label: "11. keywords",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "12-bestandenlijst",
                      label: "12. bestandenlijst",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "13-viewer",
                      label: "13. viewer met thumbnails",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "14-productinfo",
                      label: "14. productinfo",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   }
                ]
             },
@@ -870,61 +870,61 @@
                      id: "01-productoverzicht",
                      label: "01. productoverzicht",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "02-bloglayout",
                      label: "02. bloglayout",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "03-boekenmuur",
                      label: "03. boekenmuur",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "04-formulier",
                      label: "04. formulier in grid",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "05-conferentieschema",
                      label: "05. conferentieschema",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "06-productfiche",
                      label: "06. productfiche",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "07-pinterest",
                      label: "07. pinterest-stijl grid",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "08-bredekaarten",
                      label: "08. brede kaarten",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "09-springen",
                      label: "09. springen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "10-buitenhoeken",
                      label: "10. buitenhoeken",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   }
                ]
             },
@@ -936,55 +936,55 @@
                      id: "01-flexibelebox",
                      label: "01. flexibele box",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "02-flexibeleafbeelding",
                      label: "02. flexibele afbeelding",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "03-achtergrondkleur",
                      label: "03. veranderende achtergrondkleur",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "04-tekstopmaak",
                      label: "04. veranderende tekstopmaak",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "05-headerhoogte",
                      label: "05. header hoogte",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "06-kolommen",
                      label: "06. responsive kolommen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "07-menu",
                      label: "07. responsive menu",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "08-grid",
                      label: "08. grid met variabel aantal kolommen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "09-tagline",
                      label: "09. tagline verbergen en tonen",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   }
                ]
             },
@@ -996,115 +996,115 @@
                      id: "a-html-broodkorf",
                      label: "A.HTML: broodkorf",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "a-html-caffeluna",
                      label: "A.HTML: caffeluna",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "a-html-chocolatier",
                      label: "A.HTML: chocolatier",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "a-html-diafragma",
                      label: "A.HTML: diafragma",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "a-html-leeshoek",
                      label: "A.HTML: leeshoek",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "a-html-loper",
                      label: "A.HTML: loper",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "a-html-pollepel",
                      label: "A.HTML: pollepel",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "css" ]
+                     collapsed: [ "css", "js" ]
                   },
                   {
                      id: "b-cssdesign-bergop",
                      label: "B.CSS design: bergop",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "b-cssdesign-katern",
                      label: "B.CSS design: katern",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "b-cssdesign-leest",
                      label: "B.CSS design: leest",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "b-cssdesign-tulp",
                      label: "B.CSS design: tulp",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "c-csslayout-draad",
                      label: "C.CSS layout: draad",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "c-csslayout-grip",
                      label: "C.CSS layout: grip",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "c-csslayout-trein",
                      label: "C.CSS layout: trein",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "c-csslayout-werkplaats",
                      label: "C.CSS layout: werkplaats",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "d-cssresponsive-heuvel",
                      label: "D.CSS responsive: heuvel",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "d-cssresponsive-kaft",
                      label: "D.CSS responsive: kaft",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "d-cssresponsive-lelie",
                      label: "D.CSS responsive: lelie",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                   {
                      id: "d-cssresponsive-stilte",
                      label: "D.CSS responsive: stilte",
                      startfiles: [ "html", "css", "md" ],
-                     collapsed: [ "html" ]
+                     collapsed: [ "js" ]
                   },
                ]
             }

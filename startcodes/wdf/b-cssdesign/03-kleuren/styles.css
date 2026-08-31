@@ -22,23 +22,21 @@ body {
 
 /* color en background-color */
 
-#ex3 .demo {
-   .badge {
-      background-color: #eee;
-      border-radius: 6px;
-      padding: 10px 12px;
-      width: fit-content;
-   }
+.badge {
+   background-color: #eee;
+   border-radius: 6px;
+   padding: 10px 12px;
+   width: fit-content;
+}
 
-   .success {
-      /* ...*/
-   }
+.success {
+   /* ...*/
+}
 
-   .warning {
-      /* ...*/
-   }
+.warning {
+   /* ...*/
+}
 
-   .danger {
-      /* ...*/
-   }
+.danger {
+   /* ...*/
 }

@@ -1,13 +1,25 @@
 ## Theorie
 
-Een stuk lopende tekst zet je in een paragraaf met `<p>`. Elke alinea krijgt haar eigen `<p>`.
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/02_tekst.html#blocklevel-elementen](https://rogiervdl.github.io/HTML-course/02_tekst.html#blocklevel-elementen)
 
-Voor een line break gebruik je `<br>`. Gebruik het **enkel** om een regeleinde te forceren zoals in een adres of een gedicht – nooit om paragrafen te maken.
+### Paragrafen
+
+Met `<p>` maak je een paragraaf. Het is één van de meest gebruikte elementen.
 
 ```html
 <p>Dit is de eerste alinea.</p>
 <p>Dit is de tweede alinea.</p>
+```
 
+Resultaat:
+
+<img src="img/theorie1.png" alt="" width="180">
+
+### Line breaks
+
+Met  `<br>` forceer je een regeleinde. Dit wordt **zelden gebruikt**, enkel in bijvoorbeeld een adres of een gedicht:
+
+```html
 <p>
    Reisblog De Sporen<br><!-- geforceerde afbreking -->
    Stationsstraat 12<br>
@@ -17,11 +29,20 @@ Voor een line break gebruik je `<br>`. Gebruik het **enkel** om een regeleinde t
 
 Resultaat:
 
-<img src="img/theorie1.png" alt="" width="180">
+<img src="img/theorie2.png" alt="" width="160">
 
-Voor titels heeft HTML zes kopniveaus, van `<h1>` tot `<h6>`. De vuistregel: **h1 is de titel van de pagina, h2 zijn de hoofdstukken, h3 de subhoofdstukken**, enzovoort. Daaruit volgt dat er **maar één `<h1>` per pagina** kan zijn: een pagina heeft nu eenmaal één titel. Sla ook geen niveaus over – na een `<h2>` komt een `<h3>`, niet meteen een `<h4>`.
+### Titels
 
-Omgekeerd geldt hetzelfde: staat er op de pagina **geen zichtbare titel**, dan zet je er ook **geen `<h1>`**.
+Voor titels heeft HTML zes niveaus, van `<h1>` tot `<h6>`.  
+
+- **h1** is de titel van de pagina; dit komt bijgevolg hooguit één keer per pagina voor
+- **h2** zijn de hoofdstukken
+- **h3*** de subhoofdstukken
+- ... 
+
+Let op: het nummer van de titel (1 tem 6) is NIET de grootte van de titel, maar de structurele betekenis! In sommige designs kan bijvoorbeeld een `<h1>` kleiner weergegeven worden dan een `<h2>`. 
+
+Een voorbeeldfragment:
 
 ```html
 <h1>Mijn kookblog</h1><!-- de titel van de pagina -->
@@ -52,7 +73,7 @@ Omgekeerd geldt hetzelfde: staat er op de pagina **geen zichtbare titel**, dan z
 
 Resultaat:
 
-<img src="img/theorie2.png" alt="" width="350">
+<img src="img/theorie3.png" alt="" width="350">
 
 ## Opdracht
 
@@ -62,6 +83,42 @@ Maak onderstaande pagina naar voorbeeld van de screenshot.
 2. elke alinea staat in een eigen paragraaf
 3. het adres onderaan is één paragraaf met een regelafbreking na elke regel
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="500">
+
+### Teksten
+
+Alle teksten van de pagina staan hieronder, zonder opmaak, zodat je ze kan kopiëren.
+
+```
+Met de trein door Europa
+
+Drie weken, vier landen en één treinpas. Hieronder een kort verslag van elke halte, met de dingen die ik zelf graag op voorhand had geweten.
+
+Frankrijk
+
+Parijs
+
+De Thalys zet je in twee uur midden in de stad. Koop je metroticket meteen per tien: dat scheelt een pak aanschuiven.
+
+Lyon
+
+Veel rustiger dan Parijs, en het eten is er beter. De oude stad ligt op wandelafstand van het station.
+
+Italië
+
+Milaan
+
+Eén dag volstaat: de kathedraal, een koffie aan de toog en verder met de trein.
+
+Bologna
+
+De verrassing van de reis. Kilometers overdekte galerijen, en studentenprijzen in de eetcafés rond de universiteit.
+
+Contact
+
+Reisblog De Sporen
+Stationsstraat 12
+9000 Gent
+```

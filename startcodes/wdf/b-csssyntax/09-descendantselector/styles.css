@@ -2,6 +2,8 @@
 
 * {
    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
 
 body {
@@ -16,84 +18,74 @@ body {
    background-color: #f9fafb;
    border: 1px solid #e5e7eb;
    border-radius: 6px;
+   max-width: 700px;
    padding: 12px;
 }
 
 
 /* gegeven opmaak */
 
-#ex9 .demo {
-   max-width: 700px;
+h1 {
+   font-size: 18px;
+   font-weight: normal;
+}
 
-   * {
-      margin: 0;
-      padding: 0;
-   }
+header {
+   align-items: center;
+   background-color: #a5a28e;
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+}
 
-   h1 {
-      font-size: 18px;
-      font-weight: normal;
-   }
+footer {
+   background-color: #a5a28e;
+   font-size: 10px;
+   padding: 10px;
+   text-align: center;
+}
 
-   header {
-      align-items: center;
-      background-color: #a5a28e;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-   }
+nav ul {
+   display: flex;
+   gap: 10px;
+   list-style: none;
+}
 
-   footer {
-      background-color: #a5a28e;
-      font-size: 10px;
-      padding: 10px;
-      text-align: center;
-   }
+nav a {
+   text-decoration: none;
+}
 
-   nav ul {
-      display: flex;
-      gap: 10px;
-      list-style: none;
-   }
+nav a.active {
+   text-decoration: underline;
+}
 
-   nav a {
-      text-decoration: none;
-   }
+.button {
+   background-color: #876e37;
+   border-radius: 8px;
+   color: white;
+   cursor: pointer;
+   font-size: 12px;
+   padding: 5px 10px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
 
-   nav a.active {
-      text-decoration: underline;
-   }
+.product {
+   align-items: start;
+   background-color: #eee;
+   border-radius: 3px;
+   display: flex;
+   gap: 10px;
+   margin-bottom: 15px;
+   padding: 5px 10px 5px 5px;
+   width: fit-content;
 
-   .button {
-      background-color: #876e37;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      font-size: 12px;
-      padding: 5px 10px;
-      text-decoration: none;
-      text-transform: uppercase;
-   }
-
-   .product {
-      align-items: start;
-      background-color: #eee;
-      border-radius: 3px;
-      display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-      padding: 5px 10px 5px 5px;
-      width: fit-content;
-
-      img {
-         width: 120px;
-      }
+   img {
+      width: 120px;
    }
 }
 
 
 /* descendant selector */
 
-#ex9 .demo {
-   /* ...*/
-}
+/* ... */

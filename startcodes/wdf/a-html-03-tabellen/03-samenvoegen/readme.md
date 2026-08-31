@@ -29,8 +29,23 @@ Resultaat:
 
 ## Opdracht
 
-Maak een tabel naar voorbeeld van deze screenshot:
+Maak een tabel naar voorbeeld van de screenshot. Tel per rij hoeveel kolommen ze inneemt: overal moeten het er vier zijn.
+
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="354">
 
-Tel per rij hoeveel kolommen ze inneemt: overal moeten het er vier zijn.
+### Teksten
+
+Alle teksten van de tabel staan hieronder, zonder opmaak, zodat je ze kan kopiëren. Elke regel is één rij; de eerste regel is het bijschrift. Een cel die over meerdere rijen loopt, staat enkel in de rij waar ze begint.
+
+```
+Lessenrooster eerste jaar
+
+Uur   maandag   dinsdag   woensdag
+09:00   Webdevelopment   Wiskunde   Databanken
+10:00   Wiskunde   Databanken
+12:00   middagpauze
+13:00   Netwerken   Project   Engels
+14:00   Netwerken   Engels
+```

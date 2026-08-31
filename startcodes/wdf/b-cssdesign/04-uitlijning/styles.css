@@ -22,12 +22,10 @@ body {
 
 /* line-height, text-transform, text-align */
 
-#ex4 .demo {
-   h2 {
-      /* ...*/
-   }
+h2 {
+   /* ...*/
+}
 
-   p {
-      /* ...*/
-   }
+p {
+   /* ...*/
 }

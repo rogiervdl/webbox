@@ -22,22 +22,20 @@ body {
 
 /* margin en padding */
 
-#ex12 .demo {
-   .header {
-      background-image: url(../img/city.jpg);
-      background-position: center bottom;
-      background-size: contain;
-      /* ...*/
-   }
+.header {
+   background-image: url(../img/city.jpg);
+   background-position: center bottom;
+   background-size: contain;
+   /* ...*/
+}
 
-   .header-box {
-      background-color: #789b;
-      color: #eee;
-      max-width: 350px;
-      /* ...*/
-   }
+.header-box {
+   background-color: #789b;
+   color: #eee;
+   max-width: 350px;
+   /* ...*/
+}
 
-   .header-box:last-child {
-      /* ...*/
-   }
+.header-box:last-child {
+   /* ...*/
 }

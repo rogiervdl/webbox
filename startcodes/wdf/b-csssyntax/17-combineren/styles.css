@@ -16,96 +16,91 @@ body {
    background-color: #f9fafb;
    border: 1px solid #e5e7eb;
    border-radius: 6px;
+   max-width: 760px;
    padding: 12px;
 }
 
 
 /* gegeven opmaak */
 
-#ex17 .demo {
-   max-width: 760px;
+header,
+footer {
+   background-color: #a5a28e;
+   padding: 12px;
+}
 
-   header,
-   footer {
-      background-color: #a5a28e;
-      padding: 12px;
-   }
+header {
+   align-items: center;
+   display: flex;
+   gap: 12px;
+   justify-content: space-between;
+}
 
-   header {
-      align-items: center;
-      display: flex;
-      gap: 12px;
-      justify-content: space-between;
-   }
+header p {
+   font-size: 12px;
+   font-style: italic;
+}
 
-   header p {
-      font-size: 12px;
-      font-style: italic;
-   }
+header .logo {
+   font-size: 18px;
+   font-weight: normal;
+}
 
-   header .logo {
-      font-size: 18px;
-      font-weight: normal;
-   }
+nav ul {
+   display: flex;
+   gap: 10px;
+   list-style: none;
+}
 
-   nav ul {
-      display: flex;
-      gap: 10px;
-      list-style: none;
-   }
+nav a {
+   color: white;
+   font-size: 12px;
+   text-decoration: none;
+}
 
-   nav a {
-      color: white;
-      font-size: 12px;
-      text-decoration: none;
-   }
+#maincontent {
+   padding: 12px 0;
+}
 
-   #maincontent {
-      padding: 12px 0;
-   }
+#maincontent a {
+   text-decoration: none;
+}
 
-   #maincontent a {
-      text-decoration: none;
-   }
+#maincontent a:hover {
+   text-decoration: underline;
+}
 
-   #maincontent a:hover {
-      text-decoration: underline;
-   }
+.card {
+   background-color: #eee;
+   border-radius: 6px;
+   padding: 10px 20px;
+}
 
-   .card {
-      background-color: #eee;
-      border-radius: 6px;
-      padding: 10px 20px;
-   }
+.card + .card {
+   margin-top: 12px;
+}
 
-   .card + .card {
-      margin-top: 12px;
-   }
+.card h3 {
+   margin-bottom: 6px;
+}
 
-   .card h3 {
-      margin-bottom: 6px;
-   }
+footer {
+   font-size: 10px;
+   text-align: center;
+}
 
-   footer {
-      font-size: 10px;
-      text-align: center;
-   }
+footer ul {
+   display: flex;
+   justify-content: center;
+   list-style: none;
+}
 
-   footer ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-   }
-
-   footer a {
-      color: #111;
-      text-decoration: none;
-   }
+footer a {
+   color: #111;
+   text-decoration: none;
 }
 
 
 /* selectoren combineren */
 
-#ex17 .demo {
-   /* ...*/
-}
+/* ... */

@@ -22,16 +22,14 @@ body {
 
 /* lijsten: list-style */
 
-#ex6 .demo {
-   .check {
-      /* ...*/
-   }
+.check {
+   /* ...*/
+}
 
-   .check li::before {
-      /* ...*/
-   }
+.check li::before {
+   /* ...*/
+}
 
-   .steps {
-      /* ...*/
-   }
+.steps {
+   /* ...*/
 }

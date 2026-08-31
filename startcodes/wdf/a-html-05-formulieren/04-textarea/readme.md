@@ -15,6 +15,20 @@ Resultaat:
 
 Maak het contactformulier hieronder naar voorbeeld van de screenshot.
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="337">
+
+### Teksten
+
+Alle teksten van het formulier staan hieronder, zonder opmaak, zodat je ze kan kopiëren.
+
+```
+Laat iets weten
+
+Onderwerp:
+
+Je bericht:
+
+Versturen
+```

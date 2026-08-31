@@ -1,5 +1,7 @@
 ## Theorie
 
+De uitleg vind ook je op [https://rogiervdl.github.io/HTML-course/02_tekst.html#details](https://rogiervdl.github.io/HTML-course/02_tekst.html#details)
+
 Met `<details>` maak je een uitklapbaar blok. De zichtbare titel zet je in `<summary>`; de rest verschijnt bij het openklappen.
 
 ```html
@@ -30,6 +32,10 @@ Resultaat:
 
 Maak van de vier vragen hieronder een minikwis: het antwoord verschijnt pas als je op de vraag klikt, er kan er maar één tegelijk openstaan, en de eerste vraag staat al open wanneer de pagina laadt.
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="550">
+
+### Teksten
+
+De teksten staan al klaar in de HTML.

@@ -1,9 +1,11 @@
 ## Theorie
 
+De uitgebreide uitleg vind je op [https://rogiervdl.github.io/HTML-course/02_tekst.html#strong-en-em](https://rogiervdl.github.io/HTML-course/02_tekst.html#strong-en-em)
+
+### Strong en em
+
 - `<strong>`: voor een stuk tekst die je **luider** zou uitspreken: iets belangrijks.
 - `<em>`: voor een stuk tekst die je *trager* zou uitspreken, zoals een nieuwe term die je invoert.
-
-Gebruik deze elementen hooguit op **één of enkele woorden**, nooit op een hele zin!
 
 ```html
 <p>
@@ -17,6 +19,18 @@ Gebruik deze elementen hooguit op **één of enkele woorden**, nooit op een hele
 Resultaat:
 
 <img src="img/theorie1.png" alt="" width="600">
+
+Gebruik deze elementen hooguit op **één of enkele woorden**, nooit op een hele zin! Dit is fout:
+
+```html
+<p><strong>Over mezelf</strong></p><!-- FOUT! dit moet een titel zijn -->
+<p>
+   Hallo, ik ben Bert
+   ...
+</p>
+```
+
+### Markeren
 
 - `<mark>`: een stuk tekst die je wil markeren om een **externe reden**, bijvoorbeeld omdat het de zoekterm is die de bezoeker intikte.
 
@@ -35,12 +49,16 @@ Resultaat:
 
 ## Opdracht
 
-In de tekst hieronder staat nog geen enkele nadruk. Voeg ze toe naar voorbeeld van de screenshot.
+In de gegeven tekst staat nog geen enkele nadruk. Voeg ze toe naar voorbeeld van de screenshot.
 
 1. de twee waarschuwingswoorden zijn belangrijk
 2. karamelliseren is een nieuwe term die uitgelegd wordt
 3. de bezoeker zocht op "twee jaar garantie": markeer wat hij gevonden heeft
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="600">
+
+### Teksten
+
+De teksten staan al klaar in de HTML.

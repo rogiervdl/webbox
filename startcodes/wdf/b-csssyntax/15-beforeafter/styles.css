@@ -22,16 +22,12 @@ body {
 
 /* gegeven opmaak */
 
-#ex15 .demo {
-   .more {
-      font-size: smaller;
-      text-decoration: none;
-   }
+.more {
+   font-size: smaller;
+   text-decoration: none;
 }
 
 
 /* pseudo-elements ::before en ::after */
 
-#ex15 .demo {
-   /* ...*/
-}
+/* ... */

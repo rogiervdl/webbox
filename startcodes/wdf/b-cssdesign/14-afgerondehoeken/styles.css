@@ -22,23 +22,21 @@ body {
 
 /* border-radius */
 
-#ex14 .demo {
-   .box {
-      background-color: #eee;
-      border: 1px solid #999;
-      margin-bottom: 20px;
-      max-width: 300px;
-      padding: 10px 20px;
-      /* ...*/
-   }
+.box {
+   background-color: #eee;
+   border: 1px solid #999;
+   margin-bottom: 20px;
+   max-width: 300px;
+   padding: 10px 20px;
+   /* ...*/
+}
 
-   .badge {
-      background-color: #bcf;
-      color: white;
-      display: inline-block;
-      font-size: 20px;
-      padding: 10px;
-      text-decoration: none;
-      /* ...*/
-   }
+.badge {
+   background-color: #bcf;
+   color: white;
+   display: inline-block;
+   font-size: 20px;
+   padding: 10px;
+   text-decoration: none;
+   /* ...*/
 }

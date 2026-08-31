@@ -16,19 +16,14 @@ body {
    background-color: #f9fafb;
    border: 1px solid #e5e7eb;
    border-radius: 6px;
+   max-width: 400px;
    padding: 12px;
 }
 
 
 /* gegeven opmaak */
 
-#ex7 .demo {
-   max-width: 400px;
-}
-
 
 /* universele selector */
 
-#ex7 .demo {
-   /* ...*/
-}
+/* ... */

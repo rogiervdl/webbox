@@ -22,15 +22,13 @@ body {
 
 /* background-size en background-position */
 
-#ex8 .demo {
-   .banner {
-      background-color: #610163;
-      background-image: url(../img/skyline.jpg);
-      border-radius: 6px;
-      color: white;
-      height: 280px;
-      padding: 30px;
-      text-align: center;
-      /* ...*/
-   }
+.banner {
+   background-color: #610163;
+   background-image: url(../img/skyline.jpg);
+   border-radius: 6px;
+   color: white;
+   height: 280px;
+   padding: 30px;
+   text-align: center;
+   /* ...*/
 }

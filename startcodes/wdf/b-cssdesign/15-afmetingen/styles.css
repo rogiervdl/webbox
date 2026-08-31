@@ -22,12 +22,10 @@ body {
 
 /* afmetingen: height/width/min/max */
 
-#ex15 .demo {
-   .panel {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 12px;
-      /* ...*/
-   }
+.panel {
+   background-color: #fff;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   padding: 12px;
+   /* ...*/
 }

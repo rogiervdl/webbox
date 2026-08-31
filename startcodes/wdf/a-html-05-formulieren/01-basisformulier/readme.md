@@ -26,6 +26,20 @@ Resultaat:
 
 Maak onderstaand formulier naar voorbeeld van de screenshot.
 
-## Screenshot
+### Screenshot
 
 <img src="img/screenshot.png" alt="" width="491">
+
+### Teksten
+
+Alle teksten van het formulier staan hieronder, zonder opmaak, zodat je ze kan kopiëren.
+
+```
+Quizvraag 1
+
+Met welk element geef je de belangrijkste titel van een pagina aan?
+
+Jouw antwoord:
+
+Controleer
+```

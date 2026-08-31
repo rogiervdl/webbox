@@ -22,16 +22,14 @@ body {
 
 /* :hover, :active, :focus */
 
-#ex10 .demo {
-   button:hover {
-      /* ...*/
-   }
+button:hover {
+   /* ...*/
+}
 
-   button:active {
-      /* ...*/
-   }
+button:active {
+   /* ...*/
+}
 
-   input:focus {
-      /* ...*/
-   }
+input:focus {
+   /* ...*/
 }
