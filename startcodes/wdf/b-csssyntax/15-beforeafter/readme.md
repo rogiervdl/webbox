@@ -17,3 +17,7 @@ Voeg met CSS inhoud toe aan het begin of het einde van elementen.
 
 1. Voeg vóór elke paragraaf het ⦿ karakter toe met de `content` property, en zet het in blauw met `color: #33b`.
 2. Voeg na elke lees meer link de 👉🏻 emoji toe met de `content` property, en geef ze een linkermarge met `margin-left: 5px`.
+
+## Screenshot
+
+<img src="img/screenshot.png" alt="" width="800">

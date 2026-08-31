@@ -18,6 +18,14 @@ const Exercises = (() => {
    let saveTimeout = null;
    let isLoading = false;
 
+   // talen waarvoor Monaco de codeblokken in de opgave kan inkleuren
+   const LANGUAGE_MAP = {
+      css:        'css',
+      html:       'html',
+      js:         'javascript',
+      javascript: 'javascript',
+   };
+
    const FILE_MAP = {
       html: 'index.html',
       css:  'styles.css',
@@ -178,9 +186,9 @@ const Exercises = (() => {
          btnReadme.title = 'Toon opgave';
          btnReadmeNewTab.disabled = false;
          if (pipWindow) {
-            fillPipWindow(pipWindow);
+            await fillPipWindow(pipWindow);
          } else {
-            showReadme();
+            await showReadme();
          }
       }
    }
@@ -230,30 +238,98 @@ const Exercises = (() => {
    }
 
    /**
+    * Rendert de README naar HTML en kleurt de codeblokken in met de tokenizer van Monaco.
+    * De kleuren komen als inline stijl mee, zodat dezelfde HTML ook buiten de app werkt.
+    *
+    * @returns {Promise<string>} de gerenderde HTML
+    */
+   async function renderReadme() {
+      const container = document.createElement('div');
+      container.innerHTML = marked.parse(currentReadme);
+
+      // marked zet de taal van de fence in een class; blokken zonder taal blijven ongekleurd
+      const blocks = Array.from(container.querySelectorAll('pre > code[class^="language-"]'));
+
+      await Promise.all(blocks.map(async function (block) {
+         const language = LANGUAGE_MAP[block.className.replace('language-', '')];
+         if (!language) return;
+
+         // colorize scheidt regels met <br/>; in een pre doet de nieuwe regel dat zelf
+         const colored = await monaco.editor.colorize(block.textContent, language, {});
+         block.innerHTML = colored.replace(/<br\/>/g, '\n');
+      }));
+
+      if (blocks.length) inlineTokenColors(container);
+
+      return container.innerHTML;
+   }
+
+   /**
+    * Zet de tokenkleuren van Monaco om van CSS-klassen naar inline stijl.
+    * Die klassen komen uit de stylesheet van de app; een PiP-venster of een nieuw
+    * tabblad heeft die niet, en zou de code dan kleurloos tonen.
+    *
+    * @param {HTMLElement} container - De container met de gekleurde codeblokken
+    */
+   function inlineTokenColors(container) {
+      // stijlen zijn pas berekenbaar zodra het element in de pagina hangt
+      container.style.cssText = 'position: absolute; visibility: hidden;';
+      document.body.appendChild(container);
+
+      container.querySelectorAll('span[class^="mtk"]').forEach(function (span) {
+         const style = getComputedStyle(span);
+         span.style.color = style.color;
+         if (style.fontStyle === 'italic') span.style.fontStyle = 'italic';
+         if (parseInt(style.fontWeight, 10) >= 600) span.style.fontWeight = 'bold';
+         span.removeAttribute('class');
+      });
+
+      document.body.removeChild(container);
+      container.removeAttribute('style');
+   }
+
+   /**
+    * Geeft de kleuren voor een opgavevenster buiten de app, afgestemd op het thema.
+    * Monaco kleurt de codeblokken volgens datzelfde thema, dus de ondergrond moet mee.
+    *
+    * @returns {object} kleuren voor achtergrond, tekst, links en code
+    */
+   function readmePalette() {
+      const isDark = (document.documentElement.dataset.theme || 'dark') === 'dark';
+
+      return isDark
+         ? { bg: '#1e1e1e', ink: '#ccc',     link: '#6cb6ff', inlineBg: 'rgba(255 255 255 / 10%)', blockBg: 'rgba(255 255 255 / 6%)' }
+         : { bg: '#ffffff', ink: '#1e1e1e',  link: '#0b5ed7', inlineBg: 'rgba(0 0 0 / 6%)',        blockBg: 'rgba(0 0 0 / 4%)' };
+   }
+
+   /**
     * Vult een PiP-venster met de gerenderde README van de huidige oefening.
     *
     * @param {Window} pipWindow
     */
-   function fillPipWindow(pipWindow) {
+   async function fillPipWindow(pipWindow) {
       const absBase = new URL(currentExerciseBaseUrl, window.location.href).href;
+      const palette = readmePalette();
+      const body = await renderReadme();
+
       pipWindow.document.title = currentExerciseLabel;
       pipWindow.document.head.innerHTML = `<style>
          * { box-sizing: border-box; margin: 0; padding: 0; }
-         body { background: #1e1e1e; color: #ccc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.7; overflow-y: auto; padding: 20px 24px; }
+         body { background: ${palette.bg}; color: ${palette.ink}; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.7; overflow-y: auto; padding: 20px 24px; }
          h1 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
          h2 { font-size: 16px; margin-bottom: 10px; margin-top: 20px; }
          h3 { font-size: 14px; margin-bottom: 8px; margin-top: 16px; }
          p { margin-bottom: 10px; }
          ul, ol { margin-bottom: 10px; padding-left: 22px; }
          li { margin-bottom: 3px; }
-         a { color: #6cb6ff; }
-         code { background: rgba(255 255 255 / 10%); border-radius: 3px; font-family: Consolas, monospace; font-size: 12px; padding: 1px 5px; }
-         pre { background: rgba(255 255 255 / 6%); border-radius: 4px; margin-bottom: 10px; overflow-x: auto; padding: 12px; }
+         a { color: ${palette.link}; }
+         code { background: ${palette.inlineBg}; border-radius: 3px; font-family: Consolas, monospace; font-size: 12px; padding: 1px 5px; }
+         pre { background: ${palette.blockBg}; border-radius: 4px; margin-bottom: 10px; overflow-x: auto; padding: 12px; }
          pre code { background: none; padding: 0; }
          img { border-radius: 4px; max-width: 100%; }
          strong { font-weight: 600; }
       </style><base href="${absBase}">`;
-      pipWindow.document.body.innerHTML = `<h1>${currentExerciseLabel}</h1>${marked.parse(currentReadme)}`;
+      pipWindow.document.body.innerHTML = `<h1>${currentExerciseLabel}</h1>${body}`;
       fixImagePaths(pipWindow.document.body, absBase);
    }
 
@@ -263,18 +339,18 @@ const Exercises = (() => {
    async function openReadmeInPiP() {
       const pipWindow = await requestPipWindow();
       if (pipWindow) {
-         fillPipWindow(pipWindow);
+         await fillPipWindow(pipWindow);
       } else {
-         showReadme();
+         await showReadme();
       }
    }
 
    /**
     * Rendert de opgeslagen README als HTML en toont de modal.
     */
-   function showReadme() {
+   async function showReadme() {
       document.querySelector('.modal__title').textContent = `Opgave — ${currentExerciseLabel}`;
-      modalBody.innerHTML = marked.parse(currentReadme);
+      modalBody.innerHTML = await renderReadme();
       fixImagePaths(modalBody);
       modalBody.insertAdjacentHTML('beforeend', Config.readmeTip);
       modal.setAttribute('aria-hidden', 'false');
@@ -299,8 +375,10 @@ const Exercises = (() => {
    /**
     * Opent de README als opgemaakte HTML-pagina in een nieuw tabblad.
     */
-   function openReadmeInNewTab() {
+   async function openReadmeInNewTab() {
       const absBase = new URL(currentExerciseBaseUrl, window.location.href).href;
+      const palette = readmePalette();
+      const body = await renderReadme();
       const html = `<!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -308,16 +386,16 @@ const Exercises = (() => {
    <title>${currentExerciseLabel}</title>
    <base href="${absBase}">
    <style>
-      body { color: #1e1e1e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.7; margin: 0 auto; max-width: 780px; padding: 40px 24px; }
+      body { background: ${palette.bg}; color: ${palette.ink}; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.7; margin: 0 auto; max-width: 780px; padding: 40px 24px; }
       h1 { font-size: 24px; margin-bottom: 12px; margin-top: 0; }
       h2 { font-size: 20px; margin-top: 32px; }
       h3 { font-size: 17px; margin-top: 24px; }
       p { margin-bottom: 12px; }
       ul, ol { margin-bottom: 12px; padding-left: 28px; }
       li { margin-bottom: 4px; }
-      a { color: #0b5ed7; }
-      code { background: #f0f0f0; border-radius: 3px; font-family: Consolas, monospace; font-size: 13px; padding: 2px 5px; }
-      pre { background: #f6f8fa; border-radius: 6px; font-size: 13px; overflow-x: auto; padding: 16px; }
+      a { color: ${palette.link}; }
+      code { background: ${palette.inlineBg}; border-radius: 3px; font-family: Consolas, monospace; font-size: 13px; padding: 2px 5px; }
+      pre { background: ${palette.blockBg}; border-radius: 6px; font-size: 13px; overflow-x: auto; padding: 16px; }
       pre code { background: none; padding: 0; }
       img { border-radius: 4px; max-width: 100%; }
       strong { font-weight: 600; }
@@ -325,7 +403,7 @@ const Exercises = (() => {
 </head>
 <body>
 <h1>${currentExerciseLabel}</h1>
-${marked.parse(currentReadme)}
+${body}
 </body>
 </html>`;
       const blob = new Blob([html], { type: 'text/html' });

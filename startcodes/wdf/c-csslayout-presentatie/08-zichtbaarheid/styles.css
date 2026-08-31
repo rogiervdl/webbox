@@ -1,0 +1,53 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+
+/* zichtbaarheid */
+
+.card {
+   background-color: #f9fafb;
+   border: 1px solid #e5e7eb;
+   border-radius: 6px;
+   padding: 12px;
+}
+
+.button {
+   background-color: #6c757d;
+   border-radius: 8px;
+   color: white;
+   font-size: 14px;
+   padding: 8px 14px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+.removed {
+   /* ...*/
+}
+
+.invisible {
+   /* ...*/
+}
+
+.faded {
+   /* ...*/
+}
+
+.card:hover .invisible {
+   /* ...*/
+}
+
+.card:hover .faded {
+   /* ...*/
+}

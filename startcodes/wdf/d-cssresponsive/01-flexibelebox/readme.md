@@ -10,4 +10,4 @@ De box hieronder heeft nu een vaste breedte van **960px**. Als het previewvenste
 
 ## Screenshot
 
-<img src="img/screenshot-800px.png" alt="" width="826">
+<img src="img/screenshot-800px.png" alt="" width="800">

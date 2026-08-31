@@ -1,0 +1,27 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+
+/* plakken bovenaan */
+
+.menu {
+   background-color: #fff;
+   border: 1px solid #ddd;
+   border-radius: 10px;
+   display: flex;
+   gap: 10px;
+   list-style: none;
+   padding: 14px;
+   /* ...*/
+}

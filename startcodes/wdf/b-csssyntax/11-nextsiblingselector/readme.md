@@ -15,3 +15,7 @@ Staat er nog iets tussen de twee elementen, dan selecteert `+` niets meer.
 Selecteer het element dat onmiddellijk op een ander element volgt.
 
 1. Maak de paragrafen die onmiddellijk op een &lt;h3&gt; volgen rood met `color: red`.
+
+## Screenshot
+
+<img src="img/screenshot.png" alt="" width="800">

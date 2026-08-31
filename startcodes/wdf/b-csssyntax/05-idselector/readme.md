@@ -19,3 +19,7 @@ Gebruik een id voor de unieke bouwstenen van een pagina, zoals de kop, het menu 
 Selecteer een uniek element op basis van zijn id.
 
 1. Geef het element met id `speciaal` een zwarte achtergrond met `background-color: black`, en maak de tekst wit met `color: white`.
+
+## Screenshot
+
+<img src="img/screenshot.png" alt="" width="800">

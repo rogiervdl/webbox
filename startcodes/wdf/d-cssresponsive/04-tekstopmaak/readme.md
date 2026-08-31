@@ -11,12 +11,12 @@ We werken met twee media queries: 600px en 900px. Werk altijd *mobile-first*: so
 
 Onder 600px:
 
-<img src="img/screenshot-540px.png" alt="" width="566">
+<img src="img/screenshot-540px.png" alt="" width="540">
 
 Vanaf 600px:
 
-<img src="img/screenshot-700px.png" alt="" width="726">
+<img src="img/screenshot-700px.png" alt="" width="700">
 
 Vanaf 900px:
 
-<img src="img/screenshot-1000px.png" alt="" width="1026">
+<img src="img/screenshot-1000px.png" alt="" width="1000">

@@ -7,4 +7,4 @@ Net zoals bij de vorige oefening stellen we een vaste breedte in, maar beperken 
 
 ## Screenshot
 
-<img src="img/screenshot-800px.png" alt="" width="826">
+<img src="img/screenshot-800px.png" alt="" width="800">

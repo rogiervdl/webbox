@@ -773,8 +773,68 @@
                ]
             },
             {
+               id: "c-csslayout-presentatie",
+               label: "C01.CSS layout presentatie",
+               exercises: [
+                  {
+                     id: "01-blokcentreren",
+                     label: "01. blok centreren",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "02-blokrechts",
+                     label: "02. blok rechts",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "03-tekstaligneren",
+                     label: "03. tekst aligneren",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "04-floaten",
+                     label: "04. floaten",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "05-vastepositie",
+                     label: "05. vaste positie",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "06-sticky",
+                     label: "06. sticky",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "07-passendebreedte",
+                     label: "07. passende breedte",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "08-zichtbaarheid",
+                     label: "08. zichtbaarheid",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  },
+                  {
+                     id: "09-overflow",
+                     label: "09. overflow",
+                     startfiles: [ "html", "css", "md" ],
+                     collapsed: [ "js" ]
+                  }
+               ]
+            },
+            {
                id: "c-csslayout-flexbox",
-               label: "C01.CSS layout flexbox",
+               label: "C02.CSS layout flexbox",
                exercises: [
                   {
                      id: "01-navigatiebalk",
@@ -864,7 +924,7 @@
             },
             {
                id: "c-csslayout-grid",
-               label: "C02.CSS layout grid",
+               label: "C03.CSS layout grid",
                exercises: [
                   {
                      id: "01-productoverzicht",

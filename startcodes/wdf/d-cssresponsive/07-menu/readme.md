@@ -8,8 +8,8 @@ Zet het menu verticaal op smalle schermen en horizontaal op brede.
 
 Onder 600px:
 
-<img src="img/screenshot-540px.png" alt="" width="566">
+<img src="img/screenshot-540px.png" alt="" width="540">
 
 Vanaf 600px:
 
-<img src="img/screenshot-700px.png" alt="" width="726">
+<img src="img/screenshot-700px.png" alt="" width="700">

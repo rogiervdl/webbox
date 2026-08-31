@@ -12,18 +12,11 @@ body {
    padding: 12px;
 }
 
-.demo {
-   background-color: #f9fafb;
-   border: 1px solid #e5e7eb;
-   border-radius: 6px;
-   padding: 12px;
-}
-
 
 /* margin en padding */
 
 .header {
-   background-image: url(../img/city.jpg);
+   background-image: url(img/city.jpg);
    background-position: center bottom;
    background-size: contain;
    /* ...*/

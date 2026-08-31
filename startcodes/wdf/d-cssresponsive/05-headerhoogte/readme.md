@@ -9,8 +9,8 @@ De header hieronder heeft een vaste hoogte van **180px**. Maak het previewvenste
 
 Onder 900px:
 
-<img src="img/screenshot-540px.png" alt="" width="566">
+<img src="img/screenshot-540px.png" alt="" width="540">
 
 Vanaf 900px:
 
-<img src="img/screenshot-1000px.png" alt="" width="1026">
+<img src="img/screenshot-1000px.png" alt="" width="1000">

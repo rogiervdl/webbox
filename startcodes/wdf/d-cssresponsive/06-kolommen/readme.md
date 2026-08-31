@@ -10,8 +10,8 @@ Op dit moment staan sidebar en hoofdinhoud altijd naast elkaar. Dit willen we aa
 
 Onder 700px:
 
-<img src="img/screenshot-540px.png" alt="" width="566">
+<img src="img/screenshot-540px.png" alt="" width="540">
 
 Vanaf 700px:
 
-<img src="img/screenshot-800px.png" alt="" width="826">
+<img src="img/screenshot-800px.png" alt="" width="800">

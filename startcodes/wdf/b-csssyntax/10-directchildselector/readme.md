@@ -15,3 +15,7 @@ De descendant selector kijkt hoe diep dan ook. Wil je enkel de **rechtstreekse**
 Selecteer enkel de elementen die rechtstreeks in een ander element genest zijn.
 
 1. Maak enkel de paragrafen direct genest in `.blok` groen met `color: #080`.
+
+## Screenshot
+
+<img src="img/screenshot.png" alt="" width="800">

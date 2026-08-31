@@ -1,0 +1,52 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+
+/* blok rechts plaatsen */
+
+#banner {
+   background-image: url(img/banner.jpg);
+   background-size: cover;
+   padding: 60px 20px;
+}
+
+.inset {
+   background-color: #6669;
+   padding: 20px;
+   /* ...*/
+}
+
+.inset p {
+   color: white;
+   font-size: 24px;
+   font-weight: bold;
+   margin-bottom: 30px;
+   margin-top: 0;
+}
+
+.button {
+   background-color: #17a348;
+   border-bottom: 3px solid rgb(0 0 0 / 15%);
+   border-radius: 8px;
+   color: white;
+   font-size: 14px;
+   padding: 8px 14px;
+   text-decoration: none;
+   text-transform: uppercase;
+   /* ...*/
+}
+
+.button::after {
+   content: ' »';
+}

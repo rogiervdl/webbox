@@ -31,3 +31,7 @@ Voer de taken uit in de opgegeven volgorde en kijk telkens wat er verandert.
 3. Geef de `div` elementen een lichte achtergrond met `background-color: #eee`.
 4. Geef de elementen met class `specifiek` een witte tekstkleur met `color: white`.
 5. Geef de `div` elementen een paarse kleur met `color: #800080`.
+
+## Screenshot
+
+<img src="img/screenshot.png" alt="" width="800">

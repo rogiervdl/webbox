@@ -1,0 +1,29 @@
+/* basis */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fafafa;
+   color: #222;
+   font-family: system-ui, sans-serif;
+   margin: 0;
+   padding: 12px;
+}
+
+
+/* floaten */
+
+.visual {
+   /* ...*/
+}
+
+.pullquote {
+   background-color: #fff;
+   border-left: 4px solid #333;
+   font-size: larger;
+   font-style: italic;
+   padding: 12px;
+   /* ...*/
+}
