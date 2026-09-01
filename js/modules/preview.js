@@ -15,6 +15,9 @@ const Preview = (() => {
 
    const BASE_STYLE = `<style>body { overflow-y: auto !important; }</style>`;
 
+   // enkel de echte <head> tag, niet <header>
+   const HEAD_OPEN = /(<head(?:\s[^>]*)?>)/i;
+
    const CONSOLE_BRIDGE = `<script>(function(){
 var _s=function(t,a){try{window.parent.postMessage({__webbox:true,type:t,
 args:Array.prototype.slice.call(a).map(function(x){try{
@@ -50,8 +53,9 @@ window.addEventListener('error',function(e){var off=window.__webboxJsOffset||0;v
       // dit gebeurt na de CSS: een <base> werkt enkel op wat erna komt, dus een
       // url() in de stylesheet zou anders oplossen tegenover de app in plaats van
       // tegenover de map van de oefening
-      if (/(<head[^>]*>)/i.test(result)) {
-         result = result.replace(/(<head[^>]*>)/i, `$1\n${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}`);
+      // de spatie of > na "head" is nodig, anders matcht <header> ook
+      if (HEAD_OPEN.test(result)) {
+         result = result.replace(HEAD_OPEN, `$1\n${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}`);
       } else {
          result = `${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}\n${result}`;
       }
