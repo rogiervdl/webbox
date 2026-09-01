@@ -146,7 +146,7 @@ const Exercises = (() => {
       const collapsed  = exercise?.collapsed  ?? [];
 
       const hasSaved = ['html', 'css', 'js'].some(function (type) {
-         return localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, type)) !== null;
+         return Store.get(codeKey(subjectId, moduleId, exerciseId, type)) !== null;
       });
 
       // bevestigingsdialoog eerst: de button click dient als user gesture voor PiP
@@ -168,9 +168,9 @@ const Exercises = (() => {
       ]);
 
       isLoading = true;
-      editors.html.setValue((useSaved ? localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, 'html')) : null) ?? html ?? '');
-      editors.css.setValue((useSaved ? localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, 'css')) : null) ?? css ?? '');
-      editors.js.setValue((useSaved ? localStorage.getItem(codeKey(subjectId, moduleId, exerciseId, 'js')) : null) ?? js ?? '');
+      editors.html.setValue((useSaved ? Store.get(codeKey(subjectId, moduleId, exerciseId, 'html')) : null) ?? html ?? '');
+      editors.css.setValue((useSaved ? Store.get(codeKey(subjectId, moduleId, exerciseId, 'css')) : null) ?? css ?? '');
+      editors.js.setValue((useSaved ? Store.get(codeKey(subjectId, moduleId, exerciseId, 'js')) : null) ?? js ?? '');
       isLoading = false;
 
       applyPaneLayout(collapsed);
@@ -247,19 +247,26 @@ const Exercises = (() => {
       const container = document.createElement('div');
       container.innerHTML = marked.parse(currentReadme);
 
-      // marked zet de taal van de fence in een class; blokken zonder taal blijven ongekleurd
-      const blocks = Array.from(container.querySelectorAll('pre > code[class^="language-"]'));
+      // de kleuring is versiering: gaat er iets mis, dan tonen we de opgave
+      // zonder kleur in plaats van helemaal niet
+      try {
+         // marked zet de taal van de fence in een class; blokken zonder taal blijven ongekleurd
+         const blocks = Array.from(container.querySelectorAll('pre > code[class^="language-"]'));
 
-      await Promise.all(blocks.map(async function (block) {
-         const language = LANGUAGE_MAP[block.className.replace('language-', '')];
-         if (!language) return;
+         await Promise.all(blocks.map(async function (block) {
+            const language = LANGUAGE_MAP[block.className.replace('language-', '')];
+            if (!language) return;
 
-         // colorize scheidt regels met <br/>; in een pre doet de nieuwe regel dat zelf
-         const colored = await monaco.editor.colorize(block.textContent, language, {});
-         block.innerHTML = colored.replace(/<br\/>/g, '\n');
-      }));
+            // colorize scheidt regels met <br/>; in een pre doet de nieuwe regel dat zelf
+            const colored = await monaco.editor.colorize(block.textContent, language, {});
+            block.innerHTML = colored.replace(/<br\/>/g, '\n');
+         }));
 
-      if (blocks.length) inlineTokenColors(container);
+         if (blocks.length) inlineTokenColors(container);
+      } catch (e) {
+         console.warn('Exercises: syntaxkleuring overgeslagen', e);
+         container.innerHTML = marked.parse(currentReadme);
+      }
 
       return container.innerHTML;
    }
@@ -478,9 +485,9 @@ ${body}
       const moduleId   = selectModule.value;
       const exerciseId = selectExercise.value;
       if (!subjectId || !moduleId || !exerciseId) return;
-      localStorage.setItem(codeKey(subjectId, moduleId, exerciseId, 'html'), editors.html.getValue());
-      localStorage.setItem(codeKey(subjectId, moduleId, exerciseId, 'css'), editors.css.getValue());
-      localStorage.setItem(codeKey(subjectId, moduleId, exerciseId, 'js'), editors.js.getValue());
+      Store.set(codeKey(subjectId, moduleId, exerciseId, 'html'), editors.html.getValue());
+      Store.set(codeKey(subjectId, moduleId, exerciseId, 'css'), editors.css.getValue());
+      Store.set(codeKey(subjectId, moduleId, exerciseId, 'js'), editors.js.getValue());
    }
 
    /**
@@ -525,7 +532,7 @@ ${body}
     */
    function restoreSelection() {
       const fromHash = getHashSelection();
-      const savedSubject = fromHash?.subjectId ?? localStorage.getItem(LS_SUBJECT);
+      const savedSubject = fromHash?.subjectId ?? Store.get(LS_SUBJECT);
       if (!savedSubject) return;
       selectSubject.value = savedSubject;
       if (selectSubject.value !== savedSubject) return;
@@ -533,7 +540,7 @@ ${body}
       populateModules(savedSubject);
       if (fromHash && !fromHash.moduleId) return;
 
-      const savedModule = fromHash?.moduleId ?? localStorage.getItem(LS_MODULE);
+      const savedModule = fromHash?.moduleId ?? Store.get(LS_MODULE);
       if (!savedModule) return;
       selectModule.value = savedModule;
       if (selectModule.value !== savedModule) return;
@@ -541,7 +548,7 @@ ${body}
       populateExercises(savedSubject, savedModule);
       if (fromHash && !fromHash.exerciseId) return;
 
-      const savedExercise = fromHash?.exerciseId ?? localStorage.getItem(LS_EXERCISE);
+      const savedExercise = fromHash?.exerciseId ?? Store.get(LS_EXERCISE);
       if (!savedExercise) return;
       selectExercise.value = savedExercise;
       if (selectExercise.value !== savedExercise) return;
@@ -562,9 +569,9 @@ ${body}
       currentReadme = '';
       currentExerciseLabel = '';
       currentExerciseBaseUrl = '';
-      localStorage.removeItem(LS_SUBJECT);
-      localStorage.removeItem(LS_MODULE);
-      localStorage.removeItem(LS_EXERCISE);
+      Store.remove(LS_SUBJECT);
+      Store.remove(LS_MODULE);
+      Store.remove(LS_EXERCISE);
       clearHash();
       editors.html.setValue(Config.defaults.html);
       editors.css.setValue(Config.defaults.css);
@@ -586,9 +593,9 @@ ${body}
          clearHash();
          return;
       }
-      localStorage.setItem(LS_SUBJECT, subjectId);
-      localStorage.removeItem(LS_MODULE);
-      localStorage.removeItem(LS_EXERCISE);
+      Store.set(LS_SUBJECT, subjectId);
+      Store.remove(LS_MODULE);
+      Store.remove(LS_EXERCISE);
       setHash(subjectId);
       populateModules(subjectId);
    }
@@ -603,8 +610,8 @@ ${body}
       const subjectId = selectSubject.value;
       const moduleId  = selectModule.value;
       if (!subjectId || !moduleId) return;
-      localStorage.setItem(LS_MODULE, moduleId);
-      localStorage.removeItem(LS_EXERCISE);
+      Store.set(LS_MODULE, moduleId);
+      Store.remove(LS_EXERCISE);
       setHash(subjectId, moduleId);
       populateExercises(subjectId, moduleId);
    }
@@ -619,7 +626,7 @@ ${body}
          currentReadme = '';
          return;
       }
-      localStorage.setItem(LS_EXERCISE, exerciseId);
+      Store.set(LS_EXERCISE, exerciseId);
       setHash(subjectId, moduleId, exerciseId);
       loadExercise(subjectId, moduleId, exerciseId, true);
    }

@@ -21,14 +21,14 @@ const ThemeSwitcher = (() => {
       iconSun.style.display  = isDark ? '' : 'none';
       iconMoon.style.display = isDark ? 'none' : '';
       monaco.editor.setTheme(isDark ? 'vs-dark' : 'vs');
-      localStorage.setItem('webbox-theme', theme);
+      Store.set('webbox-theme', theme);
    }
 
    /**
     * Initialiseert het thema
     */
    function init() {
-      applyTheme(localStorage.getItem('webbox-theme') || 'dark');
+      applyTheme(Store.get('webbox-theme') || 'dark');
    }
 
    // event handlers
