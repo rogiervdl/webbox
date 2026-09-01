@@ -20,15 +20,16 @@ Nog wat je verder nodig hebt:
 
 ## Inhoud
 
-Alle teksten van de pagina staan hieronder, zonder opmaak, zodat je ze kan kopiëren. NL, FR en EN bovenaan zijn de taalkeuze; het zijn links (`href="#"`).
+Teksten van de pagina, zodat je ze kan kopiëren:
 
+```
 NL
 
 FR
 
 EN
 
-De Pollepel 🍲
+De Pollepel
 
 Kooklessen in kleine groep, aan de Dijle
 
@@ -58,11 +59,11 @@ Lessenrooster najaar 2026
 
 Datum   Les   Prijs
 
-3 oktober   🍝 Verse pasta   € 45
+3 oktober   Verse pasta   € 45
 
-17 oktober   🐟 Vis van de Noordzee   € 55
+17 oktober   Vis van de Noordzee   € 55
 
-7 november   🥖 Brood & desem   € 40
+7 november   Brood & desem   € 40
 
 Waar vind je ons
 
@@ -103,3 +104,4 @@ hallo@depollepel.be
 015 41 77 20
 
 © 2026 Kookatelier De Pollepel — Pollepel® is een geregistreerde naam
+```

@@ -20,9 +20,10 @@ Nog wat je verder nodig hebt:
 
 ## Inhoud
 
-Alle teksten van de pagina staan hieronder, zonder opmaak, zodat je ze kan kopiëren. De twee vragen onderaan de rubriek *Veelgestelde vragen* kan je open- en dichtklappen; de drie iconen in de voet zijn links naar Instagram, Flickr en Facebook (`href="#"`).
+Teksten van de pagina, zodat je ze kan kopiëren:
 
-Diafragma 📷
+```
+Diafragma
 
 Fotoclub in Kessel-Lo — sinds 1998
 
@@ -42,7 +43,7 @@ Een foto is een geheim over een geheim: hoe meer ze vertelt, hoe minder je weet.
 
 On Photography
 
-Foto van de maand ✨
+Foto van de maand
 
 Winter in Lapland — Marieke Segers
 
@@ -101,3 +102,4 @@ info@diafragma.be
 016 44 21 09
 
 © 2026 Fotoclub Diafragma — foto's blijven eigendom van de makers
+```

@@ -22,7 +22,8 @@ Nog wat je verder nodig hebt:
 
 Alle teksten van de pagina staan hieronder, zonder opmaak, zodat je ze kan kopiëren.
 
-Caffè Luna ☕
+```
+Caffè Luna
 
 Koffie & gebak aan de Oude Markt
 
@@ -36,7 +37,7 @@ Over ons
 
 In het hart van Leuven vind je onze koffiebar, waar de geur van versgemalen bonen je meteen verwelkomt. Onze barista's zetten elke kop apart, met bonen die we rechtstreeks bij kleine plantages kopen.
 
-Kom je werken, lezen of gewoon bijpraten? Bij ons mag het allemaal. Op vrijdagavond is er live jazz 🎵.
+Kom je werken, lezen of gewoon bijpraten? Bij ons mag het allemaal. Op vrijdagavond is er live jazz.
 
 Goede koffie is geen luxe, maar een moment van rust.
 
@@ -46,7 +47,7 @@ Onze cappuccino
 
 Onze cappuccino, met latte art van de hand van Ilse
 
-Dagselectie 🍰
+Dagselectie
 
 Dagselectie van deze week
 
@@ -97,3 +98,4 @@ hallo@caffeluna.be
 016 22 33 44
 
 © 2026 Caffè Luna — alle rechten voorbehouden
+```

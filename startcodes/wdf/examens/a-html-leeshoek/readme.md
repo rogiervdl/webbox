@@ -20,9 +20,10 @@ Nog wat je verder nodig hebt:
 
 ## Inhoud
 
-Alle teksten van de pagina staan hieronder, zonder opmaak, zodat je ze kan kopiëren.
+Teksten van de pagina, zodat je ze kan kopiëren:
 
-De Leeshoek 📖
+```
+De Leeshoek
 
 Lezen & bespreken in Gent, sinds 2012
 
@@ -46,7 +47,7 @@ Boek van de maand
 
 De Boomgaard — Lynn Austin (2019)
 
-Leeskalender 📚
+Leeskalender
 
 Leeskalender voorjaar 2026
 

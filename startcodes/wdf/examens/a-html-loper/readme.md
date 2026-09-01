@@ -20,9 +20,10 @@ Nog wat je verder nodig hebt:
 
 ## Inhoud
 
-Alle teksten van de pagina staan hieronder, zonder opmaak, zodat je ze kan kopiëren. De drie iconen bovenaan zijn links naar Facebook, Instagram en YouTube (`href="#"`).
+Teksten van de pagina, zodat je ze kan kopiëren:
 
-De Loper ♟️
+```
+De Loper 
 
 Schaakclub in hartje Gent, sinds 1974
 
@@ -56,7 +57,7 @@ Puntentelling
 
 1 punt bij winst, ½ punt bij remise
 
-Clubkampioenschap 🏆
+Clubkampioenschap
 
 Ronde 3 van het clubkampioenschap
 
@@ -101,3 +102,4 @@ info@deloper.be
 09 233 18 47
 
 © 2026 Schaakclub De Loper — aangesloten bij de Koninklijke Belgische Schaakbond
+```
