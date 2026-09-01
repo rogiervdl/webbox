@@ -39,18 +39,21 @@ window.addEventListener('error',function(e){var off=window.__webboxJsOffset||0;v
 
       let result = html;
 
-      // inject CONSOLE_BRIDGE and optional base tag after <head>
-      if (/(<head[^>]*>)/i.test(result)) {
-         result = result.replace(/(<head[^>]*>)/i, `$1\n${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}`);
-      } else {
-         result = `${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}\n${result}`;
-      }
-
       // inject CSS and base style before </head>
       if (/(<\/head>)/i.test(result)) {
          result = result.replace(/(<\/head>)/i, `${styleTag ? styleTag + '\n' : ''}${BASE_STYLE}\n$1`);
       } else {
          result = `${styleTag ? styleTag + '\n' : ''}${BASE_STYLE}\n${result}`;
+      }
+
+      // inject CONSOLE_BRIDGE and optional base tag after <head>
+      // dit gebeurt na de CSS: een <base> werkt enkel op wat erna komt, dus een
+      // url() in de stylesheet zou anders oplossen tegenover de app in plaats van
+      // tegenover de map van de oefening
+      if (/(<head[^>]*>)/i.test(result)) {
+         result = result.replace(/(<head[^>]*>)/i, `$1\n${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}`);
+      } else {
+         result = `${baseTag ? baseTag + '\n' : ''}${CONSOLE_BRIDGE}\n${result}`;
       }
 
       // inject JS with a line-offset variable so error line numbers match the editor
