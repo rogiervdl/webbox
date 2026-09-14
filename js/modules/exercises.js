@@ -21,6 +21,11 @@ const Exercises = (() => {
    // script dat de Live Preview van VS Code in elke geserveerde HTML injecteert
    const DEV_SERVER_SCRIPT = /<script[^>]*___vscode_livepreview_injected_script[^>]*><\/script>/g;
 
+   // Schoolyear's examenbrowser (Electron-shell) sluit een los PiP-venster binnen
+   // enkele milliseconden na aanmaak weer — vermoedelijk een lockdown-restrictie
+   // tegen extra vensters. Op die userAgent slaan we PiP daarom over.
+   const LOCKDOWN_BROWSER_PATTERN = /exams-client|Electron/;
+
    // talen waarvoor Monaco de codeblokken in de opgave kan inkleuren
    const LANGUAGE_MAP = {
       css:        'css',
@@ -247,6 +252,11 @@ const Exercises = (() => {
    async function requestPipWindow() {
       Debug.log(`documentPictureInPicture beschikbaar: ${!!window.documentPictureInPicture}`);
       if (!window.documentPictureInPicture) return null;
+
+      if (LOCKDOWN_BROWSER_PATTERN.test(navigator.userAgent)) {
+         Debug.log('PiP overgeslagen: lockdown-browser gedetecteerd (exams-client/Electron)');
+         return null;
+      }
 
       Debug.log('PiP: requestWindow aangevraagd');
       const hangTimer = setTimeout(logPipHang, Debug.PIP_HANG_TIMEOUT_MS);
