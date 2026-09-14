@@ -156,6 +156,7 @@ const Exercises = (() => {
       const useSaved = hasSaved && confirmIfSaved ? await confirmRestore() : hasSaved;
 
       // PiP aanvragen na bevestiging, terwijl we nog in de user gesture context zitten
+      Debug.log(`loadExercise ${subjectId}/${moduleId}/${exerciseId}: PiP aanvragen? ${startfiles.includes('md')}`);
       const pipWindow = startfiles.includes('md') ? await requestPipWindow() : null;
 
       const fetches = {};
@@ -244,11 +245,46 @@ const Exercises = (() => {
     * @returns {Promise<Window|null>}
     */
    async function requestPipWindow() {
+      Debug.log(`documentPictureInPicture beschikbaar: ${!!window.documentPictureInPicture}`);
       if (!window.documentPictureInPicture) return null;
+
+      Debug.log('PiP: requestWindow aangevraagd');
+      const hangTimer = setTimeout(logPipHang, Debug.PIP_HANG_TIMEOUT_MS);
+
       try {
-         return await window.documentPictureInPicture.requestWindow({ width: 600, height: 500, disallowReturnToOpener: true });
+         const pipWindow = await window.documentPictureInPicture.requestWindow({ width: 600, height: 500, disallowReturnToOpener: true });
+         clearTimeout(hangTimer);
+         Debug.log('PiP: requestWindow opgelost');
+         pipWindow.addEventListener('pagehide', handlePipWindowPagehide);
+         return pipWindow;
       } catch (e) {
+         clearTimeout(hangTimer);
+         Debug.log(`PiP: requestWindow fout — ${e.name}: ${e.message}`);
          return null;
+      }
+   }
+
+   /**
+    * Logt dat requestWindow na de timeout nog niet opgelost is — een aanwijzing
+    * voor een hangende call, wat in devtools anders onzichtbaar zou blijven.
+    */
+   function logPipHang() {
+      Debug.log(`PiP: requestWindow nog niet opgelost na ${Debug.PIP_HANG_TIMEOUT_MS}ms — mogelijk hangende call`);
+   }
+
+   /**
+    * Logt de positie/afmetingen van het PiP-venster en test of het programmatisch
+    * verplaatst kan worden, als indicatie of native verslepen ook zou moeten werken.
+    *
+    * @param {Window} pipWindow
+    */
+   function logPipWindowState(pipWindow) {
+      Debug.log(`PiP: positie ${pipWindow.screenX},${pipWindow.screenY} afmeting ${pipWindow.outerWidth}x${pipWindow.outerHeight}`);
+      try {
+         pipWindow.moveTo(pipWindow.screenX, pipWindow.screenY);
+         Debug.log('PiP: moveTo() werd niet geweigerd');
+      } catch (e) {
+         Debug.log(`PiP: moveTo() fout — ${e.name}: ${e.message}`);
       }
    }
 
@@ -376,17 +412,27 @@ const Exercises = (() => {
          strong { font-weight: 600; }
       </style><base href="${absBase}">`;
       pipWindow.document.body.innerHTML = `<h1>${currentExerciseLabel}</h1>${body}`;
+      logPipWindowState(pipWindow);
    }
 
    /**
     * Opent de README in PiP. Valt terug op de modal als PiP niet beschikbaar is.
+    *
+    * De try/catch hoort hier normaal niet thuis (interne logica), maar zonder devtools
+    * in Schoolyear zou een fout hier anders stil verdwijnen — vandaar de debug-log.
     */
    async function openReadmeInPiP() {
-      const pipWindow = await requestPipWindow();
-      if (pipWindow) {
-         await fillPipWindow(pipWindow);
-      } else {
-         await showReadme();
+      try {
+         const pipWindow = await requestPipWindow();
+         if (pipWindow) {
+            Debug.log('PiP: venster ontvangen, opgave invullen');
+            await fillPipWindow(pipWindow);
+         } else {
+            Debug.log('PiP: geen venster, val terug op modal');
+            await showReadme();
+         }
+      } catch (e) {
+         Debug.log(`openReadmeInPiP fout — ${e.name}: ${e.message}`);
       }
    }
 
@@ -671,7 +717,12 @@ ${body}
    }
 
    function handleBtnReadmeClick() {
+      Debug.log(`Opgave-knop geklikt (currentReadme: ${currentReadme ? currentReadme.length + ' tekens' : 'leeg'})`);
       if (currentReadme) openReadmeInPiP();
+   }
+
+   function handlePipWindowPagehide() {
+      Debug.log('PiP: venster gesloten (pagehide)');
    }
 
    function handleBtnReadmeNewTabClick() {
