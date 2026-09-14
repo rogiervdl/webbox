@@ -13,10 +13,10 @@
    bottom: 12px;
    display: flex;
    flex-direction: column;
-   max-height: 260px;
+   max-height: 340px;
    position: fixed;
    right: 12px;
-   width: 420px;
+   width: 460px;
    z-index: 2000;
 }
 
@@ -51,6 +51,30 @@
    &:hover {
       background: #4a4a4a;
       color: var(--text-primary);
+   }
+}
+
+.debug-panel__tests {
+   border-bottom: 1px solid var(--border);
+   display: flex;
+   flex-shrink: 0;
+   flex-wrap: wrap;
+   gap: 4px;
+   padding: 6px 10px;
+}
+
+.debug-panel__test-btn {
+   background: #3c3c3c;
+   border: none;
+   border-radius: 3px;
+   color: var(--text-primary);
+   cursor: pointer;
+   font-size: 10px;
+   font-weight: 500;
+   padding: 3px 7px;
+
+   &:hover {
+      background: #4a4a4a;
    }
 }
 
