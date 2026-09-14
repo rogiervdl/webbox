@@ -18,6 +18,11 @@ const Exercises = (() => {
    let saveTimeout = null;
    let isLoading = false;
 
+   // sleepstatus van het opgavepaneel
+   let readmeDragOffsetX = 0;
+   let readmeDragOffsetY = 0;
+   let readmeHasBeenPositioned = false;
+
    // script dat de Live Preview van VS Code in elke geserveerde HTML injecteert
    const DEV_SERVER_SCRIPT = /<script[^>]*___vscode_livepreview_injected_script[^>]*><\/script>/g;
 
@@ -57,10 +62,11 @@ const Exercises = (() => {
    const selectExercise    = document.querySelector('#select-exercise');
    const btnReadme            = document.querySelector('#btn-readme');
    const modal                = document.querySelector('#modal-readme');
+   const modalDialog          = document.querySelector('#modal-readme .modal__dialog');
+   const modalHeader          = document.querySelector('#modal-readme .modal__header');
    const modalBody            = document.querySelector('#modal-readme-body');
    const btnModalClose        = document.querySelector('#btn-modal-close');
    const btnReadmeNewTab      = document.querySelector('#btn-readme-newtab');
-   const modalBackdrop        = document.querySelector('#modal-readme .modal__backdrop');
    const brand                = document.querySelector('.toolbar__brand');
    const modalConfirm         = document.querySelector('#modal-confirm');
    const btnConfirmBewaarde   = document.querySelector('#btn-confirm-bewaarde');
@@ -447,13 +453,37 @@ const Exercises = (() => {
    }
 
    /**
-    * Rendert de opgeslagen README als HTML en toont de modal.
+    * Rendert de opgeslagen README als HTML en toont ze in het opgavepaneel.
     */
    async function showReadme() {
       document.querySelector('.modal__title').textContent = `Opgave — ${currentExerciseLabel}`;
       modalBody.innerHTML = await renderReadme();
       modalBody.insertAdjacentHTML('beforeend', Config.readmeTip);
       modal.setAttribute('aria-hidden', 'false');
+      positionReadmePanelInitially();
+   }
+
+   /**
+    * Zet het opgavepaneel bij de eerste keer tonen rechtsboven, buiten de weg van de editors.
+    * Nadien laten we de laatst gekozen positie en afmeting staan, ook bij een volgende oefening.
+    */
+   function positionReadmePanelInitially() {
+      if (readmeHasBeenPositioned) return;
+      readmeHasBeenPositioned = true;
+      positionReadmePanel(window.innerWidth - modalDialog.offsetWidth - 24, 64);
+   }
+
+   /**
+    * Zet het opgavepaneel op de gegeven positie, geklemd binnen het scherm.
+    *
+    * @param {number} x
+    * @param {number} y
+    */
+   function positionReadmePanel(x, y) {
+      const maxX = Math.max(window.innerWidth - modalDialog.offsetWidth, 0);
+      const maxY = Math.max(window.innerHeight - modalDialog.offsetHeight, 0);
+      modalDialog.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+      modalDialog.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
    }
 
    /**
@@ -743,12 +773,26 @@ ${body}
       closeModal();
    }
 
-   function handleModalBackdropClick() {
-      closeModal();
-   }
-
    function handleKeydown(e) {
       if (e.key === 'Escape') closeModal();
+   }
+
+   function handleModalHeaderPointerdown(e) {
+      // klikken op de knoppen in de titelbalk mogen niet slepen starten
+      if (e.target.closest('.modal__header-actions')) return;
+      const rect = modalDialog.getBoundingClientRect();
+      readmeDragOffsetX = e.clientX - rect.left;
+      readmeDragOffsetY = e.clientY - rect.top;
+      modalHeader.setPointerCapture(e.pointerId);
+   }
+
+   function handleModalHeaderPointermove(e) {
+      if (!modalHeader.hasPointerCapture(e.pointerId)) return;
+      positionReadmePanel(e.clientX - readmeDragOffsetX, e.clientY - readmeDragOffsetY);
+   }
+
+   function handleModalHeaderPointerup(e) {
+      if (modalHeader.hasPointerCapture(e.pointerId)) modalHeader.releasePointerCapture(e.pointerId);
    }
 
    /**
@@ -774,8 +818,10 @@ ${body}
       btnReadme.addEventListener('click', handleBtnReadmeClick);
       btnReadmeNewTab.addEventListener('click', handleBtnReadmeNewTabClick);
       btnModalClose.addEventListener('click', handleModalClose);
-      modalBackdrop.addEventListener('click', handleModalBackdropClick);
       document.addEventListener('keydown', handleKeydown);
+      modalHeader.addEventListener('pointerdown', handleModalHeaderPointerdown);
+      modalHeader.addEventListener('pointermove', handleModalHeaderPointermove);
+      modalHeader.addEventListener('pointerup', handleModalHeaderPointerup);
 
       loadIndex();
    }

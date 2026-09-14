@@ -113,6 +113,32 @@
    gap: 4px;
 }
 
+/* opgave paneel — los, verplaatsbaar en herschaalbaar i.p.v. een blokkerende modal */
+
+#modal-readme {
+   pointer-events: none;
+}
+
+#modal-readme .modal__dialog {
+   box-shadow: 0 8px 24px rgba(0 0 0 / 40%);
+   height: 520px;
+   margin: 0;
+   max-height: none;
+   max-width: none;
+   min-height: 200px;
+   min-width: 320px;
+   overflow: auto;
+   pointer-events: auto;
+   position: fixed;
+   resize: both;
+   width: 460px;
+}
+
+#modal-readme .modal__header {
+   cursor: move;
+   user-select: none;
+}
+
 .modal__body {
    color: var(--text-primary);
    font-size: 14px;
